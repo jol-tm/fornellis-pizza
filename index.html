@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="shortcut icon" href="imgs/favicon.jpg" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -19,9 +20,9 @@
     <nav class="navbar navbar-expand-lg nav-css">
         <a href="#top" id="logo"><img id="logo-img" src="imgs/logo-fornelli's.png" alt="Logo"></a>
         <!--BTN NAVBAR-->
-        <button id="menu-btn" class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin: 1rem;">
-            <svg id="open-menu" class="menu-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
-            <svg id="close-menu" class="menu-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/></svg>
+        <button id="nav-btn" class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin: 1rem;">
+            <svg id="open-nav" class="nav-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
+            <svg id="close-nav" class="nav-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/></svg>
         </button>
         <!--FIM BTN NAVBAR-->
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
@@ -42,8 +43,8 @@
     <!--CAROUSEL-->
     <div id="carouselExampleInterval" id="top" class="carousel slide carousel-css" data-bs-ride="carousel">
         <div class="carousel-inner carousel-inner-css">
-            <h4 id="text1" class="carousel-text">Bem-vindo à Fornelli: onde a tradição italiana se encontra com o calor brasileiro em cada fatia.</h4>
-            <h5 id="text2" class="carousel-text">TRADIÇÃO DESDE 1976</h5>
+            <p id="text1" class="carousel-text">Bem-vindo à Fornelli: onde a tradição italiana se encontra com o calor brasileiro em cada fatia.</p>
+            <p id="text2" class="carousel-text">TRADIÇÃO DESDE 1976</p>
             <div class="carousel-item active" data-bs-interval="10000">
                 <img src="imgs/img-test.jpeg" class="d-block w-100" alt="...">
             </div>
@@ -73,12 +74,12 @@
     <div id="menu">
         <h2>Cardápio</h2>
         <div class="menu-nav">
-            <h4 id="Salgadas">Salgadas</h4>
-            <h4 id="Doces">Doces</h4>
-            <h4 id="Bebidas">Bebidas</h4>
+            <h4 id="Salgadas" class="menu-nav-btns">Salgadas</h4>
+            <h4 id="Doces" class="menu-nav-btns">Doces</h4>
+            <h4 id="Bebidas" class="menu-nav-btns">Bebidas</h4>
             <span id="placeholder"></span>
         </div>
-        <div class="row d-flex justify-content-center">
+        <div id="menu-cards-box" class="row d-flex justify-content-center">
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="menu-card">
                     <img class="img-fluid" src="imgs/marguerita.jpg" alt="">
@@ -87,19 +88,19 @@
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="menu-card">
-                    <img class="img-fluid" src="imgs/frango com catupiry.jpg" alt="">
+                    <img class="img-fluid" src="imgs/marguerita.jpg" alt="">
                     <h4>Pizza</h4>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="menu-card">
-                    <img class="img-fluid" src="" alt="">
+                    <img class="img-fluid" src="imgs/marguerita.jpg" alt="">
                     <h4>Pizza</h4>
                 </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <div class="menu-card">
-                    <img class="img-fluid" src="" alt="">
+                    <img class="img-fluid" src="imgs/marguerita.jpg" alt="">
                     <h4>Pizza</h4>
                 </div>
             </div>
@@ -146,8 +147,9 @@
         Hic, quisquam quasi sapiente dolor iure maxime deserunt iste eligendi optio aliquid nam numquam. Maiores, ipsum, placeat commodi deserunt doloremque vero quo quia eius soluta mollitia officiis aperiam optio vel!</p>
         <img class="img-fluid" src="imgs/img-test.jpeg" alt="">
     </div>
+    <footer>Fornelli’s Pizza @ 2024<br>Website developed with love by Bewder Ltda.</footer>
     <!--BTN VOLTA PRA CIMA-->
-    <a id="scroll-up-btn" href="#top"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></a>
+    <a id="scroll-up-btn" href="#top"><svg xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></a>
     <!--FIM BTN VOLTA PRA CIMA-->
 </body>
 </html>
