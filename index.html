@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fornelli's Pizza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="imgs/favicon.jpg" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="scripts/main.js"></script>
+</head>
+<body>
+    <!--BARRA NAVEGAÇÃO-->
+    <nav class="navbar navbar-expand-lg nav-css">
+        <a href="#top" id="logo"><img id="logo-img" src="imgs/logo-fornelli's.png" alt="Logo"></a>
+        <!--BTN NAVBAR-->
+        <button id="menu-btn" class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin: 1rem;">
+            <svg id="open-menu" class="menu-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/></svg>
+            <svg id="close-menu" class="menu-icons" xmlns="http://www.w3.org/2000/svg" height="42px" viewBox="0 -960 960 960" width="42px" fill="#fff"><path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/></svg>
+        </button>
+        <!--FIM BTN NAVBAR-->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-css">
+                <li class="nav-item m-auto nav-item-css">    
+                    <a class="nav-link nav-link-css" href="#menu">Cardápio</a>
+                </li>
+                <li class="nav-item m-auto nav-item-css">
+                    <a class="nav-link nav-link-css" href="#contact">Contato</a>
+                </li>
+                <li class="nav-item m-auto nav-item-css">
+                    <a class="nav-link nav-link-css" href="#about">Sobre</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--FIM BARRA NAVEGAÇÃO-->
+    <!--CAROUSEL-->
+    <div id="carouselExampleInterval" id="top" class="carousel slide carousel-css" data-bs-ride="carousel">
+        <div class="carousel-inner carousel-inner-css">
+            <h4 id="text1" class="carousel-text">Bem-vindo à Fornelli: onde a tradição italiana se encontra com o calor brasileiro em cada fatia.</h4>
+            <h5 id="text2" class="carousel-text">TRADIÇÃO DESDE 1976</h5>
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="imgs/img-test.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="imgs/img-test.jpeg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imgs/img-test.jpeg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!--FIM CAROUSEL-->
+    <!--LINHA-->
+    <div class="div-line">
+        <hr><svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="rgb(255, 150, 0)"><path d="M480-80 80-680q85-72 186.5-116T480-840q112 0 213.5 43.5T880-680L480-80Zm0-144 292-438q-65-45-139-71.5T480-760q-79 0-152.5 26.5T188-662l292 438ZM380-560q25 0 42.5-17.5T440-620q0-25-17.5-42.5T380-680q-25 0-42.5 17.5T320-620q0 25 17.5 42.5T380-560Zm100 200q25 0 42.5-17.5T540-420q0-25-17.5-42.5T480-480q-25 0-42.5 17.5T420-420q0 25 17.5 42.5T480-360Zm0 136Z"/></svg><hr>
+    </div>
+    <!--FIM LINHA-->
+    <!--CARDÁPIO-->
+    <div id="menu">
+        <h2>Cardápio</h2>
+        <div class="menu-nav">
+            <h4 id="Salgadas">Salgadas</h4>
+            <h4 id="Doces">Doces</h4>
+            <h4 id="Bebidas">Bebidas</h4>
+            <span id="placeholder"></span>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="menu-card">
+                    <img class="img-fluid" src="imgs/marguerita.jpg" alt="">
+                    <h4>Marguerita</h4>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="menu-card">
+                    <img class="img-fluid" src="imgs/frango com catupiry.jpg" alt="">
+                    <h4>Pizza</h4>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="menu-card">
+                    <img class="img-fluid" src="" alt="">
+                    <h4>Pizza</h4>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="menu-card">
+                    <img class="img-fluid" src="" alt="">
+                    <h4>Pizza</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FIM CARDÁPIO-->
+    <!--LINHA-->
+    <div class="div-line">
+        <hr><svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="rgb(255, 150, 0)"><path d="M480-80 80-680q85-72 186.5-116T480-840q112 0 213.5 43.5T880-680L480-80Zm0-144 292-438q-65-45-139-71.5T480-760q-79 0-152.5 26.5T188-662l292 438ZM380-560q25 0 42.5-17.5T440-620q0-25-17.5-42.5T380-680q-25 0-42.5 17.5T320-620q0 25 17.5 42.5T380-560Zm100 200q25 0 42.5-17.5T540-420q0-25-17.5-42.5T480-480q-25 0-42.5 17.5T420-420q0 25 17.5 42.5T480-360Zm0 136Z"/></svg><hr>
+    </div>
+    <!--FIM LINHA-->
+    <!--CONTATO-->
+    <div id="contact">
+        <h2>Contato</h2>
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-item"></div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-item"></div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-item"></div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="contact-item"></div>
+            </div>
+        </div>
+    </div>
+    <!--FIM CONTATO-->
+    <!--LINHA-->
+    <div class="div-line">
+        <hr><svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="rgb(255, 150, 0)"><path d="M480-80 80-680q85-72 186.5-116T480-840q112 0 213.5 43.5T880-680L480-80Zm0-144 292-438q-65-45-139-71.5T480-760q-79 0-152.5 26.5T188-662l292 438ZM380-560q25 0 42.5-17.5T440-620q0-25-17.5-42.5T380-680q-25 0-42.5 17.5T320-620q0 25 17.5 42.5T380-560Zm100 200q25 0 42.5-17.5T540-420q0-25-17.5-42.5T480-480q-25 0-42.5 17.5T420-420q0 25 17.5 42.5T480-360Zm0 136Z"/></svg><hr>
+    </div>
+    <!--FIM LINHA-->
+    <!--SOBRE-->
+    <div id="about">
+        <h2>Sobre</h2>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil illo perferendis laudantium quos incidunt minus exercitationem doloremque eaque, doloribus officia quidem nesciunt vero cupiditate mollitia atque autem totam similique? Maxime.
+        Cumque quasi porro sint repudiandae assumenda, excepturi nulla! Eaque culpa magni commodi corporis. Nihil magni, omnis impedit suscipit ullam officiis et necessitatibus, repellendus expedita placeat cum tempore incidunt sunt illum!
+        At vitae sapiente quisquam recusandae tempora laboriosam aperiam vero nesciunt facilis odio accusamus magni accusantium numquam expedita cum illo, laborum voluptatibus commodi perspiciatis! Voluptates, nostrum. Maxime, consequatur aspernatur? Beatae, sequi?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum nobis necessitatibus non animi aliquid iusto quaerat! Quibusdam fugit rerum dicta, sint consectetur nulla molestias cumque, ea hic voluptates voluptatum.
+        Accusantium necessitatibus deserunt cupiditate debitis odio totam alias dicta, itaque quisquam omnis magnam vero nisi at quo? Atque accusamus fugiat iure similique necessitatibus suscipit. Nihil voluptatem dolorum similique mollitia quis.
+        Hic, quisquam quasi sapiente dolor iure maxime deserunt iste eligendi optio aliquid nam numquam. Maiores, ipsum, placeat commodi deserunt doloremque vero quo quia eius soluta mollitia officiis aperiam optio vel!</p>
+        <img class="img-fluid" src="imgs/img-test.jpeg" alt="">
+    </div>
+    <!--BTN VOLTA PRA CIMA-->
+    <a id="scroll-up-btn" href="#top"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#fff"><path d="M480-528 296-344l-56-56 240-240 240 240-56 56-184-184Z"/></svg></a>
+    <!--FIM BTN VOLTA PRA CIMA-->
+</body>
+</html>
