@@ -1,6 +1,5 @@
 
 :root {
-    font-size: 1rem;
     scroll-padding: 6.5rem;
     --f1: "Courgette", arial;
     --f2: "Ubuntu", sans-serif;
@@ -15,10 +14,16 @@
     .carousel-text {
         font-size: 1rem;
     }
+    footer {
+        font-size: 1rem;
+    }
 }
 @media only screen and (min-width : 600px) {
     .carousel-text {
         font-size: 1.5rem;
+    }
+    footer {
+        font-size: 1.2rem;
     }
 }
 @media only screen and (min-width : 768px) {
@@ -29,13 +34,11 @@
 
 body {
     font-family: var(--f1);
-    font-style: normal;
     background-image: url(../imgs/fundoPizza.jpeg);
     background-size: contain;
     background-attachment: fixed;
-    color: var(--c4);
 }
-
+/* BARRA DE NAVEGAÇÃO */
 .nav-css {
     position: sticky;
     top: 0;
@@ -43,11 +46,9 @@ body {
     backdrop-filter: blur(5px);
     z-index: 2;
 } 
-
 #logo {
-    position: relative;
-    left: 2rem;
-    width: 0;
+    margin-left: 2rem;
+    margin-right: -2rem;
 }
 #logo-img {
     height: 5em;
@@ -55,7 +56,7 @@ body {
     transition-duration: .3s;
 }
 #logo-img:hover {
-    scale: 1.3;
+    scale: 1.2;
     rotate: -5deg;
 }
 .nav-icons {
@@ -67,9 +68,8 @@ body {
 #close-nav {
     scale: 0;
 }
-
 .navbar-css {
-    column-gap: 10rem;
+    column-gap: 15rem;
 }
 .nav-item-css {
     transition-duration: .3s;
@@ -85,16 +85,7 @@ body {
 .nav-link-css:hover, .nav-link-css:focus {
     color: var(--c3);
 }
-
-/*.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}*/
-
-/*.carousel-css {
-    margin: auto;
-    margin-top: 5px;
-    width: 95%;
-}*/
+/* CARROSEL */
 .carousel-inner-css {
     font-family: var(--f2);
     border-bottom-left-radius: 2rem;
@@ -119,19 +110,24 @@ body {
 #text2 {
     bottom: 10%;
 }
-
+/* CAIXA BASE PARA VÁRIAS SEÇÕES */
+.box {
+    height: fit-content;
+    width: 95%;
+    max-width: 70rem;
+    margin: auto;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--c3);
+}
+/* CARDÁPIO */
 #menu {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 95%;
-    width: fit-content;
-    margin-inline: auto;
-    border-radius: 2rem;
-    padding: 2rem;
-    padding-top: 1rem;
-    background-color: var(--c3);
 }
 .menu-nav {
     display: flex;
@@ -149,7 +145,6 @@ body {
     padding: .5rem;
     z-index: 1;
 }
-
 #placeholder {
     position: relative;
     margin-right: -6.5rem;
@@ -160,7 +155,6 @@ body {
     background-color: var(--c2);
     transition-duration: .3s;
 }
-
 .menu-card {
     display: flex;
     flex-direction: column;
@@ -184,55 +178,37 @@ body {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-
-#contact {
-    height: fit-content;
-    width: 95%;
-    max-width: 70rem;
-    margin: auto;
-    padding: 1rem;
-    text-align: center;
-    border-radius: 20px;
-    background-color: var(--c3);
-}
+/* CONTATO */
 .contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 8rem;
-    width: 95%;
-    max-width: 27rem;
+    max-width: 25rem;
     margin-inline: auto;
     margin-block: 1rem;
-    border-radius: 20px;
     background-color: var(--c2);
 }
-
+/* SOBRE */
 #about {
-    height: fit-content;
-    width: 95%;
-    max-width: 70rem;
-    margin: auto;
-    padding-block: 1rem;
     padding-inline: 2rem;
-    text-align: center;
-    border-radius: 20px;
-    background-color: var(--c3);
 }
 #about p {
     font-family: var(--f2);
     text-align: justify;
 }
-
+/* RODAPÉ */
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
     height: 6rem;
     margin-top: 3.5rem;
     text-align: center;
     background-color: var(--c4);
     color: var(--c3);
 }
-
+/* LINHA DIVISÓRIA */
 .div-line {
     display: flex;
     justify-content: center;
@@ -246,7 +222,7 @@ footer {
     border: 2px solid var(--c5);
     border-radius: 10px;
 }
-
+/* BOTÃO VOLTAR PRA CIMA */
 #scroll-up-btn {
     position: fixed;
     right: 1rem;
@@ -254,6 +230,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    scale: 0;
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -261,7 +238,7 @@ footer {
     backdrop-filter: blur(5px);
     transition-duration: .3s;
 }
-
+/* ANIMAÇÕES */
 @keyframes pop {
     0% {
         scale: 1;

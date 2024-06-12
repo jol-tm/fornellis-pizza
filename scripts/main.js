@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 function checkscroll() {
     var btn = $('#scroll-up-btn');
-    if (window.scrollY > 500) {
+    if (window.scrollY > 500 && window.scrollY < 3100) {
         btn.css('scale', 1);
     } else {
         btn.css('scale', 0);
