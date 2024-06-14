@@ -2,12 +2,12 @@
 :root {
     scroll-padding: 6.5rem;
     --f1: "Courgette", arial;
-    --f2: "Ubuntu", sans-serif;
+    --f2: "Plus Jakarta Sans", sans-serif;
     --c1: #b50012cb;
-    --c2: #4eca4e;
-    --c3: aliceblue;
+    --c2: #4ab34a;
+    --c3: #f0f8ff;
     --c4: #574738;
-    --c5: #ff9600;
+    --c5: #ffe817;
 }
 
 @media only screen and (min-width : 0) {
@@ -34,10 +34,15 @@
 
 body {
     font-family: var(--f1);
+    color: var(--c4);
     background-image: url(../imgs/fundoPizza.jpeg);
     background-size: contain;
     background-attachment: fixed;
 }
+h4 {
+    margin: 0;
+}
+
 /* BARRA DE NAVEGAÇÃO */
 .nav-css {
     position: sticky;
@@ -47,7 +52,8 @@ body {
     z-index: 2;
 } 
 #logo {
-    margin-left: 2rem;
+    width: 0;
+    margin-left: 2em;
     margin-right: -2rem;
 }
 #logo-img {
@@ -69,7 +75,7 @@ body {
     scale: 0;
 }
 .navbar-css {
-    column-gap: 15rem;
+    column-gap: 5rem;
 }
 .nav-item-css {
     transition-duration: .3s;
@@ -105,10 +111,10 @@ body {
     text-shadow: 0 0 5px black, 0 0 5px black;
 }
 #text1 {
-    top: 10%;
+    top: 5%;
 }
 #text2 {
-    bottom: 10%;
+    bottom: 5%;
 }
 /* CAIXA BASE PARA VÁRIAS SEÇÕES */
 .box {
@@ -139,7 +145,6 @@ body {
     padding: 3px;
 }
 .menu-nav h4 {
-    margin: 0;
     cursor: pointer;
     border-radius: 1.5rem;
     padding: .5rem;
@@ -183,11 +188,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: var(--f2);
     height: 8rem;
     max-width: 25rem;
     margin-inline: auto;
     margin-block: 1rem;
     background-color: var(--c2);
+    color: var(--c3);
+}
+.contact-item h4 {
+    margin-inline: 1rem;
 }
 /* SOBRE */
 #about {
@@ -195,6 +205,7 @@ body {
 }
 #about p {
     font-family: var(--f2);
+    font-size: 1.2rem;
     text-align: justify;
 }
 /* RODAPÉ */
