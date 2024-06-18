@@ -1,10 +1,3 @@
-/*document.addEventListener("DOMContentLoaded", () => {
-    document.addEventListener("scroll", checkscroll);
-    document.getElementById("open-menu").addEventListener("click", toogleMenuIcon);
-    document.getElementById("close-menu").addEventListener("click", toogleMenuIcon);
-    checkscroll();
-})*/
-
 $(document).ready(function() {
     $(document).on('scroll', checkscroll);
     $('#open-nav').on('click', toogleMenuIcon);
@@ -16,7 +9,7 @@ $(document).ready(function() {
 
 function checkscroll() {
     var btn = $('#scroll-up-btn');
-    if (window.scrollY > 500 && window.scrollY < 4100) {
+    if (window.scrollY > 500 && window.scrollY < 4000) {
         btn.css('scale', 1);
     } else {
         btn.css('scale', 0);
@@ -24,9 +17,9 @@ function checkscroll() {
 }
 
 function toogleMenuIcon() {
-    var openBtn = $('#open-nav'); //document.getElementById("open-menu");
-    var closeBtn = $('#close-nav'); //document.getElementById("close-menu");
-    var menuBtn = $('#nav-btn'); //document.getElementById("menu-btn");
+    var openBtn = $('#open-nav');
+    var closeBtn = $('#close-nav');
+    var menuBtn = $('#nav-btn');
 
     if (menuBtn.attr('aria-expanded') == 'true') {
         openBtn.css('scale', 0);

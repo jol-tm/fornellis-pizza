@@ -12,15 +12,12 @@
 }
 
 @media only screen and (min-width : 0) {
-    .carousel-text {
-        font-size: 1rem;
-    }
-    footer {
+    .carousel-text, #contact h4, footer {
         font-size: 1rem;
     }
 }
-@media only screen and (min-width : 600px) {
-    .carousel-text {
+@media only screen and (min-width : 450px) {
+    .carousel-text, #contact h4 {
         font-size: 1.5rem;
     }
     footer {
@@ -30,7 +27,7 @@
 @media only screen and (min-width : 768px) {
     .carousel-text {
         font-size: 1.8rem;
-    } 
+    }
 }
 
 body {
@@ -121,7 +118,7 @@ h4 {
 .box {
     height: fit-content;
     width: 90vw;
-    max-width: 150rem;
+    max-width: 80rem;
     margin: auto;
     padding: 1rem;
     text-align: center;
@@ -156,7 +153,7 @@ h4 {
     right: 64%;
     width: 35%;
     height: 2.5rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
     background-color: var(--c2);
     transition-duration: .3s;
 }
@@ -165,7 +162,8 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20rem;
+    width: 20vw;
+    min-width: 18rem;
     margin-inline: auto;
     margin-top: 1rem;
     border-radius: 1rem;
@@ -175,6 +173,7 @@ h4 {
 }
 .menu-card h4 {
     margin: auto;
+    z-index: 1;
 }
 .menu-card p {
     transition-duration: inherit;
@@ -189,7 +188,7 @@ h4 {
     justify-content: center;
     font-size: 1.5rem;
     width: 100%;
-    height: 92%;
+    height: 100%;
     border-radius: inherit;
     text-shadow: var(--ts);
     color: var(--c3);
@@ -221,12 +220,6 @@ h4 {
 /* SOBRE */
 #about {
     padding-inline: 2rem;
-    background-image: url(../imgs/img-sobre.jpeg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: var(--c3);
-    text-shadow: var(--ts);
 }
 #about p {
     font-family: var(--f2);
