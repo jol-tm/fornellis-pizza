@@ -171,9 +171,9 @@ h4 {
     border-radius: 1rem;
     box-shadow: 0 0 5px var(--c4);
     transition-duration: .5s;
-    animation: fade .8s;
+    animation: fade 1s;
     h4 {
-        margin: auto;
+        padding: .3rem;
         z-index: 1;
     }
     p {
