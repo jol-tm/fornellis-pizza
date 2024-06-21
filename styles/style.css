@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    scroll-padding: 6.5rem;
+    scroll-padding-top: 13rem;
     --f1: "Courgette", arial;
     --f2: "Plus Jakarta Sans", sans-serif;
     --c1: #b50012cb;
@@ -55,12 +57,12 @@ h4 {
     width: 0;
 }
 #logo-img {
-    height: 5em;
+    height: 5rem;
     scale: 1.1;
     transition-duration: .3s;
 }
 #logo-img:hover {
-    scale: 1.3;
+    scale: 1.4;
     rotate: -5deg;
 }
 .nav-icons {
@@ -116,7 +118,6 @@ h4 {
 }
 /* CAIXA BASE PARA VÁRIAS SEÇÕES */
 .box {
-    height: fit-content;
     width: 90vw;
     max-width: 80rem;
     margin: auto;
@@ -130,7 +131,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    min-height: 50rem;
 }
 .menu-nav {
     position: relative;
@@ -141,12 +142,12 @@ h4 {
     border-radius: 2rem;
     gap: .5rem;
     padding: 3px;
-}
-.menu-nav h4 {
-    cursor: pointer;
-    border-radius: 1.5rem;
-    padding: .5rem;
-    z-index: 1;
+    h4 {
+        cursor: pointer;
+        border-radius: 1.5rem;
+        padding: .5rem;
+        z-index: 1;
+    }
 }
 #placeholder {
     position: absolute;
@@ -164,22 +165,23 @@ h4 {
     align-items: center;
     width: 20vw;
     min-width: 18rem;
+    max-width: 25rem;
     margin-inline: auto;
     margin-top: 1rem;
     border-radius: 1rem;
     box-shadow: 0 0 5px var(--c4);
     transition-duration: .5s;
     animation: fade .8s;
-}
-.menu-card h4 {
-    margin: auto;
-    z-index: 1;
-}
-.menu-card p {
-    transition-duration: inherit;
-}
-.menu-card img {
-    border-radius: inherit;
+    h4 {
+        margin: auto;
+        z-index: 1;
+    }
+    p {
+        transition-duration: inherit;
+    }
+    img {
+        border-radius: inherit;
+    }
 }
 .item-descriptor {
     position: absolute;
@@ -212,19 +214,19 @@ h4 {
     margin-block: 1rem;
     background-color: var(--c2);
     color: var(--c3);
-}
-.contact-item h4 {
-    margin-inline: 1rem;
-    text-align: start;
+    h4 {
+        margin-inline: 1rem;
+        text-align: start;
+    }
 }
 /* SOBRE */
 #about {
     padding-inline: 2rem;
-}
-#about p {
-    font-family: var(--f2);
-    font-size: 1.2rem;
-    text-align: justify;
+    p {
+        font-family: var(--f2);
+        font-size: 1.2rem;
+        text-align: justify;
+    }
 }
 /* RODAPÉ */
 footer {
@@ -243,13 +245,13 @@ footer {
     justify-content: center;
     align-items: center;
     margin: 2rem;
-}
-.div-line hr {
-    opacity: 100%;
-    width: 60%;
-    margin-inline: 1rem;
-    border: 2px solid var(--c5);
-    border-radius: 10px;
+    hr {
+        opacity: 100%;
+        width: 60%;
+        margin-inline: 1rem;
+        border: 2px solid var(--c5);
+        border-radius: 10px;
+    }
 }
 /* BOTÃO VOLTAR PRA CIMA */
 #scroll-up-btn {
