@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
-    scroll-padding-top: 13rem;
     --f1: "Courgette", arial;
     --f2: "Plus Jakarta Sans", sans-serif;
     --c1: #b50012cb;
@@ -14,21 +13,24 @@
 }
 
 @media only screen and (min-width : 0) {
-    .carousel-text, #contact h4, footer {
+    .carousel-text, #contact h4 {
         font-size: 1rem;
     }
+    .box {
+        scroll-margin-top: 23rem;
+    }
 }
-@media only screen and (min-width : 450px) {
+@media only screen and (min-width : 576px) {
     .carousel-text, #contact h4 {
         font-size: 1.5rem;
     }
-    footer {
-        font-size: 1.2rem;
-    }
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 992px) {
     .carousel-text {
         font-size: 1.8rem;
+    }
+    .box {
+        scroll-margin-top: 13rem;
     }
 }
 
@@ -39,7 +41,7 @@ body {
     background-size: contain;
     background-attachment: fixed;
 }
-h4 {
+h4, h5 {
     margin: 0;
 }
 
@@ -94,8 +96,7 @@ h4 {
 /* CARROSEL */
 .carousel-inner-css {
     font-family: var(--f2);
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
+    border-radius: 0 0 2rem 2rem;
     border: 2px solid var(--c2);
 }
 .carousel-control-prev, .carousel-control-next {
@@ -111,10 +112,11 @@ h4 {
     text-shadow: var(--ts);
 }
 #text1 {
-    top: 5%;
+    top: 3%;
 }
 #text2 {
-    bottom: 5%;
+    bottom: 3%;
+    margin: 0;
 }
 /* CAIXA BASE PARA VÁRIAS SEÇÕES */
 .box {
@@ -163,18 +165,20 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20vw;
+    width: 25vw;
     min-width: 18rem;
     max-width: 25rem;
-    margin-inline: auto;
-    margin-top: 1rem;
+    margin: 1rem auto 0;
     border-radius: 1rem;
     box-shadow: 0 0 5px var(--c4);
     transition-duration: .5s;
     animation: fade 1s;
-    h4 {
-        padding: .3rem;
+    h4, h5 {
+        margin: .3rem 0;
         z-index: 1;
+    } 
+    h5 {
+        margin: 0 0 .3rem 0;
     }
     p {
         transition-duration: inherit;
@@ -210,8 +214,7 @@ h4 {
     height: 8rem;
     width: 95%;
     max-width: 25rem;
-    margin-inline: auto;
-    margin-block: 1rem;
+    margin: 1rem auto;
     background-color: var(--c2);
     color: var(--c3);
     h4 {
@@ -233,7 +236,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 6rem;
+    height: 5rem;
     margin-top: 3.5rem;
     text-align: center;
     background-color: var(--c4);
@@ -262,8 +265,8 @@ footer {
     justify-content: center;
     align-items: center;
     scale: 0;
-    height: 4rem;
-    width: 4rem;
+    height: 3.5rem;
+    width: 3.5rem;
     border-radius: 50%;
     background-color: var(--c1);
     backdrop-filter: blur(5px);
