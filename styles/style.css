@@ -16,8 +16,8 @@
     .carousel-text, #contact h4 {
         font-size: 1rem;
     }
-    .box {
-        scroll-margin-top: 23rem;
+    .div-line {
+        scroll-margin-top: 10rem;
     }
 }
 @media only screen and (min-width : 576px) {
@@ -29,8 +29,8 @@
     .carousel-text {
         font-size: 1.8rem;
     }
-    .box {
-        scroll-margin-top: 13rem;
+    .div-line {
+        scroll-margin-top: 1rem;
     }
 }
 
@@ -38,7 +38,7 @@ body {
     font-family: var(--f1);
     color: var(--c4);
     background-image: url(../imgs/fundoPizza.jpeg);
-    background-size: contain;
+    background-size: cover;
     background-attachment: fixed;
 }
 h4, h5 {
