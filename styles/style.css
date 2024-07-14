@@ -18,7 +18,7 @@
         font-size: 1rem;
     }
     .div-line {
-        scroll-margin-top: 10rem;
+        scroll-margin-top: 10.2rem;
     }
 }
 @media only screen and (min-width : 576px) {
@@ -32,6 +32,9 @@
     }
     .div-line {
         scroll-margin-top: 1rem;
+    }
+    .nav-css, #scroll-up-btn { /* ativa o blur só para pc */
+        backdrop-filter: blur(var(--blur));
     }
 }
 
@@ -52,7 +55,6 @@ h4, h5 {
     position: sticky;
     top: 0;
     background-color: var(--c1);
-    backdrop-filter: blur(var(--blur));
     z-index: 2;
 } 
 #logo {
@@ -136,7 +138,7 @@ h4, h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 50rem;
+    min-height: 64rem;
 }
 .menu-nav {
     position: relative;
@@ -203,10 +205,11 @@ h4, h5 {
     color: var(--c3);
     backdrop-filter: blur(var(--blur));
     opacity: 0;
-    transition-duration: .5s;
-}
-.item-descriptor p {
-    width: 70%;
+    transition: .5s;
+    p {
+        width: 90%;
+        transform: translateY(10px);
+    }
 }
 /* CONTATO */
 .contact-item {
@@ -282,14 +285,15 @@ footer {
     width: 3.5rem;
     border-radius: 50%;
     background-color: var(--c1);
-    backdrop-filter: blur(var(--blur));
     transition-duration: .3s;
 }
 /* ANIMAÇÕES */
 @keyframes fade {
     from {
         opacity: 0;
+        top: 50px;
     } to {
         opacity: 100%;
+        top: 0px;
     }
 }

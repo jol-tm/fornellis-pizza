@@ -89,6 +89,7 @@ function changeMenu() {
                 <div id="bombom" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/bombom.jpg" alt="">
                     <h4>Bombom</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Chocolate, Chocolate Branco, Confetes e Bombons </p></div>
                 </div>
             </div>
@@ -96,6 +97,7 @@ function changeMenu() {
                 <div id="choc-gran" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/chocolate-granulado.jpg" alt="">
                     <h4>Chocolate com Granulado</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Chocolate com Granulados, Contornados por Avelã e Cerejas</p></div>
                 </div>
             </div>
@@ -103,6 +105,7 @@ function changeMenu() {
                 <div id="gotas-choc" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/gotas-chocolate.jpg" alt="">
                     <h4>Gotas de Chocolate</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Chocolate com Gotas</p></div>
                 </div>
             </div>
@@ -110,6 +113,7 @@ function changeMenu() {
                 <div id="mm" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/M&M.jpg" alt="">
                     <h4>M&M</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Chocolate com M&M&#39;s e Cobertura de Morango</p></div>
                 </div>
             </div>
@@ -117,6 +121,7 @@ function changeMenu() {
                 <div id="marshmellow" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/Marshmello.jpg" alt="">
                     <h4>Marshmellow</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Marshmellow Tostados com Morango</p></div>
                 </div>
             </div>
@@ -124,6 +129,7 @@ function changeMenu() {
                 <div id="morango" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/morango.jpg" alt="">
                     <h4>Morango</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Chocolate e Morangos cobertos com Leite em Pó</p></div>
                 </div>
             </div>`);
@@ -133,6 +139,7 @@ function changeMenu() {
                 <div id="coca" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/coca.jpg" alt="">
                     <h4>Coca Cola</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Coca Cola KS 290ml</p></div>
                 </div>
             </div>
@@ -140,6 +147,7 @@ function changeMenu() {
                 <div id="pepsi" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/pepsi-lata.jpg" alt="">
                     <h4>Pepsi</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Pepsi lata 269ml</p></div>
                 </div>
             </div>
@@ -147,6 +155,7 @@ function changeMenu() {
                 <div id="sprite" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/sprite-lata.jpg" alt="">
                     <h4>Sprite</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Sprite Lata 220ml</p></div>
                 </div>
             </div>
@@ -154,6 +163,7 @@ function changeMenu() {
                 <div id="guarana" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/guarana.jpg" alt="">
                     <h4>Guaraná</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Guaraná Lata 350ml</p></div>
                 </div>
             </div>
@@ -161,6 +171,7 @@ function changeMenu() {
                 <div id="laranja" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/laranja.jpg" alt="">
                     <h4>Suco de Laranja</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Suco Natural de Laranja 500ml</p></div>
                 </div>
             </div>
@@ -168,6 +179,7 @@ function changeMenu() {
                 <div id="maracuja" class="menu-card">
                     <img class="img-fluid" src="imgs/cardapio/maracuja.jpg" alt="">
                     <h4>Suco de Maracujá</h4>
+                    <h5>R$</h5>
                     <div class="item-descriptor"><p>Suco Natural de Maracujá 500ml</p></div>
                 </div>
             </div>`);
@@ -195,11 +207,9 @@ function changeMenu() {
 
 function showDescriptor() {
     $(this).children('.item-descriptor').css('opacity', 1);
-    $(this).children().children().css('scale', 1.1);
-    $(this).css('scale', .99); 
+    $(this).children().children().css('transform', 'translateY(-15px)');
 }
 function hideDescriptor() {
     $(this).children('.item-descriptor').css('opacity', 0);
-    $(this).children().children().css('scale', 1);
-    $(this).css('scale', 1);
+    $(this).children().children().css('transform', 'translateY(10px)');
 }
