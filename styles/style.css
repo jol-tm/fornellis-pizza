@@ -49,6 +49,9 @@ body {
 h4, h5 {
     margin: 0;
 }
+a {
+    text-decoration: none;
+}
 
 /* BARRA DE NAVEGAÇÃO */
 .nav-css {
