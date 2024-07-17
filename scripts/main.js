@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('.menu-card').on('mouseleave', hideDescriptor);
     changeMenu();
     AOS.init();
-    AOS.refresh();
+    setTimeout(() => { AOS.refresh(); }, 1000);
 });
 
 function checkscroll() {
