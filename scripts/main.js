@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    AOS.init();
     $(document).on('scroll', checkscroll);
     $('#open-nav').on('click', toogleMenuIcon);
     $('#close-nav').on('click', toogleMenuIcon);
@@ -6,7 +7,6 @@ $(document).ready(function() {
     $('.menu-card').on('mouseenter', showDescriptor);
     $('.menu-card').on('mouseleave', hideDescriptor);
     changeMenu();
-    AOS.init();
 });
 
 function checkscroll() {
