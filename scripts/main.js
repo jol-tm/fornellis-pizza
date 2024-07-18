@@ -12,11 +12,17 @@ $(document).ready(function() {
 
 function checkscroll() {
     let btn = $('#scroll-up-btn');
-    if (window.scrollY < 500) {
+    let txt = $('.carousel-text');
+
+    if (window.scrollY < 230) {
+        txt.css('transform', 'translateY(0)');
+        txt.css('opacity', 1);
         btn.css('bottom', '-3.5rem');
     } else if (window.scrollY < 4200) {
         btn.css('bottom', '1rem');
-    } else if (window.scrollY >= 4200) {
+        txt.css('transform', 'translateY(-100px)');
+        txt.css('opacity', 0);
+    } else {
         btn.css('bottom', '3rem');
     }
 }
