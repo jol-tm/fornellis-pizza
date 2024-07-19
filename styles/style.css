@@ -66,11 +66,12 @@ a {
 #logo {
     position: relative;
     left: 2rem;
+    margin: 0 -6.5rem 0 0;
     scale: 1.2;
     animation: shake 5s alternate infinite ease-in-out;
 }
 #logo-img {
-    height: 5rem;
+    width: 6.5rem;
 }
 .nav-icons {
     position: absolute;
