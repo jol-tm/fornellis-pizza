@@ -236,6 +236,12 @@ a {
         text-align: start;
     }
 }
+.ctt-link {
+    transition: .3s;
+}
+.ctt-link:hover {
+    transform: translateY(-3px);
+}
 /* SOBRE */
 #about {
     padding-inline: 2rem;
