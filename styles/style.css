@@ -192,6 +192,7 @@ a {
     } 
     h5 {
         margin: 0 0 .3rem 0;
+        font-weight: 600;
     }
     p {
         transition-duration: inherit;
