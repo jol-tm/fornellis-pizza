@@ -5,6 +5,7 @@ $(document).ready(function() {
     $('.menu-nav-btns').on('click', changeMenu);
     $('.menu-card').on('mouseenter', showDescriptor);
     $('.menu-card').on('mouseleave', hideDescriptor);
+    $('#user-icon').on('click', UserMenu);
     changeMenu();
     AOS.init();
     setTimeout(() => { AOS.refresh(); }, 1000);
@@ -13,15 +14,18 @@ $(document).ready(function() {
 function checkscroll() {
     let btn = $('#scroll-up-btn');
     let txt = $('.carousel-text');
+    let nav = $('.nav-css');
 
     if (window.scrollY < 230) {
         txt.css('transform', 'translateY(0)');
         txt.css('opacity', 1);
         btn.css('bottom', '-3.5rem');
+        nav.css('backgroundColor', 'var(--c1)');
     } else if (window.scrollY < 4200) {
         btn.css('bottom', '1rem');
         txt.css('transform', 'translateY(-100px)');
         txt.css('opacity', 0);
+        nav.css('backgroundColor', 'var(--c6)');
     } else {
         btn.css('bottom', '3rem');
     }
@@ -220,4 +224,49 @@ function showDescriptor() {
 function hideDescriptor() {
     $(this).children('.item-descriptor').css('opacity', 0);
     $(this).children().children().css('transform', 'translateY(10px)');
+}
+
+function UserMenu() {
+    let userLogin = (
+        `<div id="user-menu-box">
+            <div id="user-menu">
+                <button id="close-login"><img src="imgs/icones/close-nav.svg" alt=""></button>
+                <form>
+                    <h1>Login</h1>
+                    <input type="email" placeholder="Email" required>    
+                    <input type="password" placeholder="Senha" required>
+                    <button type="submit"><h4>Entrar</h4></button>
+                    <h5 id="sign-up">Não tem uma conta? Cadastre-se aqui!</h5>
+                </form>
+            </div>
+        </div>`);
+    let userSignUp = (
+        `<div id="user-menu">
+            <button id="close-login"><img src="imgs/icones/close-nav.svg" alt=""></button>
+            <form>
+                <h1>Cadastre-se</h1>
+                <input type="text" placeholder="Nome" required>    
+                <input type="email" placeholder="Email" required>    
+                <input type="text" placeholder="CPF" required>    
+                <input type="password" placeholder="Senha" required>
+                <input type="text" placeholder="Endereço para entregas" required>
+                <button type="submit"><h4>Cadastrar</h4></button>
+            </form>
+        </div>`);
+    // Insere o pop up de login na tela
+    $('body').prepend(userLogin);
+    $('#close-login').on('click', closeUserMenu);
+    // Troca a tela de pop up para a de cadastro
+    $('#sign-up').on('click', () => {
+        $('#user-menu-box').html(userSignUp);
+        $('#close-login').on('click', closeUserMenu);
+    });
+}
+
+function closeUserMenu(){
+    // Ao clicar em fechar roda a animação e após 300ms fecha o pop up de login/cadastro
+    $('#user-menu-box').css('opacity', 0);
+    setTimeout(() => {
+        $('#user-menu-box').remove();
+    } , 300);
 }
