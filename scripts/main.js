@@ -1,216 +1,41 @@
 $(document).ready(function() {
-    $(document).on('scroll', checkscroll);
-    $('#open-nav').on('click', toogleMenuIcon);
-    $('#close-nav').on('click', toogleMenuIcon);
     $('.menu-nav-btns').on('click', changeMenu);
     $('.menu-card').on('mouseenter', showDescriptor);
     $('.menu-card').on('mouseleave', hideDescriptor);
     $('#user-icon').on('click', UserMenu);
+    $('.hide-user-menu').on('click', closeUserMenu);
+    $('#open-nav').on('click', toogleMenuIcon);
+    $('#close-nav').on('click', toogleMenuIcon);
+    $(document).on('scroll', checkscroll);
     changeMenu();
     AOS.init();
     setTimeout(() => { AOS.refresh(); }, 1000);
 });
 
-function checkscroll() {
-    let btn = $('#scroll-up-btn');
-    let txt = $('.carousel-text');
-    let nav = $('.nav-css');
-
-    if (window.scrollY < 230) {
-        txt.css('transform', 'translateY(0)');
-        txt.css('opacity', 1);
-        btn.css('bottom', '-3.5rem');
-        nav.css('backgroundColor', 'var(--c1)');
-    } else if (window.scrollY < 4200) {
-        btn.css('bottom', '1rem');
-        txt.css('transform', 'translateY(-100px)');
-        txt.css('opacity', 0);
-        nav.css('backgroundColor', 'var(--c6)');
-    } else {
-        btn.css('bottom', '3rem');
-    }
-}
-
-function toogleMenuIcon() {
-    let openBtn = $('#open-nav');
-    let closeBtn = $('#close-nav');
-    let menuBtn = $('#nav-btn');
-
-    if (menuBtn.attr('aria-expanded') == 'true') {
-        openBtn.css('scale', 0);
-        closeBtn.css('scale', 1);
-    } else {
-        openBtn.css('scale', 1);
-        closeBtn.css('scale', 0);
-    }
-}
-
 function changeMenu() {
-    let sal = (
-            `<div class="col-xl-4 col-md-6">
-                <div id="marguerita" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/marguerita.jpg" alt="MARGUERITA">
-                    <h4>Marguerita</h4>
-                    <h5>R$59,90</h5>
-                    <div class="item-descriptor"><p>Tomate, mussarela e manjericão</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="frango-catupiry" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/Frango-com-catupiry.jpg" alt="FRANGO">
-                    <h4>Frango com Catupiry</h4>
-                    <h5>R$49,99</h5>
-                    <div class="item-descriptor"><p>Frango, catupiry, milho e azeitonas</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="4queijos" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/queijo-full.jpg" alt="QUEIJO">
-                    <h4>Quatro Queijos</h4>
-                    <h5>R$59,90</h5>
-                    <div class="item-descriptor"><p>Queijo Mussarela, Parmesão, Gorgonzola e Provolone</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="calabresa" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/calabresa.jpg" alt="CALABRESA">
-                    <h4>Calabresa</h4>
-                    <h5>R$47,99</h5>
-                    <div class="item-descriptor"><p>Calabresa com Queijo</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="strogonoff-frango" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/strogonoff-de-frango.jpg" alt="STROGONOFF">
-                    <h4>Strogonoff de frango</h4>
-                    <h5>R$59,90</h5>
-                    <div class="item-descriptor"><p>Strogonoff de Frango, Queijo e Batata Palha </p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="pepperoni" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/pepperoni.jpg" alt="PEPPERONI">
-                    <h4>Pepperoni</h4>
-                    <h5>R$49,99</h5>
-                    <div class="item-descriptor"><p>Pepperoni com Queijo</p></div>
-                </div>
-            </div>`);
-    
-    let doc = (
-            `<div class="col-xl-4 col-md-6">
-                <div id="bombom" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/bombom.jpg" alt="BOMBOM">
-                    <h4>Bombom</h4>
-                    <h5>R$49,90</h5>
-                    <div class="item-descriptor"><p>Chocolate, Chocolate Branco, Confetes e Bombons </p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="choc-gran" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/chocolate-granulado.jpg" alt="CHOCOLATE-GRANULADO">
-                    <h4>Chocolate com Granulado</h4>
-                    <h5>R$49,90</h5>
-                    <div class="item-descriptor"><p>Chocolate com Granulados, Contornados por Avelã e Cerejas</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="gotas-choc" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/gotas-chocolate.jpg" alt="GOTAS">
-                    <h4>Gotas de Chocolate</h4>
-                    <h5>R$49,90</h5>
-                    <div class="item-descriptor"><p>Chocolate com Gotas</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="mm" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/M&M.jpg" alt="M&M">
-                    <h4>M&M</h4>
-                    <h5>R$55,90</h5>
-                    <div class="item-descriptor"><p>Chocolate com M&M&#39;s e Cobertura de Morango</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="marshmellow" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/Marshmello.jpg" alt="MARSHMELLOW">
-                    <h4>Marshmellow</h4>
-                    <h5>R$55,90</h5>
-                    <div class="item-descriptor"><p>Marshmellow Tostados com Morango</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="morango" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/morango.jpg" alt="MORANGO">
-                    <h4>Morango</h4>
-                    <h5>R$49,99</h5>
-                    <div class="item-descriptor"><p>Chocolate e Morangos cobertos com Leite em Pó</p></div>
-                </div>
-            </div>`);
-
-    let beb = (
-            `<div class="col-xl-4 col-md-6">
-                <div id="coca" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/coca.jpg" alt="COCA-COLA">
-                    <h4>Coca Cola</h4>
-                    <h5>R$7,00</h5>
-                    <div class="item-descriptor"><p>Coca Cola KS 290ml</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="pepsi" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/pepsi-lata.jpg" alt="PEPSI">
-                    <h4>Pepsi</h4>
-                    <h5>R$5,99</h5>
-                    <div class="item-descriptor"><p>Pepsi lata 269ml</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="sprite" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/sprite-lata.jpg" alt="SPRITE">
-                    <h4>Sprite</h4>
-                    <h5>R$5,00</h5>
-                    <div class="item-descriptor"><p>Sprite Lata 220ml</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="guarana" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/guarana.jpg" alt="GUARANA">
-                    <h4>Guaraná</h4>
-                    <h5>R$6,00</h5>
-                    <div class="item-descriptor"><p>Guaraná Lata 350ml</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="laranja" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/laranja.jpg" alt="SUCO-DE-LARANJA">
-                    <h4>Suco de Laranja</h4>
-                    <h5>R$14,99</h5>
-                    <div class="item-descriptor"><p>Suco Natural de Laranja 500ml</p></div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-                <div id="maracuja" class="menu-card">
-                    <img class="img-fluid" src="imgs/cardapio/maracuja.jpg" alt="SUCO-DE-MARACUJA">
-                    <h4>Suco de Maracujá</h4>
-                    <h5>R$14,99</h5>
-                    <div class="item-descriptor"><p>Suco Natural de Maracujá 500ml</p></div>
-                </div>
-            </div>`);
-
     let plcHolder = $('#placeholder');
-    let menuCards = $('#menu-cards-box'); 
+    let salty = $('#salty-menu'); 
+    let sweet = $('#sweet-menu'); 
+    let drinks = $('#drinks-menu'); 
 
     if ($(this).attr('id') == 'Doces') {
         plcHolder.css('right', '35%');
         plcHolder.css('width', '27%');
-        menuCards.html(doc);
+        salty.css('display', 'none');
+        sweet.css('display', 'flex');
+        drinks.css('display', 'none');
     } else if ($(this).attr('id') == 'Bebidas') {
         plcHolder.css('right', '1%');
         plcHolder.css('width', '32%');
-        menuCards.html(beb);
+        salty.css('display', 'none');
+        sweet.css('display', 'none');
+        drinks.css('display', 'flex');
     } else {
         plcHolder.css('right', '64%');
         plcHolder.css('width', '35%');   
-        menuCards.html(sal);
+        salty.css('display', 'flex');
+        sweet.css('display', 'none');
+        drinks.css('display', 'none');
     }
     
     $('.menu-card').on('mouseenter', showDescriptor);
@@ -227,46 +52,59 @@ function hideDescriptor() {
 }
 
 function UserMenu() {
-    let userLogin = (
-        `<div id="user-menu-box">
-            <div id="user-menu">
-                <button id="close-login"><img src="imgs/icones/close-nav.svg" alt=""></button>
-                <form>
-                    <h1>Login</h1>
-                    <input type="email" placeholder="Email" required>    
-                    <input type="password" placeholder="Senha" required>
-                    <button type="submit"><h4>Entrar</h4></button>
-                    <h5 id="sign-up">Não tem uma conta? Cadastre-se aqui!</h5>
-                </form>
-            </div>
-        </div>`);
-    let userSignUp = (
-        `<div id="user-menu">
-            <button id="close-login"><img src="imgs/icones/close-nav.svg" alt=""></button>
-            <form>
-                <h1>Cadastre-se</h1>
-                <input type="text" placeholder="Nome" required>    
-                <input type="email" placeholder="Email" required>    
-                <input type="text" placeholder="CPF" required>    
-                <input type="password" placeholder="Senha" required>
-                <input type="text" placeholder="Endereço para entregas" required>
-                <button type="submit"><h4>Cadastrar</h4></button>
-            </form>
-        </div>`);
-    // Insere o pop up de login na tela
-    $('body').prepend(userLogin);
-    $('#close-login').on('click', closeUserMenu);
+    let userMenu = $('#user-menu-box');
+    let loginMenu = $('#login-menu');
+    let signUpMenu = $('#sign-up-menu');
+    let signUpLink = $('#sign-up-link');
+    // Mostra o pop up de login na tela
+    userMenu.css({'display': 'flex', 'opacity': 1});
+    loginMenu.css('display', 'flex');
     // Troca a tela de pop up para a de cadastro
-    $('#sign-up').on('click', () => {
-        $('#user-menu-box').html(userSignUp);
-        $('#close-login').on('click', closeUserMenu);
-    });
+    signUpLink.on('click', () => {
+        loginMenu.css('display', 'none');
+        signUpMenu.css('display', 'flex');
+    })
 }
 
 function closeUserMenu(){
     // Ao clicar em fechar roda a animação e após 300ms fecha o pop up de login/cadastro
     $('#user-menu-box').css('opacity', 0);
     setTimeout(() => {
-        $('#user-menu-box').remove();
-    } , 300);
+        $('#user-menu-box').css('display', 'none');
+        $('#sign-up-menu').css('display', 'none');
+    }, 300);
+}
+
+function toogleMenuIcon() {
+    let openBtn = $('#open-nav');
+    let closeBtn = $('#close-nav');
+    let menuBtn = $('#nav-btn');
+    
+    if (menuBtn.attr('aria-expanded') == 'true') {
+        openBtn.css('scale', 0);
+        closeBtn.css('scale', 1);
+    } else {
+        openBtn.css('scale', 1);
+        closeBtn.css('scale', 0);
+    }
+}
+
+function checkscroll() {
+    let btn = $('#scroll-up-btn');
+    let txt = $('.carousel-text');
+    let nav = $('.nav-css');
+    
+    if (window.scrollY < 230) {
+        txt.css('transform', 'translateY(0)');
+        txt.css('opacity', 1);
+        btn.css('bottom', '-3.5rem');
+        nav.css('backgroundColor', 'var(--c1)');
+    } else if (window.scrollY < 4200) {
+        btn.css('bottom', '1rem');
+        txt.css('transform', 'translateY(-100px)');
+        txt.css('opacity', 0);
+        nav.css('backgroundColor', 'var(--c6)');
+    } else {
+        btn.css('bottom', '3rem');
+    }
 }
