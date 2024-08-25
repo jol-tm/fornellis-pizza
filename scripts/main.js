@@ -52,12 +52,12 @@ function hideDescriptor() {
 }
 
 function UserMenu() {
-    let userMenu = $('#user-menu-box');
+    let popUp = $('.pop-up-box');
     let loginMenu = $('#login-menu');
     let signUpMenu = $('#sign-up-menu');
     let signUpLink = $('#sign-up-link');
     // Mostra o pop up de login na tela
-    userMenu.css({'display': 'flex', 'opacity': 1});
+    popUp.css({'display': 'flex', 'opacity': 1});
     loginMenu.css('display', 'flex');
     // Troca a tela de pop up para a de cadastro
     signUpLink.on('click', () => {
@@ -68,9 +68,9 @@ function UserMenu() {
 
 function closeUserMenu(){
     // Ao clicar em fechar roda a animação e após 300ms fecha o pop up de login/cadastro
-    $('#user-menu-box').css('opacity', 0);
+    $('.pop-up-box').css('opacity', 0);
     setTimeout(() => {
-        $('#user-menu-box').css('display', 'none');
+        $('.pop-up-box').css('display', 'none');
         $('#sign-up-menu').css('display', 'none');
     }, 300);
 }

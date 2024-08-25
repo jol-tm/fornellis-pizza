@@ -104,7 +104,7 @@ a {
     color: var(--c3);
 }
 /* MENU DO USUÁRIO */
-#user-menu-box {
+.pop-up-box {
     position: fixed;
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@ a {
         transition: .3s;
     }
 }
-.user-menu {
+.pop-up {
     position: relative;
     font-family: var(--f2);
     display: flex;
@@ -156,18 +156,16 @@ a {
     }
     input {
         font-size: 1.5rem;
-        outline: none;
+        background-color: var(--c3);
         height: 4rem;
         width: 40vw;
         min-width: 18rem;
         max-width: 50rem;
+        outline: none;
         border: 3px solid var(--c2);
         border-radius: 1rem;
         padding: 1rem;
         transition: .3s;
-    }
-    input:focus {
-        box-shadow: 0 0 1rem var(--c2);
     }
     button:hover {
         transform: translateY(-3px);
@@ -180,7 +178,7 @@ a {
         text-decoration: underline;
     }
 }
-#login-menu, #sign-up-menu, #user-menu-box {
+.pop-up, .pop-up-box {
     display: none;
 }
 /* CARROSEL */
