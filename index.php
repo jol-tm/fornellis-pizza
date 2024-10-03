@@ -49,6 +49,9 @@
                         <img class="img-fluid" src="imgs/cardapio/marguerita.jpg" alt="MARGUERITA">
                         <h4>Marguerita</h4>
                         <h5>R$59,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Tomate, mussarela e manjericão</p></div>
                     </div>
                 </div>
@@ -57,6 +60,9 @@
                         <img class="img-fluid" src="imgs/cardapio/Frango-com-catupiry.jpg" alt="FRANGO">
                         <h4>Frango com Catupiry</h4>
                         <h5>R$49,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Frango, catupiry, milho e azeitonas</p></div>
                     </div>
                 </div>
@@ -65,6 +71,9 @@
                         <img class="img-fluid" src="imgs/cardapio/queijo-full.jpg" alt="QUEIJO">
                         <h4>Quatro Queijos</h4>
                         <h5>R$59,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Queijo Mussarela, Parmesão, Gorgonzola e Provolone</p></div>
                     </div>
                 </div>
@@ -73,6 +82,9 @@
                         <img class="img-fluid" src="imgs/cardapio/calabresa.jpg" alt="CALABRESA">
                         <h4>Calabresa</h4>
                         <h5>R$47,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Calabresa com Queijo</p></div>
                     </div>
                 </div>
@@ -81,6 +93,9 @@
                         <img class="img-fluid" src="imgs/cardapio/strogonoff-de-frango.jpg" alt="STROGONOFF">
                         <h4>Strogonoff de frango</h4>
                         <h5>R$59,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Strogonoff de Frango, Queijo e Batata Palha </p></div>
                     </div>
                 </div>
@@ -89,6 +104,9 @@
                         <img class="img-fluid" src="imgs/cardapio/pepperoni.jpg" alt="PEPPERONI">
                         <h4>Pepperoni</h4>
                         <h5>R$49,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Pepperoni com Queijo</p></div>
                     </div>
                 </div>
@@ -99,6 +117,9 @@
                         <img class="img-fluid" src="imgs/cardapio/bombom.jpg" alt="BOMBOM">
                         <h4>Bombom</h4>
                         <h5>R$49,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Chocolate, Chocolate Branco, Confetes e Bombons </p></div>
                     </div>
                 </div>
@@ -107,6 +128,9 @@
                         <img class="img-fluid" src="imgs/cardapio/chocolate-granulado.jpg" alt="CHOCOLATE-GRANULADO">
                         <h4>Chocolate com Granulado</h4>
                         <h5>R$49,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Chocolate com Granulados, Contornados por Avelã e Cerejas</p></div>
                     </div>
                 </div>
@@ -115,6 +139,9 @@
                         <img class="img-fluid" src="imgs/cardapio/gotas-chocolate.jpg" alt="GOTAS">
                         <h4>Gotas de Chocolate</h4>
                         <h5>R$49,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Chocolate com Gotas</p></div>
                     </div>
                 </div>
@@ -123,6 +150,9 @@
                         <img class="img-fluid" src="imgs/cardapio/M&M.jpg" alt="M&M">
                         <h4>M&M</h4>
                         <h5>R$55,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Chocolate com M&M&#39;s e Cobertura de Morango</p></div>
                     </div>
                 </div>
@@ -131,6 +161,9 @@
                         <img class="img-fluid" src="imgs/cardapio/Marshmello.jpg" alt="MARSHMELLOW">
                         <h4>Marshmellow</h4>
                         <h5>R$55,90</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Marshmellow Tostados com Morango</p></div>
                     </div>
                 </div>
@@ -139,6 +172,9 @@
                         <img class="img-fluid" src="imgs/cardapio/morango.jpg" alt="MORANGO">
                         <h4>Morango</h4>
                         <h5>R$49,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Chocolate e Morangos cobertos com Leite em Pó</p></div>
                     </div>
                 </div>
@@ -149,6 +185,9 @@
                         <img class="img-fluid" src="imgs/cardapio/coca.jpg" alt="COCA-COLA">
                         <h4>Coca Cola</h4>
                         <h5>R$7,00</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Coca Cola KS 290ml</p></div>
                     </div>
                 </div>
@@ -157,6 +196,9 @@
                         <img class="img-fluid" src="imgs/cardapio/pepsi-lata.jpg" alt="PEPSI">
                         <h4>Pepsi</h4>
                         <h5>R$5,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Pepsi lata 269ml</p></div>
                     </div>
                 </div>
@@ -165,6 +207,9 @@
                         <img class="img-fluid" src="imgs/cardapio/sprite-lata.jpg" alt="SPRITE">
                         <h4>Sprite</h4>
                         <h5>R$5,00</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Sprite Lata 220ml</p></div>
                     </div>
                 </div>
@@ -173,6 +218,9 @@
                         <img class="img-fluid" src="imgs/cardapio/guarana.jpg" alt="GUARANA">
                         <h4>Guaraná</h4>
                         <h5>R$6,00</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Guaraná Lata 350ml</p></div>
                     </div>
                 </div>
@@ -181,6 +229,9 @@
                         <img class="img-fluid" src="imgs/cardapio/laranja.jpg" alt="SUCO-DE-LARANJA">
                         <h4>Suco de Laranja</h4>
                         <h5>R$14,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Suco Natural de Laranja 500ml</p></div>
                     </div>
                 </div>
@@ -189,6 +240,9 @@
                         <img class="img-fluid" src="imgs/cardapio/maracuja.jpg" alt="SUCO-DE-MARACUJA">
                         <h4>Suco de Maracujá</h4>
                         <h5>R$14,99</h5>
+                        <form style="z-index: 1;" action="index.php" method="post">
+                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                        </form>
                         <div class="item-descriptor"><p>Suco Natural de Maracujá 500ml</p></div>
                     </div>
                 </div>

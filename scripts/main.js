@@ -44,11 +44,11 @@ function changeMenu() {
 
 function showDescriptor() {
     $(this).children('.item-descriptor').css('opacity', 1);
-    $(this).children().children().css('transform', 'translateY(-15px)');
+    $(this).children('.item-descriptor').css('transform', 'translateY(-15px)');
 }
 function hideDescriptor() {
     $(this).children('.item-descriptor').css('opacity', 0);
-    $(this).children().children().css('transform', 'translateY(10px)');
+    $(this).children('.item-descriptor').css('transform', 'translateY(10px)');
 }
 
 function UserMenu() {

@@ -335,6 +335,17 @@ a {
         transform: translateY(10px);
     }
 }
+.addToCartBtn {
+    margin: .3rem;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: var(--c2);
+    transition: .3s;
+}
+.addToCartBtn:hover {
+    transform: translateY(-5px);
+}
 /* CONTATO */
 .contact-item {
     display: flex;
