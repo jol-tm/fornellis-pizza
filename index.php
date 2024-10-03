@@ -61,7 +61,7 @@
                         <h4>Frango com Catupiry</h4>
                         <h5>R$49,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="frango-catupiry"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Frango, catupiry, milho e azeitonas</p></div>
                     </div>
@@ -72,7 +72,7 @@
                         <h4>Quatro Queijos</h4>
                         <h5>R$59,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="4queijos"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Queijo Mussarela, Parmesão, Gorgonzola e Provolone</p></div>
                     </div>

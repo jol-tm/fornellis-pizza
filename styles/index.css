@@ -140,37 +140,6 @@ a {
     padding: 5rem;
     border-radius: 1rem;
     animation: fade .3s;
-    form {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: .5rem;
-        button {
-            text-align: center;
-            height: 3rem;
-            border: 2px solid #006600;
-            border-radius: 1rem;
-            background-color: var(--c2);
-            padding: .5rem;
-            transition: .3s;
-        }
-    }
-    input {
-        font-size: 1.5rem;
-        background-color: var(--c3);
-        height: 4rem;
-        width: 40vw;
-        min-width: 18rem;
-        max-width: 50rem;
-        outline: none;
-        border: 3px solid var(--c2);
-        border-radius: 1rem;
-        padding: 1rem;
-        transition: .3s;
-    }
-    button:hover {
-        transform: translateY(-3px);
-    }
     h5 {
         cursor: pointer;
         transition: .3s;
@@ -178,6 +147,37 @@ a {
     h5:hover {
         text-decoration: underline;
     }
+}
+button:hover {
+    transform: translateY(-3px);
+}
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    button {
+        text-align: center;
+        height: 3rem;
+        border: 2px solid #006600;
+        border-radius: 1rem;
+        background-color: var(--c2);
+        padding: .5rem;
+        transition: .3s;
+    }
+}
+input {
+    font-size: 1.5rem;
+    background-color: white;
+    height: 4rem;
+    width: 40vw;
+    min-width: 18rem;
+    max-width: 50rem;
+    outline: none;
+    border: 3px solid var(--c2);
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: .3s;
 }
 .pop-up, .pop-up-box {
     display: none;
@@ -403,7 +403,7 @@ footer {
         border-radius: 10px;
     }
 }
-/* BOTÃO VOLTAR PRA CIMA */
+/* BOTÃO VOLTAR PRA CIMA E NOTIFICADOR */
 #scroll-up-btn {
     position: fixed;
     right: 1rem;
@@ -416,6 +416,20 @@ footer {
     border-radius: 50%;
     background-color: var(--c6);
     transition-duration: .3s;
+}
+.notification {
+    font-family: var(--f2);
+    z-index: 1;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto;
+    bottom: -5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: var(--c3);
+    background-color: var(--c2);
+    animation: showUp 5s;
 }
 /* ANIMAÇÕES */
 @keyframes fade {
@@ -432,5 +446,16 @@ footer {
         rotate: -5deg;
     } to {
         rotate: 5deg;
+    }
+}
+@keyframes showUp {
+    0% {
+        bottom: -5rem;
+    } 20% {
+        bottom: 1rem;
+    } 80% {
+        bottom: 1rem;
+    } 100% {
+        bottom: -5rem;
     }
 }
