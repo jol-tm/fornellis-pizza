@@ -1,0 +1,45 @@
+.box {
+    font-family: var(--f2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.imgProd {
+    border-radius: 50%;
+}
+
+a {
+    color: black;
+}
+
+#itens {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 90%;
+    
+}
+.topo {
+    display: flex;
+    gap: 10%;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 2px solid var(--c2);
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.amount {
+    color: black;
+    padding: 1rem 1.5rem;
+    background-color: var(--c2);
+    border-radius: 1rem;
+}
