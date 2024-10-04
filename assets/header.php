@@ -30,23 +30,23 @@
                 <a href="" class="logOff"><img height="32" src="imgs/icones/logOff.svg" alt="">Sair da Conta</a>
             </div> -->
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
-            <form>
+            <form action="dataAcess/login.php" method="post">
                 <h1>Login</h1>
-                <input type="email" placeholder="Email" required>    
-                <input type="password" placeholder="Senha" required>
+                <input type="email" placeholder="Email" name="emailLog" required>    
+                <input type="password" placeholder="Senha" name="passLog" required>
                 <button type="submit"><h4>Entrar</h4></button>
                 <h5 id="sign-up-link">Não tem uma conta? Cadastre-se aqui!</h5>
             </form>
         </div>
         <div id="sign-up-menu" class="pop-up">
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
-            <form>
+            <form action="dataAcess/signUp.php" method="post">
                 <h1>Cadastre-se</h1>
-                <input type="text" placeholder="Nome" required>    
-                <input type="email" placeholder="Email" required>    
-                <input type="text" placeholder="Telefone" required>    
-                <input type="password" placeholder="Senha" required>
-                <input type="text" placeholder="Endereço para entregas" required>
+                <input type="text" placeholder="Nome" name="nomeSignUp" required>    
+                <input type="email" placeholder="Email" name="emailSignUp" required>    
+                <input type="text" placeholder="Telefone" name="telSignUp" required>    
+                <input type="password" placeholder="Senha" name="passSignUp" required>
+                <input type="text" placeholder="Endereço para entregas" name="adressSignUp" required>
                 <button type="submit"><h4>Cadastrar</h4></button>
             </form>
         </div>

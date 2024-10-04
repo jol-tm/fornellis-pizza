@@ -50,7 +50,7 @@
                         <h4>Marguerita</h4>
                         <h5>R$59,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Tomate, mussarela e manjericão</p></div>
                     </div>
@@ -61,7 +61,7 @@
                         <h4>Frango com Catupiry</h4>
                         <h5>R$49,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="frango-catupiry"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Frango com Catupiry"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Frango, catupiry, milho e azeitonas</p></div>
                     </div>
@@ -72,7 +72,7 @@
                         <h4>Quatro Queijos</h4>
                         <h5>R$59,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="4queijos"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Quatro Queijos"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Queijo Mussarela, Parmesão, Gorgonzola e Provolone</p></div>
                     </div>
@@ -83,7 +83,7 @@
                         <h4>Calabresa</h4>
                         <h5>R$47,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Calabresa"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Calabresa com Queijo</p></div>
                     </div>
@@ -94,7 +94,7 @@
                         <h4>Strogonoff de frango</h4>
                         <h5>R$59,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Strogonoff de Frango"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Strogonoff de Frango, Queijo e Batata Palha </p></div>
                     </div>
@@ -105,7 +105,7 @@
                         <h4>Pepperoni</h4>
                         <h5>R$49,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Pepperoni"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Pepperoni com Queijo</p></div>
                     </div>
@@ -118,7 +118,7 @@
                         <h4>Bombom</h4>
                         <h5>R$49,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Bombom"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Chocolate, Chocolate Branco, Confetes e Bombons </p></div>
                     </div>
@@ -129,7 +129,7 @@
                         <h4>Chocolate com Granulado</h4>
                         <h5>R$49,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Chocolate com Granulado"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Chocolate com Granulados, Contornados por Avelã e Cerejas</p></div>
                     </div>
@@ -140,7 +140,7 @@
                         <h4>Gotas de Chocolate</h4>
                         <h5>R$49,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Gotas de Chocolate"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Chocolate com Gotas</p></div>
                     </div>
@@ -151,7 +151,7 @@
                         <h4>M&M</h4>
                         <h5>R$55,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="M&M"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Chocolate com M&M&#39;s e Cobertura de Morango</p></div>
                     </div>
@@ -162,7 +162,7 @@
                         <h4>Marshmellow</h4>
                         <h5>R$55,90</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Marshmellow"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Marshmellow Tostados com Morango</p></div>
                     </div>
@@ -173,7 +173,7 @@
                         <h4>Morango</h4>
                         <h5>R$49,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Morango"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Chocolate e Morangos cobertos com Leite em Pó</p></div>
                     </div>
@@ -186,7 +186,7 @@
                         <h4>Coca Cola</h4>
                         <h5>R$7,00</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Coca Cola"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Coca Cola KS 290ml</p></div>
                     </div>
@@ -197,7 +197,7 @@
                         <h4>Pepsi</h4>
                         <h5>R$5,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Pepsi"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Pepsi lata 269ml</p></div>
                     </div>
@@ -208,7 +208,7 @@
                         <h4>Sprite</h4>
                         <h5>R$5,00</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Sprite"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Sprite Lata 220ml</p></div>
                     </div>
@@ -219,7 +219,7 @@
                         <h4>Guaraná</h4>
                         <h5>R$6,00</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Guaraná"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Guaraná Lata 350ml</p></div>
                     </div>
@@ -230,7 +230,7 @@
                         <h4>Suco de Laranja</h4>
                         <h5>R$14,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Suco de Laranja"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Suco Natural de Laranja 500ml</p></div>
                     </div>
@@ -241,7 +241,7 @@
                         <h4>Suco de Maracujá</h4>
                         <h5>R$14,99</h5>
                         <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
+                            <button class="addToCartBtn" type="submit" name="product" value="Suco de Maracujá"><img src="imgs/icones/addProduct.svg" alt=""></button>
                         </form>
                         <div class="item-descriptor"><p>Suco Natural de Maracujá 500ml</p></div>
                     </div>
@@ -302,5 +302,12 @@
         <p>Nossa paixão pela pizza atravessa gerações. Desde os primeiros dias, quando começamos a preparar a massa, até hoje, cada pizza que sai dos nossos fornos conta uma história de dedicação, qualidade e autenticidade. Mas mais do que apenas pizza, na Fornelli você encontra um lar. Somos um ponto de encontro para amigos que se reúnem para celebrar a vida, para famílias que compartilham uma refeição e para casais que brindam ao amor.</p>
         <p>Nosso compromisso com a qualidade e a hospitalidade é o que nos diferencia. Quando você entra na Fornelli, não é apenas um cliente; é parte da nossa história. Nossa mesa está sempre posta para recebê-lo com um sorriso caloroso e uma fatia generosa de pizza. Então, venha se juntar a nós na Fornelli, onde a comida é boa, as risadas são contagiantes e as memórias são feitas a cada mordida. Afinal, aqui, você não está apenas comendo pizza, você está vivendo a experiência italiana no coração de Rio Claro. <strong><em>Buon appetito!</em></strong></p>
     </section>
+    <?php
+        if (isset($_POST['product']) && !empty($_POST['product'])) {
+            $produto = $_POST['product'];
+        }
+        echo "<div class='notification'>$produto foi adicionado ao carrinho :)</div>";
+    ?>
+
 <?php include "assets/footer.php"; ?>
 
