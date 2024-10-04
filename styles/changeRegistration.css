@@ -1,0 +1,14 @@
+.red-btn{
+    color: white;
+    background-color: #a70011;
+    border: none;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+.box{
+    margin-top: 3rem;
+}
