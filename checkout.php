@@ -10,11 +10,17 @@
         <div class="item">
             <img class="imgProd" height="100" src="imgs\cardapio\calabresa.jpg" alt="">
             <h3>Calabresa</h3>
-            <a href="">+</a>
-            <div class="amount">1</div>
-            <a href="">-</a>
+                <a href="" >+</a>
+                <div class="number">1</div>
+                <a href="" >-</a>
             <h4 class="price">R$59,99</h4>
         </div>
     </div>
+    <footer>
+        Total: <br>R$
+        <form action="" method="post">
+            <button type="submit">Comprar</button>
+        </form>
+    </footer>
 </div>
 <?php include "assets/footer.php"; ?>
