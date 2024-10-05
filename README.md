@@ -1,7 +1,5 @@
-# Projeto Integrador Front-end Pizzaria
-Repositório do código do front-end do projeto integrador 1
-
-Link: https://jol-tm.github.io/projeto-integrador-front-end-pizzaria/
+# Projeto Integrador Pizzaria
+Repositório do código do projeto integrador
 
 # Imagens do Front-End:
 
