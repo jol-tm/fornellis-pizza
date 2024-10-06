@@ -1,9 +1,11 @@
 <?php 
-    if (isset($_POST['emailLog']) && $_POST['passLog']) {
-        $email = $_POST['emailLog'];
-        $pass = $_POST['passLog'];
+    include_once 'conn.php';
+
+    if (isset($_POST['email']) && $_POST['pass']) {
+        $email = $_POST['email'];
+        $pass = $_POST['pass'];
     }
 
-    echo "Email para login: $email<br>";
-    echo "Senha para login: $pass<br>";
+    $conn->query($sql);
+    $sql = "INSERT INTO usuarios (email, pass) VALUES ('$email', '$pass')";
 ?>

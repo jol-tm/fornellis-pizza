@@ -7,10 +7,8 @@
         <input type="text" placeholder="Telefone" name="telSignUp" required>    
         <input type="password" placeholder="Senha" name="passSignUp" required>
         <input type="text" placeholder="Endereço para entregas" name="adressSignUp" required>
-        <div class="wrapper">
-            <button type="submit"><h4>Salvar</h4></button>
-            <button type="submit" class="red-btn"><h4><img src="imgs/icones/delete-account-svg.svg" alt=""> Excluir Conta</h4></button>
-        </div>
+        <button type="submit"><h4>Salvar</h4></button>
+        <a href="dataAcess/deleteAcc.php" id="deleteAcc"><h4><img src="imgs/icones/delete-account-svg.svg" alt="">Excluir Conta</h4></a>
     </form>
 </div>
 <?php include "assets/footer.php"; ?>

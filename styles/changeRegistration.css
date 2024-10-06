@@ -1,14 +1,5 @@
-.red-btn{
+#deleteAcc {
     color: white;
     background-color: var(--c1);
     border: none;
-}
-.wrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-.box{
-    margin-top: 3rem;
 }

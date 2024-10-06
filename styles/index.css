@@ -148,15 +148,14 @@ a {
         text-decoration: underline;
     }
 }
-button:hover {
-    transform: translateY(-3px);
-}
 form {
+    font-family: var(--f2);
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: .5rem;
-    button {
+    button, a {
+        cursor: pointer;
         text-align: center;
         height: 3rem;
         border: none;
@@ -165,6 +164,9 @@ form {
         padding: .5rem;
         transition: .3s;
     }
+    button:hover, a:hover {
+        transform: translateY(-3px);
+}
 }
 input {
     font-size: 1.5rem;
@@ -250,7 +252,7 @@ input {
 .box {
     width: 90vw;
     max-width: 80rem;
-    margin: auto;
+    margin: 1rem auto;
     padding: 1rem;
     text-align: center;
     border-radius: 1rem;
@@ -384,7 +386,6 @@ footer {
     justify-content: center;
     align-items: center;
     height: 5rem;
-    margin-top: 3.5rem;
     text-align: center;
     background-color: var(--c4);
     color: var(--c3);

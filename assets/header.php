@@ -32,8 +32,8 @@
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
             <form action="dataAcess/login.php" method="post">
                 <h1>Login</h1>
-                <input type="email" placeholder="Email" name="emailLog" required>    
-                <input type="password" placeholder="Senha" name="passLog" required>
+                <input type="email" placeholder="Email" name="email" required>    
+                <input type="password" placeholder="Senha" name="pass" required>
                 <button type="submit"><h4>Entrar</h4></button>
                 <h5 id="sign-up-link">Não tem uma conta? Cadastre-se aqui!</h5>
             </form>
@@ -43,10 +43,10 @@
             <form action="dataAcess/signUp.php" method="post">
                 <h1>Cadastre-se</h1>
                 <input type="text" placeholder="Nome" name="nomeSignUp" required>    
-                <input type="email" placeholder="Email" name="emailSignUp" required>    
-                <input type="text" placeholder="Telefone" name="telSignUp" required>    
-                <input type="password" placeholder="Senha" name="passSignUp" required>
-                <input type="text" placeholder="Endereço para entregas" name="adressSignUp" required>
+                <input type="email" placeholder="Email" name="email" required>    
+                <input type="text" placeholder="Telefone" name="tel" required>    
+                <input type="password" placeholder="Senha" name="pass" required>
+                <input type="text" placeholder="Endereço para entregas" name="adress" required>
                 <button type="submit"><h4>Cadastrar</h4></button>
             </form>
         </div>
@@ -64,13 +64,13 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-css">
                 <li class="nav-item m-auto nav-item-css">    
-                    <a class="nav-link nav-link-css" href="#menu-section">Cardápio</a>
+                    <a class="nav-link nav-link-css" href="index.php#menu-section">Cardápio</a>
                 </li>
                 <li class="nav-item m-auto nav-item-css">
-                    <a class="nav-link nav-link-css" href="#contact-section">Contato</a>
+                    <a class="nav-link nav-link-css" href="index.php#contact-section">Contato</a>
                 </li>
                 <li class="nav-item m-auto nav-item-css">
-                    <a class="nav-link nav-link-css" href="#about-section">Sobre</a>
+                    <a class="nav-link nav-link-css" href="index.php#about-section">Sobre</a>
                 </li>
                 <li class="m-auto" id="user-icon-item">
                     <img class="nav-item-css" id="user-icon" src="imgs/icones/user.svg" alt="">
