@@ -7,9 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/index.css">
-    <link rel="stylesheet" href="styles/changeRegistration.css">
-    <link rel="stylesheet" href="styles/checkout.css">
-    <link rel="stylesheet" href="styles/purchaseHistory.css">
     <link rel="shortcut icon" href="imgs/favicon.jpg" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -21,14 +18,16 @@
      <!--TELA LOGIN/CADASTRO-->
      <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
-                <!-- PARA QUANDO LOGADO 
+            <!-- 
+            PARA QUANDO LOGADO 
             <div id="userOptionsBox">
                 <h2>Olá $nome</h2>
                 <a class="userOptions" href="checkout.php"><img height="42" src="imgs/icones/shoppingCart.svg" alt="">Carrinho</a>
                 <a class="userOptions" href="purchaseHistory.php"><img height="42" src="imgs/icones/purchaseHistory.svg" alt="">Histórico de Compras</a>
                 <a class="userOptions" href="changeRegistration.php"><img height="42" src="imgs/icones/changeRegistration.svg" alt="">Alterar Cadastro</a>
                 <a href="" class="logOff"><img height="32" src="imgs/icones/logOff.svg" alt="">Sair da Conta</a>
-            </div> -->
+            </div>
+             -->
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
             <form action="dataAcess/login.php" method="post">
                 <h1>Login</h1>

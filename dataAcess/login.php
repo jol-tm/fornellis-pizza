@@ -1,11 +1,10 @@
 <?php 
-    include_once 'conn.php';
+    $email = $_POST['email'];
+    $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-    if (isset($_POST['email']) && $_POST['pass']) {
-        $email = $_POST['email'];
-        $pass = $_POST['pass'];
-    }
+    echo "<h2>Email: $email</h2>";
+    echo "<h2>Senha: $pass</h2>";
 
-    $conn->query($sql);
-    $sql = "INSERT INTO usuarios (email, pass) VALUES ('$email', '$pass')";
+    // $sql = "INSERT INTO usuarios (email, pass) VALUES ('$email', '$pass')";
+    // $conn->query($sql);
 ?>

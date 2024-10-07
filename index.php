@@ -302,12 +302,5 @@
         <p>Nossa paixão pela pizza atravessa gerações. Desde os primeiros dias, quando começamos a preparar a massa, até hoje, cada pizza que sai dos nossos fornos conta uma história de dedicação, qualidade e autenticidade. Mas mais do que apenas pizza, na Fornelli você encontra um lar. Somos um ponto de encontro para amigos que se reúnem para celebrar a vida, para famílias que compartilham uma refeição e para casais que brindam ao amor.</p>
         <p>Nosso compromisso com a qualidade e a hospitalidade é o que nos diferencia. Quando você entra na Fornelli, não é apenas um cliente; é parte da nossa história. Nossa mesa está sempre posta para recebê-lo com um sorriso caloroso e uma fatia generosa de pizza. Então, venha se juntar a nós na Fornelli, onde a comida é boa, as risadas são contagiantes e as memórias são feitas a cada mordida. Afinal, aqui, você não está apenas comendo pizza, você está vivendo a experiência italiana no coração de Rio Claro. <strong><em>Buon appetito!</em></strong></p>
     </section>
-    <?php
-        if (isset($_POST['product']) && !empty($_POST['product'])) {
-            $produto = $_POST['product'];
-        }
-        echo "<div class='notification'>$produto foi adicionado ao carrinho :)</div>";
-    ?>
-
 <?php include "assets/footer.php"; ?>
 
