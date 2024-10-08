@@ -7,36 +7,29 @@
         <h2>Preço</h2>
     </div>
     <div id="itens">
-        <div class="item">
-            <img class="imgProd" height="100" src="imgs\cardapio\calabresa.jpg" alt="">
-            <h3>Calabresa</h3>
-            <div class="units">
-                <a href="" >+</a>
-                <div class="number">1</div>
-                <a href="" >-</a>
-            </div>
-            <h4 class="price">R$59,99</h4>
-        </div>
-        <div class="item">
-            <img class="imgProd" height="100" src="imgs\cardapio\calabresa.jpg" alt="">
-            <h3>Calabresa</h3>
-            <div class="units">
-                <a href="" >+</a>
-                <div class="number">1</div>
-                <a href="" >-</a>
-            </div>
-            <h4 class="price">R$59,99</h4>
-        </div>
-        <div class="item">
-            <img class="imgProd" height="100" src="imgs\cardapio\calabresa.jpg" alt="">
-            <h3>Calabresa</h3>
-            <div class="units">
-                <a href="" >+</a>
-                <div class="number">1</div>
-                <a href="" >-</a>
-            </div>
-            <h4 class="price">R$59,99</h4>
-        </div>
+        <?php
+
+            $imgPath = 'imgs/cardapio/bombom.jpg';
+            $nameProd = "Bombom";
+            $amt = "3";
+            $price = '50,00';
+
+            for ($i=0; $i < 5; $i++) { 
+                echo "
+                    <div class='item'>
+                        <img class='imgProd' height='100' src='$imgPath' alt=''>
+                        <h3>$nameProd</h3>
+                        <div class='units'>
+                            <a href=''>+</a>
+                            <div class='number'>$amt</div>
+                            <a href=''>-</a>
+                        </div>
+                        <h4 class='price'>R$$price</h4>
+                    </div>
+                "; 
+            }
+            
+        ?>
     </div>
     <footer id="total">
         Total: <br>R$

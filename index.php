@@ -44,208 +44,81 @@
         </div>
         <div id="menu-cards-box">
             <div id="salty-menu" class="row justify-content-center">
-                <div class="col-xl-4 col-md-6">
-                    <div id="marguerita" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/marguerita.jpg" alt="MARGUERITA">
-                        <h4>Marguerita</h4>
-                        <h5>R$59,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Marguerita"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Tomate, mussarela e manjericão</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="frango-catupiry" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/Frango-com-catupiry.jpg" alt="FRANGO">
-                        <h4>Frango com Catupiry</h4>
-                        <h5>R$49,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Frango com Catupiry"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Frango, catupiry, milho e azeitonas</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="4queijos" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/queijo-full.jpg" alt="QUEIJO">
-                        <h4>Quatro Queijos</h4>
-                        <h5>R$59,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Quatro Queijos"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Queijo Mussarela, Parmesão, Gorgonzola e Provolone</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="calabresa" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/calabresa.jpg" alt="CALABRESA">
-                        <h4>Calabresa</h4>
-                        <h5>R$47,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Calabresa"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Calabresa com Queijo</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="strogonoff-frango" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/strogonoff-de-frango.jpg" alt="STROGONOFF">
-                        <h4>Strogonoff de frango</h4>
-                        <h5>R$59,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Strogonoff de Frango"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Strogonoff de Frango, Queijo e Batata Palha </p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="pepperoni" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/pepperoni.jpg" alt="PEPPERONI">
-                        <h4>Pepperoni</h4>
-                        <h5>R$49,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Pepperoni"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Pepperoni com Queijo</p></div>
-                    </div>
-                </div>
+                <?php
+
+                    $imgPath = 'imgs/cardapio/marguerita.jpg';
+                    $nameProd = "Marguerita";
+                    $desc = "Tomate, mussarela e manjericão";
+                    $price = '50,00';
+
+                    for ($i = 0; $i < 6; $i++) { 
+                        echo "
+                            <div class='col-xl-4 col-md-6'>
+                                <div class='menu-card'>
+                                    <img class='img-fluid' src='$imgPath'>
+                                    <h4>$nameProd</h4>
+                                    <h5>R$$price</h5>
+                                    <form style='z-index: 1;' action='index.php'method='post'>
+                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                    </form>
+                                    <div class='item-descriptor'><p>$desc</p></div>
+                                </div>
+                            </div>
+                        "; 
+                    }
+
+                ?>
             </div>
             <div id="sweet-menu" class="row justify-content-center">
-                <div class="col-xl-4 col-md-6">
-                    <div id="bombom" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/bombom.jpg" alt="BOMBOM">
-                        <h4>Bombom</h4>
-                        <h5>R$49,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Bombom"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Chocolate, Chocolate Branco, Confetes e Bombons </p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="choc-gran" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/chocolate-granulado.jpg" alt="CHOCOLATE-GRANULADO">
-                        <h4>Chocolate com Granulado</h4>
-                        <h5>R$49,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Chocolate com Granulado"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Chocolate com Granulados, Contornados por Avelã e Cerejas</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="gotas-choc" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/gotas-chocolate.jpg" alt="GOTAS">
-                        <h4>Gotas de Chocolate</h4>
-                        <h5>R$49,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Gotas de Chocolate"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Chocolate com Gotas</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="mm" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/M&M.jpg" alt="M&M">
-                        <h4>M&M</h4>
-                        <h5>R$55,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="M&M"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Chocolate com M&M&#39;s e Cobertura de Morango</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="marshmellow" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/Marshmello.jpg" alt="MARSHMELLOW">
-                        <h4>Marshmellow</h4>
-                        <h5>R$55,90</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Marshmellow"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Marshmellow Tostados com Morango</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="morango" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/morango.jpg" alt="MORANGO">
-                        <h4>Morango</h4>
-                        <h5>R$49,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Morango"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Chocolate e Morangos cobertos com Leite em Pó</p></div>
-                    </div>
-                </div>
+                <?php
+                    $imgPath = 'imgs/cardapio/bombom.jpg';
+                    $nameProd = "Bombom";
+                    $desc = "Chocolate, Chocolate Branco, Confetes e Bombons";
+                    $price = '50,00';
+
+                    for ($i = 0; $i < 6; $i++) { 
+                        echo "
+                            <div class='col-xl-4 col-md-6'>
+                                <div class='menu-card'>
+                                    <img class='img-fluid' src='$imgPath'>
+                                    <h4>$nameProd</h4>
+                                    <h5>R$$price</h5>
+                                    <form style='z-index: 1;' action='index.php'method='post'>
+                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                    </form>
+                                    <div class='item-descriptor'><p>$desc</p></div>
+                                </div>
+                            </div>
+                        "; 
+                    }
+
+                ?>
             </div>
             <div id="drinks-menu" class="row justify-content-center">
-                <div class="col-xl-4 col-md-6">
-                    <div id="coca" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/coca.jpg" alt="COCA-COLA">
-                        <h4>Coca Cola</h4>
-                        <h5>R$7,00</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Coca Cola"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Coca Cola KS 290ml</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="pepsi" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/pepsi-lata.jpg" alt="PEPSI">
-                        <h4>Pepsi</h4>
-                        <h5>R$5,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Pepsi"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Pepsi lata 269ml</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="sprite" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/sprite-lata.jpg" alt="SPRITE">
-                        <h4>Sprite</h4>
-                        <h5>R$5,00</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Sprite"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Sprite Lata 220ml</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="guarana" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/guarana.jpg" alt="GUARANA">
-                        <h4>Guaraná</h4>
-                        <h5>R$6,00</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Guaraná"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Guaraná Lata 350ml</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="laranja" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/laranja.jpg" alt="SUCO-DE-LARANJA">
-                        <h4>Suco de Laranja</h4>
-                        <h5>R$14,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Suco de Laranja"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Suco Natural de Laranja 500ml</p></div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6">
-                    <div id="maracuja" class="menu-card">
-                        <img class="img-fluid" src="imgs/cardapio/maracuja.jpg" alt="SUCO-DE-MARACUJA">
-                        <h4>Suco de Maracujá</h4>
-                        <h5>R$14,99</h5>
-                        <form style="z-index: 1;" action="index.php" method="post">
-                            <button class="addToCartBtn" type="submit" name="product" value="Suco de Maracujá"><img src="imgs/icones/addProduct.svg" alt=""></button>
-                        </form>
-                        <div class="item-descriptor"><p>Suco Natural de Maracujá 500ml</p></div>
-                    </div>
-                </div>
+                <?php
+
+                    $imgPath = 'imgs/cardapio/laranja.jpg';
+                    $nameProd = "Suco de Laranja";
+                    $desc = "Suco Natural de Laranja 500ml";
+                    $price = '14,99';
+
+                    for ($i = 0; $i < 6; $i++) { 
+                        echo "
+                            <div class='col-xl-4 col-md-6'>
+                                <div class='menu-card'>
+                                    <img class='img-fluid' src='$imgPath'>
+                                    <h4>$nameProd</h4>
+                                    <h5>R$$price</h5>
+                                    <form style='z-index: 1;' action='index.php'method='post'>
+                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                    </form>
+                                    <div class='item-descriptor'><p>$desc</p></div>
+                                </div>
+                            </div>
+                        "; 
+                    }
+
+                ?>
             </div>
         </div>
     </section>
