@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "123456";
-    $dbname = "fornellis_db";
+    $dbname = "fornellis";
 
     // Cria a conexão
     $conn = new mysqli($servername, $username, $password, $dbname);
