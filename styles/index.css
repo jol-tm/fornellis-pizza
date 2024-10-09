@@ -525,6 +525,10 @@ footer {
     color: white;
     background-color: var(--c1);
 }
+/* HISTÓRICO DE PEDIDOS */
+.table {
+    font-family: var(--f2);
+}
 /* ANIMAÇÕES */
 @keyframes fade {
     from {
