@@ -1,5 +1,5 @@
 <?php 
-    // include_once 'conn.php';
+    include_once 'conn.php';
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
@@ -7,7 +7,15 @@
     $pass = $_POST['pass'];
     $adr = $_POST['adress'];
     
-    // $conn->query($sql);
-    // $sql = "INSERT INTO usuarios (nome, email, tel, pass, adress ) VALUES ('$nome', '$email', '$tel', '$pass', '$adr')";
-
+    $check = "SELECT COUNT(*) FROM cliente WHERE email = $email";
+    
+    if ($conn->query($check) == 0) {
+        $insert = "INSERT INTO usuarios (nome, email, tel, pass, adress ) VALUES ('$nome', '$email', '$tel', '$pass', '$adr')";
+        if ($conn->query($insert)) {
+            echo "Cadastrado com sucesso! :D";
+            header('Location: ../index.php');
+        };
+    } else {
+        echo "Usuário já cadastrado";
+    }
 ?>

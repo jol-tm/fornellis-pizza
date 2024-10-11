@@ -163,7 +163,7 @@ form {
     }
     button:hover, a:hover {
         transform: translateY(-3px);
-}
+    }
 }
 input {
     font-size: 1.5rem;
@@ -528,6 +528,25 @@ footer {
 /* HISTÓRICO DE PEDIDOS */
 .table {
     font-family: var(--f2);
+}
+/* GERENCIAMENTO DE PEDIDOS */
+#controlOrder {
+    flex-direction: row;
+}
+button {
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem;
+    transition: .3s;
+}
+button:hover {
+    transform: translateY(-3px);
+}
+#editBtn {
+    background-color: var(--c2  );
+}
+#denyBtn, #removeBtn {
+    background-color: var(--c1);
 }
 /* ANIMAÇÕES */
 @keyframes fade {
