@@ -1,11 +1,12 @@
 <?php
-    include_once 'conn.php';
+    include_once '../conn.php';
 
     $email = $_POST['email'];
-    $pass = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    $pass = $_POST['pass'];
 
-    $sql = "INSERT INTO usuarios (email, pass) VALUES ('$email', '$pass')";
-    if ($conn->query($sql)) {
+    $sql = "SELECT COUNT(*) FROM cliente WHERE email = '$email'";
+
+    if ($conn->query($sql) != 0) {
         echo "Logado!";
         header('Location: ../index.php');
     }

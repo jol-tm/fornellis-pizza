@@ -41,7 +41,7 @@
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
             <form action="dataAcess/signUp.php" method="post">
                 <h1>Cadastre-se</h1>
-                <input type="text" placeholder="Nome" name="nomeSignUp" required>    
+                <input type="text" placeholder="Nome" name="nome" required>    
                 <input type="email" placeholder="Email" name="email" required>    
                 <input type="text" placeholder="Telefone" name="tel" required>    
                 <input type="password" placeholder="Senha" name="pass" required>

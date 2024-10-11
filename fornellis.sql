@@ -3,24 +3,24 @@ use fornellis;
 
 create table cliente(
     id int auto_increment primary key,
-    nome varchar(100),
-    email varchar(100),
-    numero varchar(11),
-    senha varchar(20),
+    nome varchar(255),
+    email varchar(255),
+    numero varchar(255),
+    senha varchar(255),
     endereco varchar(255)
 );
 
 create table produto(
     id int auto_increment primary key,
-    nome varchar(100),
-    categoria varchar(20),
+    nome varchar(255),
+    categoria varchar(255),
     descricao varchar(255),
     preco decimal(3,2)
 );
 
 create table administrador(
-    email varchar(100),
-    senha varchar(50)
+    email varchar(255),
+    senha varchar(255)
 );
 
 create table pedido(
