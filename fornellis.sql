@@ -25,5 +25,8 @@ create table administrador(
 
 create table pedido(
     id int auto_increment primary key,
+    idCliente int,
+    descricaoPedido varchar(255),
+    dataPedido date,
     precoTotal decimal(3,2)
 );
