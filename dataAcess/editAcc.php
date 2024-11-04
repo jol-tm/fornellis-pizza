@@ -5,10 +5,10 @@
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $tel = $_POST['tel'];
-    $senha = password_hash($_POST['pass'], PASSWORD_DEFAULT)$;
+    $senha = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     $end = $_POST['adress'];
 
-    if (isset($_POST[ 'deleteAcc'])) {
+    if (isset($_POST['deleteAcc'])) {
         $sql = "DELETE FROM cliente WHERE id = " . $_SESSION['user'];
         if ($conn->query($sql)) {
             echo 'Sucesso ao deletar sua conta! :D';

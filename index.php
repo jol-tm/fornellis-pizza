@@ -1,4 +1,10 @@
-<?php include "assets/header.php"; ?>
+<?php 
+    include "assets/header.php";
+    include "classes/produto.php";
+
+    // $produto1 = new Produto();
+    // $produto1->addProduct('gotachoc', 'doce', "chocos", 39.9, 'imgs/cardapio/gotas-chocolate.jpg');
+?>
     <!--CAROUSEL-->
     <div id="carousel" class="carousel slide carousel-css" data-bs-ride="carousel">
         <div class="carousel-inner carousel-inner-css">
@@ -45,79 +51,58 @@
         <div id="menu-cards-box">
             <div id="salty-menu" class="row justify-content-center">
                 <?php
-
-                    $imgPath = 'imgs/cardapio/marguerita.jpg';
-                    $nameProd = "Marguerita";
-                    $desc = "Tomate, mussarela e manjericão";
-                    $price = '50,00';
-
-                    for ($i = 0; $i < 6; $i++) { 
+                    $produto = new Produto();
+                    foreach ($produto->listProducts("salgada") as $row) {
                         echo "
                             <div class='col-xl-4 col-md-6'>
                                 <div class='menu-card'>
-                                    <img class='img-fluid' src='$imgPath'>
-                                    <h4>$nameProd</h4>
-                                    <h5>R$$price</h5>
+                                    <img class='img-fluid' src='" . $row["imagem"] . "'>
+                                    <h4>" . $row["nome"] . "</h4>
+                                    <h5>R$" . $row["preco"] . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
-                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                        <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>
-                                    <div class='item-descriptor'><p>$desc</p></div>
+                                    <div class='item-descriptor'><p>" . $row["descricao"] . "</p></div>
                                 </div>
-                            </div>
-                        "; 
+                            </div>";
                     }
-
                 ?>
             </div>
             <div id="sweet-menu" class="row justify-content-center">
                 <?php
-                    $imgPath = 'imgs/cardapio/bombom.jpg';
-                    $nameProd = "Bombom";
-                    $desc = "Chocolate, Chocolate Branco, Confetes e Bombons";
-                    $price = '50,00';
-
-                    for ($i = 0; $i < 6; $i++) { 
+                    foreach ($produto->listProducts("doce") as $row) {
                         echo "
                             <div class='col-xl-4 col-md-6'>
                                 <div class='menu-card'>
-                                    <img class='img-fluid' src='$imgPath'>
-                                    <h4>$nameProd</h4>
-                                    <h5>R$$price</h5>
+                                    <img class='img-fluid' src='" . $row["imagem"] . "'>
+                                    <h4>" . $row["nome"] . "</h4>
+                                    <h5>R$" . $row["preco"] . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
-                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                        <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>
-                                    <div class='item-descriptor'><p>$desc</p></div>
+                                    <div class='item-descriptor'><p>" . $row["descricao"] . "</p></div>
                                 </div>
-                            </div>
-                        "; 
+                            </div>";
                     }
-
                 ?>
             </div>
             <div id="drinks-menu" class="row justify-content-center">
                 <?php
-
-                    $imgPath = 'imgs/cardapio/laranja.jpg';
-                    $nameProd = "Suco de Laranja";
-                    $desc = "Suco Natural de Laranja 500ml";
-                    $price = '14,99';
-
-                    for ($i = 0; $i < 6; $i++) { 
+                    $produto->listProducts("bebida");
+                    foreach ($produto->listProducts("bebida") as $row) {
                         echo "
                             <div class='col-xl-4 col-md-6'>
                                 <div class='menu-card'>
-                                    <img class='img-fluid' src='$imgPath'>
-                                    <h4>$nameProd</h4>
-                                    <h5>R$$price</h5>
+                                    <img class='img-fluid' src='" . $row["imagem"] . "'>
+                                    <h4>" . $row["nome"] . "</h4>
+                                    <h5>R$" . $row["preco"] . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
-                                        <button class='addToCartBtn' type='submit' name='product' value='$nameProd'><img src='imgs/icones/addProduct.svg'></button>
+                                        <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>
-                                    <div class='item-descriptor'><p>$desc</p></div>
+                                    <div class='item-descriptor'><p>" . $row["descricao"] . "</p></div>
                                 </div>
-                            </div>
-                        "; 
+                            </div>";
                     }
-
                 ?>
             </div>
         </div>

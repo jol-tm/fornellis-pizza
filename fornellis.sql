@@ -1,7 +1,7 @@
 create database if not exists fornellis;
 use fornellis;
 
-create table cliente(
+create table clientes(
     id int auto_increment primary key,
     nome varchar(255),
     email varchar(255),
@@ -10,12 +10,13 @@ create table cliente(
     endereco varchar(255)
 );
 
-create table produto(
+create table produtos(
     id int auto_increment primary key,
     nome varchar(255),
     categoria varchar(255),
     descricao varchar(255),
-    preco decimal(3,2)
+    imagem varchar(255),
+    preco decimal(4,2)
 );
 
 create table administrador(
@@ -23,7 +24,7 @@ create table administrador(
     senha varchar(255)
 );
 
-create table pedido(
+create table pedidos(
     id int auto_increment primary key,
     idCliente int,
     descricaoPedido varchar(255),
