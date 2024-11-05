@@ -1,9 +1,10 @@
 <?php 
     include "assets/header.php";
     include "classes/produto.php";
+    include "classes/pedido.php";
 
-    // $produto1 = new Produto();
-    // $produto1->addProduct('gotachoc', 'doce', "chocos", 39.9, 'imgs/cardapio/gotas-chocolate.jpg');
+    $pedido1 = new pedido();
+    $pedido1->addProduct(7, 3);
 ?>
     <!--CAROUSEL-->
     <div id="carousel" class="carousel slide carousel-css" data-bs-ride="carousel">
