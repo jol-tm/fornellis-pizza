@@ -22,6 +22,21 @@
             }
         }
 
+        public function editProduct($nome, $categoria, $descricao, $preco, $imagem, $id) {
+            include_once 'conn.php';
+            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = $id";
+            $stmt = $conn->prepare($update);
+            $stmt->bind_param('sssss', $nome, $categoria, $descricao, $preco , $imagem);
+            if ($stmt->execute()) {
+                return "Editado com sucesso! :D";
+                $stmt->close();
+                $conn->close();
+                header('Location: ../index.php');
+            } else {
+                return "Erro ao editar";
+            }
+        }
+
         public function deleteProduct($id) {
             include_once 'conn.php';
         
