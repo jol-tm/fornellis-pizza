@@ -16,7 +16,7 @@ create table produtos(
     categoria varchar(255),
     descricao varchar(255),
     imagem varchar(255),
-    preco decimal(4,2)
+    preco decimal(10,2)
 );
 
 create table administrador(
@@ -30,5 +30,5 @@ create table pedidos(
     produtos varchar(255),
     quant int,
     dataPedido TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-    precoTotal decimal(4,2)
+    precoTotal decimal(10,2)
 );

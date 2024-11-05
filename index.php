@@ -2,9 +2,13 @@
     include "assets/header.php";
     include "classes/produto.php";
     include "classes/pedido.php";
+    include "classes/cliente.php";
 
-    $pedido1 = new pedido();
-    $pedido1->addProduct(7, 3);
+    // $pedido1 = new pedido();
+    // $pedido1->addProduct(3, 3);
+    // print_r($pedido1->listOrder(3));
+    // $c = new Cliente();
+    // echo $c->login("pessoa@email", "senha");
 ?>
     <!--CAROUSEL-->
     <div id="carousel" class="carousel slide carousel-css" data-bs-ride="carousel">
