@@ -1,6 +1,6 @@
 <?php include "assets/header.php"; ?>
 <div class="box">
-    <table class="table">
+    <table class="table rounded table-bordered border border-3 border-success">
       <thead>
         <tr>
           <th scope="col">Pedido</th>

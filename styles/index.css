@@ -492,13 +492,6 @@ footer {
     }
 }
 
-.number {
-    color: black;
-    padding: .5rem 1rem;
-    background-color: var(--c2);
-    border-radius: 1rem;
-}
-
 .units {
     display: flex;
     flex-direction: row;
