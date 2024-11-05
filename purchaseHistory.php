@@ -1,23 +1,31 @@
 <?php include "assets/header.php"; ?>
 <div class="box">
-    <table class="table rounded table-bordered border border-3 border-success">
-      <thead>
-        <tr>
-          <th scope="col">Pedido</th>
-          <th scope="col">Realizado em</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Status</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row">2x Marguerita <br> 1x Marshmellow</th>
-          <td>21-08-2024</td>
-          <td>R$179,90</td>
-          <td>Entregue</td>
-        </tr>
-        <tr>
-      </tbody>
-    </table>
+  <h1>Histórico Pedidos</h1>
+    <div class="topo">
+      <h2>Pedido</h2>
+      <h2>Realizado em</h2>
+      <h2>Pagamento</h2>
+      <h2>Valor</h2>
+      <h2>Status</h2>
+    </div>
+    <div id="itens">
+        <div class="item">
+            <div class="espacamento">1x Calabresa <br> 3x Morango</div>
+            <div class="espacamento">21/08/2024</div>
+            <div class="espacamento">Cartão</div>
+            <div class="espacamento">R$179,70</div>
+            <div class="espacamento">Entregue</div>
+        </div>
+      </div>
+      <div id="itens">
+        <div class="item">
+            <div class="espacamento">1x Calabresa <br> 3x Morango</div>
+            <div class="espacamento">21/08/2024</div>
+            <div class="espacamento">Cartão</div>
+            <div class="espacamento">R$179,70</div>
+            <div class="espacamento">Entregue</div>
+        </div>
+      </div>
 </div>
+
 <?php include "assets/footer.php"; ?>
