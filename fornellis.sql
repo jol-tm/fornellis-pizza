@@ -30,5 +30,5 @@ create table pedidos(
     produtos varchar(255),
     quant int,
     dataPedido TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-    precoTotal decimal(10,2)
+    preco decimal(4,2)
 );

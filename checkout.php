@@ -8,23 +8,20 @@
     </div>
     <div id="itens">
         <?php
-
-            $imgPath = 'imgs/cardapio/bombom.jpg';
-            $nameProd = "Bombom";
-            $amt = "3";
-            $price = '50,00';
-
-            for ($i=0; $i < 5; $i++) { 
+            $pedido = new Pedido();
+            $pedidos = $pedido->listOrder($_SESSION['userid']);
+            print_r($pedidos);
+            foreach ($pedidos as $item) {
                 echo "
                     <div class='item'>
-                        <img class='imgProd' height='100' src='$imgPath' alt=''>
-                        <h3>$nameProd</h3>
+                        <img class='imgProd' height='100' src='" . $item['imagem']. "' alt=''>
+                        <h3>" . $item['nome'] . "</h3>
                         <div class='units'>
-                            <a href=''>+</a>
-                            <div class='number'>$amt</div>
-                            <a href=''>-</a>
+                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['produtos']}&act=add'>+</a>
+                            <div class='number'>" . $item['quant'] . "</div>
+                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['produtos']}&act=sub'>-</a>
                         </div>
-                        <h4 class='price'>R$$price</h4>
+                        <h4 class='price'>R$" . $item['preco'] . "</h4>
                     </div>
                 "; 
             }
@@ -32,7 +29,7 @@
         ?>
     </div>
     <footer id="total">
-        Total: <br>R$
+        Total:<br>R$ <?php echo $pedido->calcTotalPrice($_SESSION['userid'])[0][0]; ?>
         <form action="endPurchase.php" method="post">
             <button type="submit">Comprar</button>
         </form>

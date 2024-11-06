@@ -1,3 +1,8 @@
+<?php
+    include "classes/produto.php";
+    include "classes/pedido.php";
+    include "classes/cliente.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

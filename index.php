@@ -1,14 +1,12 @@
 <?php 
     include "assets/header.php";
-    include "classes/produto.php";
-    include "classes/pedido.php";
-    include "classes/cliente.php";
 
-    // $pedido1 = new pedido();
-    // $pedido1->addProduct(3, 3);
-    // print_r($pedido1->listOrder(3));
-    // $c = new Cliente();
-    // echo $c->login("pessoa@email", "senha");
+    if (isset($_POST['product'])) {
+        $pedido = new pedido();
+        if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
+            echo "sucesso";
+        }
+    }
 ?>
     <!--CAROUSEL-->
     <div id="carousel" class="carousel slide carousel-css" data-bs-ride="carousel">
