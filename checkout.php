@@ -1,4 +1,10 @@
-<?php include "assets/header.php"; ?>
+<?php
+    session_start();
+    if (!isset($_SESSION['userid'])) {
+        header("Location: index.php");
+    }
+    include "assets/header.php"; 
+?>
 <div id="checkoutpadding" class="box">
     <h1>Carrinho</h1>
     <div class="topo">
@@ -10,7 +16,6 @@
         <?php
             $pedido = new Pedido();
             $pedidos = $pedido->listOrder($_SESSION['userid']);
-            print_r($pedidos);
             foreach ($pedidos as $item) {
                 echo "
                     <div class='item'>

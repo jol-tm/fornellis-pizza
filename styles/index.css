@@ -417,7 +417,7 @@ footer {
 }
 .notification {
     font-family: var(--f2);
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
@@ -548,6 +548,20 @@ button:hover {
 }
 #denyBtn, #removeBtn {
     background-color: var(--c1);
+}
+#addProduct {
+    position: fixed;
+    right: 20rem;
+    font-family: var(--f2);
+    color: var(--c3);
+    width: 7rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--c2);
+}
+.inputEditMenu {
+    min-width: 10rem;
+    width: 100%;
 }
 /* ANIMAÇÕES */
 @keyframes fade {

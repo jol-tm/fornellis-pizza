@@ -23,24 +23,31 @@
      <!--TELA LOGIN/CADASTRO-->
      <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
-            <!-- 
-            PARA QUANDO LOGADO 
-            <div id="userOptionsBox">
-                <h2>Olá $nome</h2>
-                <a class="userOptions" href="checkout.php"><img height="42" src="imgs/icones/shoppingCart.svg" alt="">Carrinho</a>
-                <a class="userOptions" href="purchaseHistory.php"><img height="42" src="imgs/icones/purchaseHistory.svg" alt="">Histórico de Compras</a>
-                <a class="userOptions" href="changeRegistration.php"><img height="42" src="imgs/icones/changeRegistration.svg" alt="">Alterar Cadastro</a>
-                <a href="" class="logOff"><img height="32" src="imgs/icones/logOff.svg" alt="">Sair da Conta</a>
-            </div>
-             -->
+            <?php
+                if (isset($_SESSION['userid'])) {
+                    echo "
+                        <div id=\"userOptionsBox\">
+                            <h2>Olá {$_SESSION['userno']}</h2>
+                            <a class=\"userOptions\" href=\"checkout.php\"><img height=\"42\" src=\"imgs/icones/shoppingCart.svg\">Carrinho</a>
+                            <a class=\"userOptions\" href=\"purchaseHistory.php\"><img height=\"42\" src=\"imgs/icones/purchaseHistory.svg\">Histórico de Compras</a>
+                            <a class=\"userOptions\" href=\"changeRegistration.php\"><img height=\"42\" src=\"imgs/icones/changeRegistration.svg\">Alterar Cadastro</a>
+                            <a href=\"dataAcess/logOff.php\" class=\"logOff\"><img height=\"32\" src=\"imgs/icones/logOff.svg\">Sair da Conta</a>
+                        </div>
+                    ";
+                } else {
+                    echo "
+                    <form action=\"dataAcess/login.php\" method=\"post\">
+                        <h1>Login</h1>
+                        <input type=\"email\" placeholder=\"Email\" name=\"email\" required>    
+                        <input type=\"password\" placeholder=\"Senha\" name=\"pass\" required>
+                        <button type=\"submit\"><h4>Entrar</h4></button>
+                        <h5 id=\"sign-up-link\">Não tem uma conta? Cadastre-se aqui!</h5>
+                    </form>
+                    ";
+                }
+            ?>
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>
-            <form action="dataAcess/login.php" method="post">
-                <h1>Login</h1>
-                <input type="email" placeholder="Email" name="email" required>    
-                <input type="password" placeholder="Senha" name="pass" required>
-                <button type="submit"><h4>Entrar</h4></button>
-                <h5 id="sign-up-link">Não tem uma conta? Cadastre-se aqui!</h5>
-            </form>
+
         </div>
         <div id="sign-up-menu" class="pop-up">
             <button class="hide-user-menu"><img height="26" src="imgs/icones/close-nav.svg" alt=""></button>

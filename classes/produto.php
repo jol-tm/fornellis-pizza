@@ -22,11 +22,11 @@
             }
         }
 
-        public function editProduct($nome, $categoria, $descricao, $preco, $imagem, $id) {
-            include_once 'conn.php';
-            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = $id";
+        public function editProduct($nome, $categoria, $descricao, $preco, /*$imagem,*/ $id) {
+            include_once '../conn.php';
+            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?/*, imagem = ?*/ WHERE id = $id";
             $stmt = $conn->prepare($update);
-            $stmt->bind_param('sssss', $nome, $categoria, $descricao, $preco , $imagem);
+            $stmt->bind_param('ssss', $nome, $categoria, $descricao, $preco/*, $imagem*/);
             if ($stmt->execute()) {
                 return "Editado com sucesso! :D";
                 $stmt->close();
@@ -38,7 +38,7 @@
         }
 
         public function deleteProduct($id) {
-            include_once 'conn.php';
+            include_once '../conn.php';
         
             $delete = "DELETE FROM produtos WHERE id = $id";
             $stmt = $conn->prepare($delete);

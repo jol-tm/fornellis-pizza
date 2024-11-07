@@ -1,11 +1,14 @@
 <?php 
-    include "assets/header.php";
+    session_start();
+    include_once "assets/header.php";
 
-    if (isset($_POST['product'])) {
+    if (isset($_POST['product']) && isset($_SESSION['userid'])) {
         $pedido = new pedido();
         if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
-            echo "sucesso";
-        }
+            echo "<div class='notification'>Adicionado ao carrinho!</div>";
+        } 
+    } elseif (!isset($_SESSION['userid']))  {
+        echo "<div class='notification'>Você tem que estar logado!</div>";
     }
 ?>
     <!--CAROUSEL-->

@@ -28,10 +28,14 @@
         public function login($email, $senha) {
             include '../conn.php';
             
-            $check = "SELECT email, id FROM clientes WHERE email = '$email' AND senha = '$senha'";
+            $check2 = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha'";
+            $stmt = $conn->prepare($check);
+            $stmt->execute(); 
+            $result = $stmt->get_result();
             
-            if ($conn->query($check)->num_rows != 0) {
-                return 1;
+            if ($result->num_rows != 0) {
+                $result = $result->fetch_all(MYSQLI_ASSOC);
+                return $result;
             } else {
                 return 0;
             }

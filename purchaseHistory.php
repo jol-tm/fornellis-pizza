@@ -1,4 +1,10 @@
-<?php include "assets/header.php"; ?>
+<?php 
+  session_start();
+  if (!isset($_SESSION['userid'])) {
+    header("Location: index.php");
+  }
+  include "assets/header.php"; 
+?>
 <div class="box">
   <h1>Histórico Pedidos</h1>
     <div class="topo">

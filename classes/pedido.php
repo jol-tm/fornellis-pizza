@@ -7,20 +7,19 @@
         private $preco;
         
         public function addProduct($idProd, $idCliente) {
-            include_once '../conn.php';
+            include_once 'conn.php';
             
             $check = "SELECT produtos FROM pedidos WHERE produtos = $idProd AND idCliente = $idCliente";
-            $check = "SELECT pedidos.produtos, produtos.preco FROM pedidos INNER JOIN produtos ON pedidos.produtos = produtos.id WHERE pedidos.idCliente = $idCliente";
+            // $check = "SELECT pedidos.produtos, produtos.preco FROM pedidos INNER JOIN produtos ON pedidos.produtos = produtos.id WHERE pedidos.idCliente = $idCliente";
             $check2 = "SELECT preco FROM produtos WHERE id = $idProd";
 
             $price = $conn->prepare($check2);
             $price->execute();
             $price = $price->get_result();
             $price = $price->fetch_all(MYSQLI_ASSOC);
-            print_r($price);
             
             if ($conn->query($check)->num_rows == 0) {
-                $insert = "INSERT INTO pedidos (idCliente, produtos, quant, preco) VALUES ($idCliente, $idProd, 1, $price)";
+                $insert = "INSERT INTO pedidos (idCliente, produtos, quant, preco) VALUES ($idCliente, $idProd, 1, {$price[0]['preco']})";
                 $stmt = $conn->prepare($insert);
                 if ($stmt->execute()) {
                     return 1;
