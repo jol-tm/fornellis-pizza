@@ -4,6 +4,7 @@
         header("Location: index.php");
     }
     include "assets/header.php"; 
+    include "classes/conn.php"; 
 ?>
 <div id="checkoutpadding" class="box">
     <h1>Carrinho</h1>
@@ -14,7 +15,8 @@
     </div>
     <div id="itens">
         <?php
-            $pedido = new Pedido();
+            $conn = new Conn();
+            $pedido = new Pedido($conn->conectar());
             $pedidos = $pedido->listOrder($_SESSION['userid']);
             foreach ($pedidos as $item) {
                 echo "

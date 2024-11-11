@@ -1,8 +1,11 @@
 <?php
     include_once '../conn.php';
+    include_once '../classes/cliente.php';
+    include_once '../classes/conn.php';
 
-    include_once "../classes/cliente.php";
-    $cliente = new Cliente();
+    $conn = new Conn();
+    $cliente = new Cliente($conn->conectar());
+
     if ($user = $cliente->login($_POST['email'], $_POST['pass'])) {
         session_start();
         $_SESSION['userid'] = $user[0]['id'];

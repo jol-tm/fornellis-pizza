@@ -1,9 +1,12 @@
 <?php 
     session_start();
     include_once "assets/header.php";
-
+    include_once "classes/conn.php";
+    
+    $conn = new Conn();
+    
     if (isset($_POST['product']) && isset($_SESSION['userid'])) {
-        $pedido = new pedido();
+        $pedido = new Pedido($conn->conectar());
         if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
             echo "<div class='notification'>Adicionado ao carrinho!</div>";
         } 
@@ -57,7 +60,7 @@
         <div id="menu-cards-box">
             <div id="salty-menu" class="row justify-content-center">
                 <?php
-                    $produto = new Produto();
+                    $produto = new Produto($conn->conectar());
                     foreach ($produto->listProducts("salgada") as $row) {
                         echo "
                             <div class='col-xl-4 col-md-6'>

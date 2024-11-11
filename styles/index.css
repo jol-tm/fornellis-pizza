@@ -165,7 +165,7 @@ form {
         transform: translateY(-3px);
     }
 }
-input {
+input, select {
     font-size: 1.5rem;
     background-color: white;
     height: 4rem;
@@ -177,6 +177,10 @@ input {
     border-radius: 1rem;
     padding: 1rem;
     transition: .3s;
+}
+select {
+    width: 100%;
+    min-width: 10rem;
 }
 .pop-up, .pop-up-box {
     display: none;
@@ -247,6 +251,12 @@ input {
 }
 /* CAIXA BASE PARA VÁRIAS SEÇÕES */
 .box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
     width: 90vw;
     max-width: 80rem;
     margin: 1rem auto;
@@ -437,6 +447,9 @@ footer {
     .item {
         flex-direction: column;
     }
+    h3 {
+        margin: 0;
+    }
 }
 @media only screen and (min-width : 1000px) {
     .item {
@@ -445,20 +458,19 @@ footer {
     .imgProd, .topo {
         display: flex;
     }   
+    h3 {
+        margin-left: 5rem;
+    }
 }
 
 .topo {
-    justify-content: center;
-    gap: 0 6rem;
+    justify-content: space-around;
+    gap: 15rem;
+    margin-left: 5rem;
 }
-
-.box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 1rem;
-    position: relative;
+.topoOrders {
+    gap: 10rem;
+    margin-left: 5rem;
 }
 
 .imgProd {
@@ -474,9 +486,8 @@ footer {
 .item {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 5rem;
     margin: 1rem 0;
     padding: 3rem 0;
     border: 3px solid var(--c2);
@@ -490,6 +501,16 @@ footer {
     a:hover {
         transform: translateY(-3px);
     }
+    h3 {
+        width: 10rem;
+        /* margin-left: 5rem; */
+    }
+}
+
+.itemCol {
+    word-wrap: break-word;
+    width: 10rem;
+    margin: .5rem;
 }
 
 .espacamento{
@@ -550,8 +571,6 @@ button:hover {
     background-color: var(--c1);
 }
 #addProduct {
-    position: fixed;
-    right: 20rem;
     font-family: var(--f2);
     color: var(--c3);
     width: 7rem;

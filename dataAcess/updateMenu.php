@@ -1,7 +1,10 @@
 <?php
     session_start();
     include_once "../classes/produto.php";
-    $produto = new Produto();
+    include_once '../classes/conn.php';
+
+    $conn = new Conn();
+    $produto = new Produto($conn->conectar());
 
     if (isset($_POST['editProduct'])) {
         if ($produto->editProduct($_POST['nome'], $_POST['categ'], $_POST['desc'], $_POST['preco'], /*$_POST['img'],*/ $_POST['editProduct'])) {
