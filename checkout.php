@@ -24,11 +24,11 @@
                         <img class='imgProd' height='100' src='" . $item['imagem']. "' alt=''>
                         <h3>" . $item['nome'] . "</h3>
                         <div class='units'>
-                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['produtos']}&act=add'>+</a>
-                            <div class='number'>" . $item['quant'] . "</div>
-                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['produtos']}&act=sub'>-</a>
+                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=add'>+</a>
+                            <div class='number'>" . $item['quantidade'] . "</div>
+                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=sub'>-</a>
                         </div>
-                        <h4 class='price'>R$" . $item['preco'] . "</h4>
+                        <h4 class='price'>R$" . $item['preco_unitario'] . "</h4>
                     </div>
                 "; 
             }
@@ -36,7 +36,7 @@
         ?>
     </div>
     <footer id="total">
-        Total:<br>R$ <?php echo $pedido->calcTotalPrice($_SESSION['userid'])[0][0]; ?>
+        Total:<br>R$ <?php echo $pedido->calcTotalPrice($_SESSION['userid']); ?>
         <form action="endPurchase.php" method="post">
             <button type="submit">Comprar</button>
         </form>

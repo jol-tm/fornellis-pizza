@@ -27,7 +27,7 @@
                 if (isset($_SESSION['userid'])) {
                     echo "
                         <div id=\"userOptionsBox\">
-                            <h2>Olá {$_SESSION['userno']}</h2>
+                            <h2>Olá, {$_SESSION['userno']}!</h2>
                             <a class=\"userOptions\" href=\"checkout.php\"><img height=\"42\" src=\"imgs/icones/shoppingCart.svg\">Carrinho</a>
                             <a class=\"userOptions\" href=\"purchaseHistory.php\"><img height=\"42\" src=\"imgs/icones/purchaseHistory.svg\">Histórico de Compras</a>
                             <a class=\"userOptions\" href=\"changeRegistration.php\"><img height=\"42\" src=\"imgs/icones/changeRegistration.svg\">Alterar Cadastro</a>

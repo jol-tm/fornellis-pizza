@@ -26,11 +26,5 @@ INSERT INTO produtos (nome, categoria, descricao, preco, imagem) VALUES
 ('Suco de Laranja', 'Bebida', 'Suco Natural de Laranja 500ml', 14.99, 'imgs/cardapio/laranja.jpg'),
 ('Pepsi', 'Bebida', 'Pepsi lata 269ml', 5.99, 'imgs/cardapio/pepsi.jpg');
 
-SELECT * FROM produtos;
-
-INSERT INTO administrador (email, senha) VALUES
-('admin@fornellis.com', 'admin123');
-
-SELECT * FROM PRODUTOS;
-
-
+INSERT INTO clientes (nome, email, senha) VALUES
+('Administrador', 'admin@fornellis.com', 'admin123');

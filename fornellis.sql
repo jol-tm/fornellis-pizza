@@ -25,16 +25,19 @@ CREATE TABLE pedidos(
     idCliente INT NOT NULL,
     dataPedido TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
     valor_total DECIMAL(10,2) NOT NULL,
+    status VARCHAR(255) DEFAULT "Carrinho",
     FOREIGN KEY (idCliente) REFERENCES clientes(id)
 );
 
 CREATE TABLE itens_pedido(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    idPedido INT NOT NULL,
+    /*idPedido INT NOT NULL,*/
     idProduto INT NOT NULL,
+    idCliente INT NOT NULL,
     quantidade INT NOT NULL,
     preco_unitario DECIMAL(10,2) NOT NULL,
-    FOREIGN KEY (idPedido) REFERENCES pedidos(id),
+    FOREIGN KEY (idCliente) REFERENCES pedidos(idCliente),
+    /*FOREIGN KEY (idPedido) REFERENCES pedidos(id),*/
     FOREIGN KEY (idProduto) REFERENCES produtos(id)
 );
 

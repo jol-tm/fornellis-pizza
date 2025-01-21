@@ -67,7 +67,7 @@
                                 <div class='menu-card'>
                                     <img class='img-fluid' src='" . $row["imagem"] . "'>
                                     <h4>" . $row["nome"] . "</h4>
-                                    <h5>R$" . $row["preco"] . "</h5>
+                                    <h5>R$" . str_replace('.', ',', $row["preco"]) . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
                                         <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>
@@ -85,7 +85,7 @@
                                 <div class='menu-card'>
                                     <img class='img-fluid' src='" . $row["imagem"] . "'>
                                     <h4>" . $row["nome"] . "</h4>
-                                    <h5>R$" . $row["preco"] . "</h5>
+                                    <h5>R$" . str_replace('.', ',', $row["preco"]) . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
                                         <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>
@@ -104,7 +104,7 @@
                                 <div class='menu-card'>
                                     <img class='img-fluid' src='" . $row["imagem"] . "'>
                                     <h4>" . $row["nome"] . "</h4>
-                                    <h5>R$" . $row["preco"] . "</h5>
+                                    <h5>R$" . str_replace('.', ',', $row["preco"]) . "</h5>
                                     <form style='z-index: 1;' action='index.php'method='post'>
                                         <button class='addToCartBtn' type='submit' name='product' value='" . $row["id"] . "'><img src='imgs/icones/addProduct.svg'></button>
                                     </form>

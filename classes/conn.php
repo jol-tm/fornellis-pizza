@@ -3,7 +3,7 @@
         private $servername = "127.0.0.1";
         private $username = "root";
         private $password = "";
-        private $dbname = "fornellis_db";
+        private $dbname = "fornellis";
         public $con;
         
         public function conectar() {
