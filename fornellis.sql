@@ -1,34 +1,42 @@
-create database if not exists fornellis;
-use fornellis;
+CREATE DATABASE IF NOT EXISTS fornellis;
+USE fornellis;
 
-create table clientes(
-    id int auto_increment primary key,
-    nome varchar(255),
-    email varchar(255),
-    numero varchar(255),
-    senha varchar(255),
-    endereco varchar(255)
+
+CREATE TABLE clientes(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    email VARCHAR(255),
+    numero VARCHAR(255),
+    senha VARCHAR(255),
+    endereco VARCHAR(255)
 );
 
-create table produtos(
-    id int auto_increment primary key,
-    nome varchar(255),
-    categoria varchar(255),
-    descricao varchar(255),
-    imagem varchar(255),
-    preco decimal(10,2)
+CREATE TABLE produtos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255),
+    categoria VARCHAR(255),
+    descricao VARCHAR(255),
+    imagem VARCHAR(255),
+    preco DECIMAL(10,2)
 );
 
-create table administrador(
-    email varchar(255),
-    senha varchar(255)
-);
-
-create table pedidos(
-    id int auto_increment primary key,
-    idCliente int,
-    produtos varchar(255),
-    quant int,
+CREATE TABLE pedidos(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idCliente INT NOT NULL,
     dataPedido TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-    preco decimal(4,2)
+    valor_total DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (idCliente) REFERENCES clientes(id)
 );
+
+CREATE TABLE itens_pedido(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idPedido INT NOT NULL,
+    idProduto INT NOT NULL,
+    quantidade INT NOT NULL,
+    preco_unitario DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (idPedido) REFERENCES pedidos(id),
+    FOREIGN KEY (idProduto) REFERENCES produtos(id)
+);
+
+
+
