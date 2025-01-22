@@ -101,8 +101,8 @@
             $this->conn->close();
         }
 
-        public function listAllOrders() { //Não ta pronto
-            $select = "SELECT pedidos.quant, pedidos.idCliente, produtos.nome, clientes.id, clientes.endereco, clientes.numero FROM pedidos, produtos INNER JOIN clientes WHERE pedidos.idCliente = clientes.id" ;
+        public function listAllOrders() {
+            $select = "SELECT pedidos.idCliente, itens_pedido.quantidade, produtos.nome, clientes.id, clientes.endereco, clientes.numero FROM pedidos INNER JOIN clientes ON pedidos.idCliente = clientes.id INNER JOIN itens_pedido ON itens_pedido.idCliente = clientes.id INNER JOIN produtos ON itens_pedido.idProduto = produtos.id;" ;
             $stmt = $this->conn->prepare($select);
 
             if ($stmt->execute()) {

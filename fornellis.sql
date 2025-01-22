@@ -1,7 +1,6 @@
 CREATE DATABASE IF NOT EXISTS fornellis;
 USE fornellis;
 
-
 CREATE TABLE clientes(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255),
@@ -31,15 +30,10 @@ CREATE TABLE pedidos(
 
 CREATE TABLE itens_pedido(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    /*idPedido INT NOT NULL,*/
     idProduto INT NOT NULL,
     idCliente INT NOT NULL,
     quantidade INT NOT NULL,
     preco_unitario DECIMAL(10,2) NOT NULL,
     FOREIGN KEY (idCliente) REFERENCES pedidos(idCliente),
-    /*FOREIGN KEY (idPedido) REFERENCES pedidos(id),*/
     FOREIGN KEY (idProduto) REFERENCES produtos(id)
 );
-
-
-

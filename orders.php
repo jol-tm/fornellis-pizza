@@ -19,7 +19,7 @@
             foreach ($pedidos as $item) {
                 echo "
                     <div class='item'>
-                        <h4 class='itemCol'>{$item['nome']} x {$item['quant']}</h4>
+                        <h4 class='itemCol'>{$item['nome']} x {$item['quantidade']}</h4>
                         <h4 class='itemCol'>{$item['numero']}</h4>
                         <h4 class='itemCol'>{$item['endereco']}</h4>
                         <form id='controlOrder' action='' method='post'>

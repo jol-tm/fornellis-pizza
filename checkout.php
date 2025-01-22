@@ -36,7 +36,14 @@
         ?>
     </div>
     <footer id="total">
-        Total:<br>R$ <?php echo $pedido->calcTotalPrice($_SESSION['userid']); ?>
+        Total:<br>R$ 
+        <?php
+            if ($pedidos != null) {
+                echo $pedido->calcTotalPrice($_SESSION['userid']); 
+            } else {
+                echo "00,00"; 
+            }
+        ?>
         <form action="endPurchase.php" method="post">
             <button type="submit">Comprar</button>
         </form>
