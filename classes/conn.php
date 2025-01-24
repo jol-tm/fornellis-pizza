@@ -1,6 +1,6 @@
 <?php
     Class Conn {
-        private $servername = "127.0.0.1";
+        private $servername = "127.0.0.1:3307";
         private $username = "root";
         private $password = "";
         private $dbname = "fornellis";
@@ -12,7 +12,7 @@
             try { 
                 $this->con = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
             } catch (mysqli_sql_exception $e) {
-                echo "Erro: {$e->get_Message()}";
+                echo "Erro: {$e->getMessage()}";
             }
             
             return $this->con;

@@ -1,10 +1,5 @@
 <?php
     Class Cliente {
-        private $nome;
-        private $email;
-        private $numero;
-        private $senha;
-        private $endereco;
         private $conn;
 
         public function __construct($conn) {

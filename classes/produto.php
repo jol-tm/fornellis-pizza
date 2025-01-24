@@ -1,10 +1,5 @@
 <?php
     Class Produto {
-        private $nome;
-        private $categoria;
-        private $descricao;
-        private $preco;
-        private $imagem;
         private $conn;
         
         public function __construct($conn) {

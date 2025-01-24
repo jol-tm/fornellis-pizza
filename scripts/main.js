@@ -10,6 +10,9 @@ $(document).ready(function() {
     changeMenu();
     AOS.init();
     setTimeout(() => { AOS.refresh(); }, 1000);
+    if (window.history.replaceState) {
+        window.history.replaceState( null, null, window.location.href );
+    }
 });
 
 function changeMenu() {
