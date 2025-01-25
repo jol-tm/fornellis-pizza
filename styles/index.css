@@ -464,11 +464,11 @@ footer {
 }
 
 .topo {
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 10rem;
 }
 .topoOrders {
-    gap: 10rem;
+    gap: 9rem;
     margin-left: 5rem;
 }
 
@@ -485,7 +485,7 @@ footer {
 .item {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     margin: 1rem 0;
     padding: 3rem 0;
@@ -579,8 +579,23 @@ button:hover {
 }
 .inputEditMenu {
     min-width: 10rem;
-    width: 100%;
+    width: 90%;
+    border: 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
+
+tr {
+    border-bottom: 2px solid var(--c2);
+}
+
+td, th {
+    padding: 1rem 0;
+}
+
+#topLine {
+    border-bottom: 3px solid var(--c1);
+}
+
 /* ANIMAÇÕES */
 @keyframes fade {
     from {

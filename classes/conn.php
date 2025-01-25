@@ -1,6 +1,6 @@
 <?php
     Class Conn {
-        private $servername = "127.0.0.1:3307";
+        private $servername = "127.0.0.1";
         private $username = "root";
         private $password = "";
         private $dbname = "fornellis";

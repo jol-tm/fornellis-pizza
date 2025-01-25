@@ -20,6 +20,11 @@
     <noscript>É necessário permitir JavaScript para o website funcionar corretamente</noscript>
 </head>
 <body>
+    <?php
+     if (isset($_SESSION['userid'])) {
+        echo "<div class='notification'>Logado como {$_SESSION['userno']}</div>";
+     }
+    ?>
      <!--TELA LOGIN/CADASTRO-->
      <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
@@ -65,7 +70,7 @@
     <!--FIM TELA LOGIN/CADASTRO-->
     <!--BARRA NAVEGAÇÃO-->
     <nav class="navbar navbar-expand-lg nav-css">
-        <a href="#top" id="logo"><img id="logo-img" src="imgs/logo-fornelli's.png" alt="Logo"></a>
+        <a href="index.php#top" id="logo"><img id="logo-img" src="imgs/logo-fornelli's.png" alt="Logo"></a>
         <!--BTN NAVBAR-->
         <button id="nav-btn" class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin: 1rem;">
             <img id="open-nav" class="nav-icons" src="imgs/icones/open-nav.svg" alt="">

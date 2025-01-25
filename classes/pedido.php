@@ -23,7 +23,7 @@
                 $stmt2 = $this->conn->prepare($update);
                 $stmt3 = $this->conn->prepare($insert2);
                 if ($stmt->execute() && $stmt2->execute() && $stmt3->execute()) {
-                    return 1;
+                    return true;
                 };
             } elseif ($this->conn->query($check)->num_rows != 0) {
                 $check = "SELECT idProduto FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
@@ -32,7 +32,7 @@
                     $insert = "INSERT INTO itens_pedido (idProduto, idCliente, quantidade, preco_unitario) VALUES ($idProd, $idCliente, 1, {$price[0]['preco']})"; 
                     $stmt = $this->conn->prepare($insert);
                     if ($stmt->execute()) {
-                        return 1;
+                        true;
                     };
                 } elseif ($this->conn->query($check)->num_rows != 0) {
                     $update = "UPDATE itens_pedido SET quantidade = quantidade+1 WHERE idProduto = $idProd AND idCliente = $idCliente";
@@ -40,11 +40,11 @@
                     $stmt = $this->conn->prepare($update);
                     $stmt2 = $this->conn->prepare($update2);
                     if ($stmt->execute() && $stmt2->execute()) {
-                        return 1;
+                        return true;
                     };
                 }
             } else {
-                return 0;
+                return false;
             }
             $stmt->close();
             $this->conn->close();
@@ -66,7 +66,7 @@
                 $stmt = $this->conn->prepare($delete);
                 $stmt2 = $this->conn->prepare($update);
                 if ($stmt->execute() && $stmt2->execute()) {
-                    return 1;
+                    return true;
                 };
             } elseif ($this->conn->query($check)->fetch_all(MYSQLI_ASSOC)[0]['quantidade'] > 0) {
                 $update = "UPDATE itens_pedido SET quantidade = quantidade-1 WHERE idProduto = $idProd AND idCliente = $idCliente";
@@ -74,10 +74,10 @@
                 $stmt = $this->conn->prepare($update);
                 $stmt2 = $this->conn->prepare($update2);
                 if ($stmt->execute() && $stmt2->execute()) {
-                    return 1;
+                    return true;
                 };
             } else {
-                return 0;
+                return false;
             }
             $stmt->close();
             $this->conn->close();
@@ -119,7 +119,7 @@
             $stmt = $this->conn->prepare($update);
 
             if ($stmt->execute()) {
-                return 1;
+                return true;
             }
 
             $stmt->close();

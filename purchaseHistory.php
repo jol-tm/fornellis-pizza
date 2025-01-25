@@ -21,15 +21,27 @@
             $conn = new Conn();
             $pedido = new pedido($conn->conectar());
             $userOrder = $pedido->listOrder($_SESSION["userid"]);
-            foreach ($userOrder as $item) {
-              echo "
+            foreach ($userOrder as $index => $item) {
+                $itens = "{$item['nome']} x {$item['quantidade']}";
+
+                if ($index > 0) {
+                    $itemAnterior = $userOrder[$index - 1];
+    
+                    if ($item['idCliente'] == $itemAnterior['idCliente']) {
+                        $itens = "{$itemAnterior['nome']} x {$itemAnterior['quantidade']}<br>{$item['nome']} x {$item['quantidade']}";
+                    }
+                }
+                
+                if ($index != 0) {
+                  echo "
                       <div class=\"item\">
-                        <div class=\"espacamento\">{$item["quantidade"]}x {$item["nome"]} <br></div>
+                        <div class=\"espacamento\">$itens</div>
                         <div class=\"espacamento\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
                         <div class=\"espacamento\">R$ {$item["valor_total"]}</div>
                         <div class=\"espacamento\">{$item["status"]}</div>
                       </div>
-              ";
+                  ";
+                }
             }
         ?>
     </div>

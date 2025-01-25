@@ -11,13 +11,13 @@
             $stmt = $this->conn->prepare($insert);
             $stmt->bind_param('sssss', $nome, $categoria, $descricao, $preco , $imagem);
             if ($stmt->execute()) {
-                return "Cadastrado com sucesso! :D";
-                $stmt->close();
-                $this->conn->close();
+                return true;
                 header('Location: ../index.php');
             } else {
-                return "Erro ao cadastrar";
+                return false;
             }
+            $stmt->close();
+            $this->conn->close();
         }
 
         public function editProduct($nome, $categoria, $descricao, $preco, /*$imagem,*/ $id) {
@@ -25,26 +25,26 @@
             $stmt = $this->conn->prepare($update);
             $stmt->bind_param('ssss', $nome, $categoria, $descricao, $preco/*, $imagem*/);
             if ($stmt->execute()) {
-                return "Editado com sucesso! :D";
-                $stmt->close();
-                $this->conn->close();
+                return true;
                 header('Location: ../index.php');
             } else {
-                return "Erro ao editar";
+                return false;
             }
+            $stmt->close();
+            $this->conn->close();
         }
 
         public function deleteProduct($id) {
             $delete = "DELETE FROM produtos WHERE id = $id";
             $stmt = $this->conn->prepare($delete);
             if ($stmt->execute()) {
-                return "Excluído com sucesso! :D";
-                $stmt->close();
-                $conn->close();
+                return true;
                 header('Location: ../index.php');
             } else {
-                return "Erro ao excluir";
+                return false;
             }
+            $stmt->close();
+            $this->conn->close();
         }
 
         public function listProducts($category) {
@@ -54,8 +54,8 @@
             if ($stmt->execute()) {
                 $stmt = $stmt->get_result();
                 return $stmt->fetch_all(MYSQLI_ASSOC);
-                $stmt->close();
-                $conn->close();
             }
+            $stmt->close();
+            $this->conn->close();
         }
     }

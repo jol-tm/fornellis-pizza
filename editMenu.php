@@ -6,16 +6,16 @@
 <div class="box">
     <h1>Gerenciar Cardápio</h1>
     <a href="addProduct.php" id="addProduct">Adicionar Produto</a>
-    <table class="table">
+    <table>
       <thead>
-        <tr>
-          <th>Imagem</th>
-          <th>Nome</th>
-          <th>Categoria</th>
-          <th>Descrição</th>
-          <th>Preço</th>
-          <th>Editar</th>
-          <th>Apagar</th>
+        <tr id="topLine">
+          <th><h4>Imagem</h4></th>
+          <th><h4>Nome</h4></th>
+          <th><h4>Categoria</h4></th>
+          <th><h4>Descrição</h4></th>
+          <th><h4>Preço</h4></th>
+          <th><h4>Editar</h4></th>
+          <th><h4>Apagar</h4></th>
         </tr>
       </thead>
       <tbody>
@@ -33,7 +33,7 @@
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
                 <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
-                    <td><select name='categ'>
+                    <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>
@@ -54,7 +54,7 @@
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
                 <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
-                    <td><select name='categ'>
+                    <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>
@@ -75,7 +75,7 @@
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
                 <th scope='row'><input  class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
-                    <td><select name='categ'>
+                    <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>

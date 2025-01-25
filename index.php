@@ -9,8 +9,10 @@
         $pedido = new Pedido($conn->conectar());
         if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
             echo "<div class='notification'>Adicionado ao carrinho!</div>";
-        } 
-    } elseif (!isset($_SESSION['userid']))  {
+        } else {
+            echo "<div class='notification'>Erro ao adicionar ao carrinho!</div>";
+        }
+    } elseif (isset($_POST['product']) && !isset($_SESSION['userid']))  {
         echo "<div class='notification'>Você tem que estar logado!</div>";
     }
 ?>
