@@ -20,8 +20,8 @@
             $this->conn->close();
         }
 
-        public function editProduct($nome, $categoria, $descricao, $preco, /*$imagem,*/ $id) {
-            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?/*, imagem = ?*/ WHERE id = $id";
+        public function editProduct($nome, $categoria, $descricao, $preco, $imagem, $id) {
+            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = $id";
             $stmt = $this->conn->prepare($update);
             $stmt->bind_param('ssss', $nome, $categoria, $descricao, $preco/*, $imagem*/);
             if ($stmt->execute()) {

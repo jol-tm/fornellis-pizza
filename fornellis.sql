@@ -23,7 +23,7 @@ CREATE TABLE pedidos(
     id INT AUTO_INCREMENT PRIMARY KEY,
     idCliente INT NOT NULL,
     dataPedido TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-    valor_total DECIMAL(10,2) NOT NULL,
+    valor_total DECIMAL(10,2) DEFAULT 00.00,
     status VARCHAR(255) DEFAULT "Carrinho",
     FOREIGN KEY (idCliente) REFERENCES clientes(id)
 );
@@ -34,6 +34,7 @@ CREATE TABLE itens_pedido(
     idCliente INT NOT NULL,
     quantidade INT NOT NULL,
     preco_unitario DECIMAL(10,2) NOT NULL,
+    status VARCHAR(255) DEFAULT "Carrinho",
     FOREIGN KEY (idCliente) REFERENCES pedidos(idCliente),
     FOREIGN KEY (idProduto) REFERENCES produtos(id)
 );
