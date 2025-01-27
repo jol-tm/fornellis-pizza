@@ -45,7 +45,7 @@
             }
         ?>
         <form action="endPurchase.php" method="post">
-            <button type="submit">Comprar</button>
+            <button type="submit" name="buy">Comprar</button>
         </form>
     </footer id="total">
 </div>

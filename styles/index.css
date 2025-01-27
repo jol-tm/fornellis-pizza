@@ -566,7 +566,7 @@ button:hover {
 #editBtn {
     background-color: var(--c2  );
 }
-#denyBtn, #removeBtn {
+#denyBtn, #removeBtn, #cancelBtn {
     background-color: var(--c1);
 }
 #addProduct {

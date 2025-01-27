@@ -8,7 +8,6 @@ $produto = new Produto($conn->conectar());
 if (isset($_POST['nome'], $_POST['categ'], $_POST['desc'], $_POST['preco'], $_FILES['img'])) {
     $dirPath = "imgs/cardapio/";
     $filePath = $dirPath . basename($_FILES['img']['name']);
-
     if (move_uploaded_file($_FILES['img']['tmp_name'], "../" . $filePath)) {
         if ($produto->addProduct($_POST['nome'], $_POST['categ'], $_POST['desc'], $_POST['preco'], $filePath)) {
             header("Location: ../addProduct.php");

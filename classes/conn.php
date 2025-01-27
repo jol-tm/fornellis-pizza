@@ -11,6 +11,7 @@
             
             try { 
                 $this->con = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+                $this->con->set_charset("utf8mb4");
             } catch (mysqli_sql_exception $e) {
                 echo "Erro: {$e->getMessage()}";
             }

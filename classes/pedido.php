@@ -13,14 +13,13 @@
             $price = $this->conn->prepare($priceCheck);
             $price->execute();
             $price = $price->get_result();
-            $price = $price->fetch_all(MYSQLI_ASSOC); //tente fetch row e tire indice 0
-
+            $price = $price->fetch_row();
             $result = $this->conn->query($check);
 
             if ($result->num_rows == 0) {
                 $insertOrder = "INSERT INTO pedidos (idCliente) VALUES ($idCliente)";
-                $updatePrice = "UPDATE pedidos SET valor_total =  {$price[0]['preco']} WHERE idCliente = $idCliente AND status = 'Carrinho';";
-                $insertItens = "INSERT INTO itens_pedido (idProduto, idCliente, quantidade, preco_unitario) VALUES ($idProd, $idCliente, 1, {$price[0]['preco']})";
+                $updatePrice = "UPDATE pedidos SET valor_total = {$price[0]} WHERE idCliente = $idCliente AND status = 'Carrinho'";
+                $insertItens = "INSERT INTO itens_pedido (idProduto, idCliente, quantidade, preco_unitario) VALUES ($idProd, $idCliente, 1, {$price[0]})";
                 $stmt = $this->conn->prepare($insertOrder);
                 $stmt2 = $this->conn->prepare($updatePrice);
                 $stmt3 = $this->conn->prepare($insertItens);
@@ -31,13 +30,16 @@
                 $check = "SELECT idProduto FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
                 
                 if ($this->conn->query($check)->num_rows == 0) {
-                    $insert = "INSERT INTO itens_pedido (idProduto, idCliente, quantidade, preco_unitario) VALUES ($idProd, $idCliente, 1, {$price[0]['preco']})"; 
-                    $stmt = $this->conn->prepare($insert);
-                    if ($stmt->execute()) {
-                        true;
+                    $insertOrder = "INSERT INTO itens_pedido (idProduto, idCliente, quantidade, preco_unitario) VALUES ($idProd, $idCliente, 1, {$price[0]})";
+                    $updatePrice = "UPDATE pedidos SET valor_total = valor_total + {$price[0]} WHERE idCliente = $idCliente AND status = 'Carrinho'";
+                    $stmt = $this->conn->prepare($insertOrder);
+                    $stm2 = $this->conn->prepare($updatePrice);
+                    
+                    if ($stmt->execute() && $stm2->execute()) {
+                        return true;
                     };
                 } elseif ($this->conn->query($check)->num_rows != 0) {
-                    $update = "UPDATE itens_pedido SET quantidade = quantidade+1 WHERE idProduto = $idProd AND idCliente = $idCliente";
+                    $update = "UPDATE itens_pedido SET quantidade = quantidade + 1 WHERE idProduto = $idProd AND idCliente = $idCliente";
                     $update2 = "UPDATE pedidos SET valor_total = (SELECT SUM(ip.quantidade * ip.preco_unitario) FROM itens_pedido ip WHERE ip.idCliente = pedidos.idCliente) WHERE idCliente = $idCliente AND status = 'Carrinho';";
                     $stmt = $this->conn->prepare($update);
                     $stmt2 = $this->conn->prepare($update2);
@@ -45,10 +47,10 @@
                         return true;
                     };
                 }
-            } else {
-                return false;
             }
             $stmt->close();
+            $stmt2->close();
+            $stmt3->close();
             $this->conn->close();
         }
 
@@ -75,6 +77,7 @@
                 return false;
             }
             $stmt->close();
+            $stmt2->close();
             $this->conn->close();
         }
 
@@ -91,9 +94,8 @@
             $this->conn->close();
         }
 
-        public function listHistory($idCliente) {
-            // trocar para realizado
-            $select = "SELECT itens_pedido.quantidade, pedidos.dataPedido, pedidos.valor_total, pedidos.status, produtos.nome, produtos.imagem FROM itens_pedido INNER JOIN produtos ON itens_pedido.idProduto = produtos.id INNER JOIN pedidos ON itens_pedido.idCliente = pedidos.idCliente  WHERE itens_pedido.idCliente = $idCliente AND itens_pedido.status = 'Aceito' AND pedidos.status = 'Aceito';";
+        public function listAllOrders() {
+            $select = "SELECT pedidos.idCliente, itens_pedido.quantidade, produtos.nome, clientes.id, clientes.endereco, clientes.numero FROM pedidos INNER JOIN clientes ON pedidos.idCliente = clientes.id INNER JOIN itens_pedido ON itens_pedido.idCliente = clientes.id INNER JOIN produtos ON itens_pedido.idProduto = produtos.id WHERE pedidos.status = 'Realizado';";
             $stmt = $this->conn->prepare($select);
 
             if ($stmt->execute()) {
@@ -105,9 +107,8 @@
             $this->conn->close();
         }
 
-        public function listAllOrders() {
-            // trocar para realizado
-            $select = "SELECT pedidos.idCliente, itens_pedido.quantidade, produtos.nome, clientes.id, clientes.endereco, clientes.numero FROM pedidos INNER JOIN clientes ON pedidos.idCliente = clientes.id INNER JOIN itens_pedido ON itens_pedido.idCliente = clientes.id INNER JOIN produtos ON itens_pedido.idProduto = produtos.id WHERE pedidos.status = 'Carrinho';";
+        public function listHistory($idCliente) {
+            $select = "SELECT itens_pedido.quantidade, pedidos.dataPedido, pedidos.valor_total, pedidos.status, produtos.nome, produtos.imagem FROM itens_pedido INNER JOIN produtos ON itens_pedido.idProduto = produtos.id INNER JOIN pedidos ON itens_pedido.idCliente = pedidos.idCliente WHERE itens_pedido.idCliente = $idCliente AND itens_pedido.status != 'Carrinho' AND pedidos.status != 'Carrinho' ORDER BY pedidos.dataPedido DESC;";
             $stmt = $this->conn->prepare($select);
 
             if ($stmt->execute()) {
@@ -116,16 +117,30 @@
                 return $result;
             }
             $stmt->close();
+            $this->conn->close();
+        }
+
+        public function endPurchase($idCliente) {
+            $updateOrder = "UPDATE pedidos SET status = 'Realizado' WHERE idCliente = $idCliente AND status = 'Carrinho';";
+            $updateItens = "UPDATE itens_pedido SET status = 'Realizado' WHERE idCliente = $idCliente AND status = 'Carrinho';";
+            $stmt = $this->conn->prepare($updateOrder);
+            $stmt2 = $this->conn->prepare($updateItens);
+
+            if ($stmt->execute() && $stmt2->execute()) {
+                return true;
+            }
+            $stmt->close();
+            $stmt2->close();
             $this->conn->close();
         }
 
         public function manageOrder($act, $idCliente) {
             if ($act == "accept") {
-                $updateOrder = "UPDATE pedidos SET status = 'Aceito' WHERE idCliente = $idCliente AND status = 'Carrinho';";
-                $updateItens = "UPDATE itens_pedido SET status = 'Aceito' WHERE idCliente = $idCliente AND status = 'Carrinho';";
+                $updateOrder = "UPDATE pedidos SET status = 'Aceito' WHERE idCliente = $idCliente AND status = 'Realizado';";
+                $updateItens = "UPDATE itens_pedido SET status = 'Aceito' WHERE idCliente = $idCliente AND status = 'Realizado';";
             } else {
-                $updateOrder = "UPDATE pedidos SET status = 'Negado' WHERE idCliente = $idCliente AND status = 'Carrinho';";
-                $updateItens = "UPDATE itens_pedido SET status = 'Negado' WHERE idCliente = $idCliente AND status = 'Carrinho';";
+                $updateOrder = "UPDATE pedidos SET status = 'Negado' WHERE idCliente = $idCliente AND status = 'Realizado';";
+                $updateItens = "UPDATE itens_pedido SET status = 'Negado' WHERE idCliente = $idCliente AND status = 'Realizado';";
             }
 
             $stmt = $this->conn->prepare($updateOrder);
@@ -138,6 +153,7 @@
             }
 
             $stmt->close();
+            $stmt2->close();
             $this->conn->close();
         }
 

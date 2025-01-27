@@ -5,7 +5,7 @@
   <form action="dataAcess/addProduct.php" method="post" enctype="multipart/form-data">
         <h1>Adicionar Produto</h1>
         <input type="text" placeholder="Nome" name="nome" value='' required>
-        <select name='categ'>
+        <select name='categ' required>
             <option value="" disabled selected>Categoria</option>
             <option value='Salgada'>Salgada</option>
             <option value='Doce'>Doce</option>

@@ -13,13 +13,22 @@ $(document).ready(function() {
     if (window.history.replaceState) {
         window.history.replaceState( null, null, window.location.href );
     }
+
+    let path = window.location.href;
+    let archive = path.substring(path.lastIndexOf('/') + 1);
+    if (archive == "endPurchase.php") {
+        endPurchaseTimer();
+    } else if (archive == "purchaseHistory.php") {
+        paintStatus();
+    }
+
 });
 
 function changeMenu() {
-    let plcHolder = $('#placeholder');
-    let salty = $('#salty-menu'); 
-    let sweet = $('#sweet-menu'); 
-    let drinks = $('#drinks-menu'); 
+    const plcHolder = $('#placeholder');
+    const salty = $('#salty-menu'); 
+    const sweet = $('#sweet-menu'); 
+    const drinks = $('#drinks-menu'); 
 
     if ($(this).attr('id') == 'Doces') {
         plcHolder.css('right', '35%');
@@ -55,10 +64,10 @@ function hideDescriptor() {
 }
 
 function UserMenu() {
-    let popUp = $('.pop-up-box');
-    let loginMenu = $('#login-menu');
-    let signUpMenu = $('#sign-up-menu');
-    let signUpLink = $('#sign-up-link');
+    const popUp = $('.pop-up-box');
+    const loginMenu = $('#login-menu');
+    const signUpMenu = $('#sign-up-menu');
+    const signUpLink = $('#sign-up-link');
     // Mostra o pop up de login na tela
     popUp.css({'display': 'flex', 'opacity': 1});
     loginMenu.css('display', 'flex');
@@ -79,9 +88,9 @@ function closeUserMenu(){
 }
 
 function toogleMenuIcon() {
-    let openBtn = $('#open-nav');
-    let closeBtn = $('#close-nav');
-    let menuBtn = $('#nav-btn');
+    const openBtn = $('#open-nav');
+    const closeBtn = $('#close-nav');
+    const menuBtn = $('#nav-btn');
     
     if (menuBtn.attr('aria-expanded') == 'true') {
         openBtn.css('scale', 0);
@@ -93,9 +102,9 @@ function toogleMenuIcon() {
 }
 
 function checkscroll() {
-    let btn = $('#scroll-up-btn');
-    let txt = $('.carousel-text');
-    let nav = $('.nav-css');
+    const btn = $('#scroll-up-btn');
+    const txt = $('.carousel-text');
+    const nav = $('.nav-css');
     
     if (window.scrollY < 230) {
         txt.css('transform', 'translateY(0)');
@@ -110,4 +119,33 @@ function checkscroll() {
     } else {
         btn.css('bottom', '3rem');
     }
+}
+
+function endPurchaseTimer() {
+    const timerDisplayer = $('#endPurchaseTimer');
+    let time = 20;
+
+    const timer = setInterval(() => {
+        if (time >= 0) {
+            timerDisplayer.text(`Sua compra vai ser finalizada em ${time} segundos`);
+            time --;
+        } else {
+            window.location.href += "?purchase=true";
+            clearTimeout(timer);
+        }
+    }, 1000);
+}
+
+function paintStatus() {
+    let rows = $('.status');
+
+    rows.each(function() {
+        let e = $(this);
+
+        if (e.text() == "Aceito") {
+            e.css('color', '#4ab34a');
+        } else if (e.text() == "Negado") {
+            e.css('color', '#a70011');
+        }
+    });
 }

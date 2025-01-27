@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS fornellis;
+CREATE DATABASE IF NOT EXISTS fornellis CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE fornellis;
 
 CREATE TABLE clientes(

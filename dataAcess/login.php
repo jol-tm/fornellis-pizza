@@ -1,5 +1,4 @@
 <?php
-    include_once '../conn.php';
     include_once '../classes/cliente.php';
     include_once '../classes/conn.php';
 

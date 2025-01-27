@@ -6,8 +6,8 @@
     $cliente = new Cliente($conn->conectar());
 
     if ($cliente->signUp($_POST['nome'], $_POST['email'], $_POST['tel'], $_POST['pass'], $_POST['adress'])) {
-        header('Location: ../index.php');
+        header('Location: ../index.php?cadastro=sucesso');
     } else {
-        echo "Erro ao cadastrar";
+        header('Location: ../index.php?cadastro=falha');
     }
 ?>
