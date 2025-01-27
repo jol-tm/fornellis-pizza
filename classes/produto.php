@@ -12,7 +12,6 @@
             $stmt->bind_param('sssss', $nome, $categoria, $descricao, $preco , $imagem);
             if ($stmt->execute()) {
                 return true;
-                header('Location: ../index.php');
             } else {
                 return false;
             }
@@ -21,12 +20,11 @@
         }
 
         public function editProduct($nome, $categoria, $descricao, $preco, $imagem, $id) {
-            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = $id";
+            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = ?";
             $stmt = $this->conn->prepare($update);
-            $stmt->bind_param('ssss', $nome, $categoria, $descricao, $preco/*, $imagem*/);
+            $stmt->bind_param('sssssi', $nome, $categoria, $descricao, $preco, $imagem, $id);
             if ($stmt->execute()) {
                 return true;
-                header('Location: ../index.php');
             } else {
                 return false;
             }
@@ -35,13 +33,20 @@
         }
 
         public function deleteProduct($id) {
+            $select = "SELECT imagem FROM produtos WHERE id = $id";
             $delete = "DELETE FROM produtos WHERE id = $id";
             $stmt = $this->conn->prepare($delete);
-            if ($stmt->execute()) {
-                return true;
-                header('Location: ../index.php');
-            } else {
-                return false;
+
+            $stmt2 = $this->conn->prepare($select);
+            $stmt2->execute();
+            $result = $stmt2->get_result();
+            $image = $result->fetch_row();
+            if (unlink("../" . $image[0])) {
+                if ($stmt->execute()) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
             $stmt->close();
             $this->conn->close();

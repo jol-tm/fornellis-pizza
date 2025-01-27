@@ -30,8 +30,8 @@
             $status = setSelected($item['categoria']);
             echo "
                 <tr>
-                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
+                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
@@ -51,8 +51,8 @@
             $status = setSelected($item['categoria']);
             echo "
                 <tr>
-                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
+                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
@@ -72,8 +72,8 @@
             $status = setSelected($item['categoria']);
             echo "
                 <tr>
-                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post'>
-                <th scope='row'><input  class='inputEditMenu' type='file' name='img' value='{$item['imagem']}' id=''></th>
+                <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
+                <th scope='row'><input  class='inputEditMenu' type='file' name='img'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
