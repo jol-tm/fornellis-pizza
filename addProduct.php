@@ -1,4 +1,10 @@
 <?php 
+  session_start();
+  include_once "admin.php";
+
+  if ($_SESSION['userem'] != $admin) {
+    header("Location: index.php");
+  }
   include_once "assets/header.php"; 
 ?>
 <div class="box">
@@ -17,4 +23,4 @@
         <button type="submit"><h4>Adicionar</h4></button>
     </form>
 </div>
-<?php include "assets/footer.php"; ?>
+<?php include_once "assets/footer.php"; ?>

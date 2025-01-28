@@ -7,14 +7,14 @@
 
     if ($user = $cliente->login($_POST['email'], $_POST['pass'])) {
         session_start();
-        $_SESSION['userid'] = $user[0]['id'];
-        $_SESSION['userno'] = $user[0]['nome'];
-        $_SESSION['userem'] = $user[0]['email'];
-        $_SESSION['usernu'] = $user[0]['numero'];
-        $_SESSION['userse'] = $user[0]['senha'];
-        $_SESSION['useren'] = $user[0]['endereco'];
+        $_SESSION['userid'] = $user['id'];
+        $_SESSION['userno'] = $user['nome'];
+        $_SESSION['userem'] = $user['email'];
+        $_SESSION['usernu'] = $user['numero'];
+        $_SESSION['userse'] = $user['senha'];
+        $_SESSION['useren'] = $user['endereco'];
         header('Location: ../index.php');
     } else {
-        echo "Usuário ou senha incorreto.";
+        header('Location: ../index.php?loginerro');
     }
 ?>

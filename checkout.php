@@ -3,8 +3,8 @@
     if (!isset($_SESSION['userid'])) {
         header("Location: index.php");
     }
-    include "assets/header.php"; 
-    include "classes/conn.php"; 
+    include_once "assets/header.php"; 
+    include_once "classes/conn.php"; 
 ?>
 <div id="checkoutpadding" class="box">
     <h1>Carrinho</h1>
@@ -49,4 +49,4 @@
         </form>
     </footer id="total">
 </div>
-<?php include "assets/footer.php"; ?>
+<?php include_once "assets/footer.php"; ?>

@@ -1,4 +1,9 @@
-<?php 
+<?php
+  include_once "admin.php";
+  session_start();
+  if ($_SESSION['userem'] != $admin) {
+    header("Location: index.php");
+  }
   include_once "assets/header.php"; 
   include_once "classes/produto.php"; 
   include_once "classes/conn.php";
@@ -110,4 +115,4 @@
       </tbody>
     </table>
 </div>
-<?php include "assets/footer.php"; ?>
+<?php include_once "assets/footer.php"; ?>

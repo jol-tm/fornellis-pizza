@@ -2,6 +2,7 @@
     include "classes/produto.php";
     include "classes/pedido.php";
     include "classes/cliente.php";
+    include "admin.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -29,12 +30,22 @@
      <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
             <?php
-                if (isset($_SESSION['userid'])) {
+                if (isset($_SESSION['userid']) && $_SESSION['userem'] != $admin) {
                     echo "
                         <div id=\"userOptionsBox\">
                             <h2>Olá, {$_SESSION['userno']}!</h2>
                             <a class=\"userOptions\" href=\"checkout.php\"><img height=\"42\" src=\"imgs/icones/shoppingCart.svg\">Carrinho</a>
                             <a class=\"userOptions\" href=\"purchaseHistory.php\"><img height=\"42\" src=\"imgs/icones/purchaseHistory.svg\">Histórico de Compras</a>
+                            <a class=\"userOptions\" href=\"changeRegistration.php\"><img height=\"42\" src=\"imgs/icones/changeRegistration.svg\">Alterar Cadastro</a>
+                            <a href=\"dataAcess/logOff.php\" class=\"logOff\"><img height=\"32\" src=\"imgs/icones/logOff.svg\">Sair da Conta</a>
+                        </div>
+                    ";
+                } else if (isset($_SESSION['userid']) && $_SESSION['userem'] == $admin) {
+                    echo "
+                        <div id=\"userOptionsBox\">
+                            <h2>Olá, {$_SESSION['userno']}!</h2>
+                            <a class=\"userOptions\" href=\"orders.php\"><img height=\"42\" src=\"imgs/icones/orders.svg\">Pedidos</a>
+                            <a class=\"userOptions\" href=\"editMenu.php\"><img height=\"42\" src=\"imgs/icones/editMenu.svg\">Gerenciar Cardápio</a>
                             <a class=\"userOptions\" href=\"changeRegistration.php\"><img height=\"42\" src=\"imgs/icones/changeRegistration.svg\">Alterar Cadastro</a>
                             <a href=\"dataAcess/logOff.php\" class=\"logOff\"><img height=\"32\" src=\"imgs/icones/logOff.svg\">Sair da Conta</a>
                         </div>

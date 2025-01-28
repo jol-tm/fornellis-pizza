@@ -1,7 +1,11 @@
 <?php
+    include_once "admin.php";
     session_start();
-    include "assets/header.php"; 
-    include "classes/conn.php"; 
+    if ($_SESSION['userem'] != "admin@fornellis.com") {
+        header("Location: index.php");
+    }
+    include_once "assets/header.php"; 
+    include_once "classes/conn.php"; 
 
     $conn = new Conn();
     $pedido = new Pedido($conn->conectar());
@@ -34,4 +38,4 @@
         ?>
     </div>
 </div>
-<?php include "assets/footer.php"; ?>
+<?php include_once "assets/footer.php"; ?>
