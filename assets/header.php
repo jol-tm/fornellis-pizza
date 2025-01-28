@@ -1,8 +1,8 @@
 <?php
-    include "classes/produto.php";
-    include "classes/pedido.php";
-    include "classes/cliente.php";
-    include "admin.php";
+    include_once "classes/produto.php";
+    include_once "classes/pedido.php";
+    include_once "classes/cliente.php";
+    include_once "admin.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
