@@ -13,14 +13,15 @@
         }
     } elseif (isset($_POST['product']) && !isset($_SESSION['userid']))  {
         echo "<div class='notification'>Você tem que estar logado!</div>";
-    } elseif (isset($_GET['cadastro']) && $_GET['cadastro'] == "sucesso") {
-        echo "<div class='notification'>Cadastrado com sucesso!</div>";
-    } elseif (isset($_GET['cadastro']) && $_GET['cadastro'] == "falha") {
-        echo "<div class='notification'>Erro ao cadastrar!</div>";
-    } elseif (isset($_GET['logoff'])) {
-        echo "<div class='notification'>Conta desconectada.</div>";
-    } elseif (isset($_GET['loginerro'])) {
-        echo "<div class='notification'>Email ou senha incorretos!</div>";
+    } elseif (isset($_SESSION['cadastro'])) {
+        echo "<div class='notification'>{$_SESSION['cadastro']}</div>";
+        unset($_SESSION['cadastro']);
+    } elseif (isset($_SESSION['logoff'])) {
+        echo "<div class='notification'>{$_SESSION['logoff']}</div>";
+        unset($_SESSION['logoff']);
+    } elseif (isset($_SESSION['loginerro'])) {
+        echo "<div class='notification'>{$_SESSION['loginerro']}</div>";
+        unset($_SESSION['loginerro']);
     }
 ?>
     <!--CAROUSEL-->

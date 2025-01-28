@@ -1,6 +1,7 @@
 <?php
     session_start();
     if (session_destroy()) {
-        header("Location: ../index.php?logoff");
+        $_SESSION['loginoff'] = "Conta desconectada.";
+        header("Location: ../index.php");
     } 
 ?>

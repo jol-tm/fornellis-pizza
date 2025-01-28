@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include_once '../classes/cliente.php';
     include_once '../classes/conn.php';
 
@@ -15,6 +16,7 @@
         $_SESSION['useren'] = $user['endereco'];
         header('Location: ../index.php');
     } else {
-        header('Location: ../index.php?loginerro');
+        $_SESSION['loginerro'] = "Email ou senha incorretos!";
+        header('Location: ../index.php');
     }
 ?>
