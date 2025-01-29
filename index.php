@@ -16,12 +16,11 @@
     } elseif (isset($_SESSION['cadastro'])) {
         echo "<div class='notification'>{$_SESSION['cadastro']}</div>";
         unset($_SESSION['cadastro']);
-    } elseif (isset($_SESSION['logoff'])) {
-        echo "<div class='notification'>{$_SESSION['logoff']}</div>";
-        unset($_SESSION['logoff']);
     } elseif (isset($_SESSION['loginerro'])) {
         echo "<div class='notification'>{$_SESSION['loginerro']}</div>";
         unset($_SESSION['loginerro']);
+    } elseif (isset($_GET['off'])) {
+        echo "<div class='notification'>Conta desconectada.</div>";
     }
 ?>
     <!--CAROUSEL-->
@@ -180,4 +179,3 @@
         <p>Nosso compromisso com a qualidade e a hospitalidade é o que nos diferencia. Quando você entra na Fornelli, não é apenas um cliente; é parte da nossa história. Nossa mesa está sempre posta para recebê-lo com um sorriso caloroso e uma fatia generosa de pizza. Então, venha se juntar a nós na Fornelli, onde a comida é boa, as risadas são contagiantes e as memórias são feitas a cada mordida. Afinal, aqui, você não está apenas comendo pizza, você está vivendo a experiência italiana no coração de Rio Claro. <strong><em>Buon appetito!</em></strong></p>
     </section>
 <?php include_once "assets/footer.php"; ?>
-

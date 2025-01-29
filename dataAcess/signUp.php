@@ -1,4 +1,5 @@
-<?php 
+<?php
+    session_start();
     include_once "../classes/cliente.php";
     include_once '../classes/conn.php';
 
