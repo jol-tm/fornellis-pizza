@@ -81,9 +81,6 @@ a {
     right: 1rem;
     transition-duration: .3s;
 }
-#close-nav {
-    scale: 0;
-}
 .navbar-css {
     column-gap: 5rem;
 }

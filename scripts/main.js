@@ -4,8 +4,6 @@ $(document).ready(function() {
     $('.menu-card').on('mouseleave', hideDescriptor);
     $('#user-icon').on('click', UserMenu);
     $('.hide-user-menu').on('click', closeUserMenu);
-    $('#open-nav').on('click', toogleMenuIcon);
-    $('#close-nav').on('click', toogleMenuIcon);
     $(document).on('scroll', checkscroll);
     changeMenu();
     AOS.init();
@@ -85,20 +83,6 @@ function closeUserMenu(){
         $('.pop-up-box').css('display', 'none');
         $('#sign-up-menu').css('display', 'none');
     }, 300);
-}
-
-function toogleMenuIcon() {
-    const openBtn = $('#open-nav');
-    const closeBtn = $('#close-nav');
-    const menuBtn = $('#nav-btn');
-    
-    if (menuBtn.attr('aria-expanded') == 'true') {
-        openBtn.css('scale', 0);
-        closeBtn.css('scale', 1);
-    } else {
-        openBtn.css('scale', 1);
-        closeBtn.css('scale', 0);
-    }
 }
 
 function checkscroll() {

@@ -84,8 +84,7 @@
         <a href="index.php#top" id="logo"><img id="logo-img" src="imgs/logo-fornelli's.png" alt="Logo"></a>
         <!--BTN NAVBAR-->
         <button id="nav-btn" class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="margin: 1rem;">
-            <img id="open-nav" class="nav-icons" src="imgs/icones/open-nav.svg" alt="">
-            <img id="close-nav" class="nav-icons" src="imgs/icones/close-nav.svg" alt="">
+            <img src="imgs/icones/menu.svg" alt="">
         </button>
         <!--FIM BTN NAVBAR-->
         <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
