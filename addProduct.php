@@ -1,14 +1,18 @@
 <?php 
-  session_start();
-  include_once "admin.php";
-
-  if ($_SESSION['userem'] != $admin) {
-    header("Location: index.php");
-  }
-  include_once "assets/header.php"; 
+    session_start();
+    include_once "admin.php";
+    
+    if ($_SESSION['userem'] != $admin) {
+      header("Location: index.php");
+    } 
+    if (isset($_SESSION['status'])) {
+      echo "<div class='notification'>{$_SESSION['status']}</div>";
+      unset($_SESSION['status']);
+    }
+    include_once "assets/header.php";
 ?>
 <div class="box">
-  <form action="dataAcess/addProduct.php" method="post" enctype="multipart/form-data">
+    <form action="dataAcess/addProduct.php" method="post" enctype="multipart/form-data">
         <h1>Adicionar Produto</h1>
         <input type="text" placeholder="Nome" name="nome" value='' required>
         <select name='categ' required>

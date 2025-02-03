@@ -16,7 +16,7 @@ $(document).ready(function() {
     let archive = path.substring(path.lastIndexOf('/') + 1);
     if (archive == "endPurchase.php") {
         endPurchaseTimer();
-    } else if (archive == "purchaseHistory.php") {
+    } else if (archive == "purchaseHistory.php" ||archive == "admPurchaseHistory.php") {
         paintStatus();
     }
 
@@ -122,7 +122,6 @@ function endPurchaseTimer() {
 
 function paintStatus() {
     let rows = $('.status');
-
     rows.each(function() {
         let e = $(this);
 

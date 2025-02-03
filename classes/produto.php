@@ -20,9 +20,15 @@
         }
 
         public function editProduct($nome, $categoria, $descricao, $preco, $imagem, $id) {
-            $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = ?";
-            $stmt = $this->conn->prepare($update);
-            $stmt->bind_param('sssssi', $nome, $categoria, $descricao, $preco, $imagem, $id);
+            if ($imagem != "imgs/cardapio/") {
+                $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ?, imagem = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $stmt->bind_param('sssssi', $nome, $categoria, $descricao, $preco, $imagem, $id);
+            } else {
+                $update = "UPDATE produtos SET nome = ?, categoria = ?, descricao = ?, preco = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $stmt->bind_param('ssssi', $nome, $categoria, $descricao, $preco, $id);
+            }
             if ($stmt->execute()) {
                 return true;
             } else {
@@ -36,11 +42,7 @@
             $select = "SELECT imagem FROM produtos WHERE id = $id";
             $delete = "DELETE FROM produtos WHERE id = $id";
             $stmt = $this->conn->prepare($delete);
-
-            $stmt2 = $this->conn->prepare($select);
-            $stmt2->execute();
-            $result = $stmt2->get_result();
-            $image = $result->fetch_row();
+            $image = $this->conn->query($select)->fetch_row();
             if (unlink("../" . $image[0])) {
                 if ($stmt->execute()) {
                     return true;

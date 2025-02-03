@@ -21,11 +21,6 @@
     <noscript>É necessário permitir JavaScript para o website funcionar corretamente</noscript>
 </head>
 <body>
-    <?php
-     if (isset($_SESSION['userid'])) {
-        echo "<div class='notification'>Logado como {$_SESSION['userno']}</div>";
-     }
-    ?>
      <!--TELA LOGIN/CADASTRO-->
      <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
@@ -45,6 +40,7 @@
                         <div id=\"userOptionsBox\">
                             <h2>Olá, {$_SESSION['userno']}!</h2>
                             <a class=\"userOptions\" href=\"orders.php\"><img height=\"42\" src=\"imgs/icones/orders.svg\">Pedidos</a>
+                            <a class=\"userOptions\" href=\"admPurchaseHistory.php\"><img height=\"42\" src=\"imgs/icones/purchaseHistory.svg\">Histórico de Pedidos</a>
                             <a class=\"userOptions\" href=\"editMenu.php\"><img height=\"42\" src=\"imgs/icones/editMenu.svg\">Gerenciar Cardápio</a>
                             <a class=\"userOptions\" href=\"changeRegistration.php\"><img height=\"42\" src=\"imgs/icones/changeRegistration.svg\">Alterar Cadastro</a>
                             <a href=\"dataAcess/logOff.php\" class=\"logOff\"><img height=\"32\" src=\"imgs/icones/logOff.svg\">Sair da Conta</a>

@@ -4,8 +4,8 @@
     if ($_SESSION['userem'] != "admin@fornellis.com") {
         header("Location: index.php");
     }
-    include_once "assets/header.php"; 
     include_once "classes/conn.php"; 
+    include_once "assets/header.php"; 
 
     $conn = new Conn();
     $pedido = new Pedido($conn->conectar());
@@ -27,8 +27,8 @@
                         <h4 class='itemCol'>{$item['nome']} x {$item['quantidade']}</h4>
                         <h4 class='itemCol'>{$item['numero']}</h4>
                         <h4 class='itemCol'>{$item['endereco']}</h4>
-                        <input type='hidden' name='idCliente' value='{$item['idCliente']}'></input>
                         <form id='controlOrder' action='dataAcess/manageOrder.php' method='post'>
+                            <input type='hidden' name='idCliente' value='{$item['idCliente']}'></input>
                             <button type='submit' id='acceptBtn' name='accept'><img src='imgs/icones/accept.svg' alt=''></button>
                             <button type='submit' id='denyBtn' name='deny'><img height=24 src='imgs/icones/close-nav.svg' alt=''></button>
                         </form>                        

@@ -20,7 +20,7 @@
 
         if (isset($_GET['purchase']) && $_GET['purchase'] == true ) {
             if ($pedido->endPurchase($_SESSION['userid'])) {
-                header("purchaseHistory.php");
+                echo '<script type="text/javascript">window.location.href = "purchaseHistory.php";</script>';
             }
         }
     ?>

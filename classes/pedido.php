@@ -120,6 +120,19 @@
             $this->conn->close();
         }
 
+        public function listAllHistory() {
+            $select = "SELECT itens_pedido.* , produtos.nome, pedidos.*, clientes.numero FROM itens_pedido INNER JOIN pedidos INNER JOIN produtos ON itens_pedido.idProduto = produtos.id INNER JOIN clientes ON clientes.id = pedidos.idCliente WHERE itens_pedido.status != 'Carrinho' AND pedidos.status != 'Carrinho' ORDER BY pedidos.dataPedido DESC;";
+            $stmt = $this->conn->prepare($select);
+
+            if ($stmt->execute()) {
+                $stmt = $stmt->get_result();
+                $result = $stmt->fetch_all(MYSQLI_ASSOC);
+                return $result;
+            }
+            $stmt->close();
+            $this->conn->close();
+        }
+
         public function endPurchase($idCliente) {
             $updateOrder = "UPDATE pedidos SET status = 'Realizado' WHERE idCliente = $idCliente AND status = 'Carrinho';";
             $updateItens = "UPDATE itens_pedido SET status = 'Realizado' WHERE idCliente = $idCliente AND status = 'Carrinho';";

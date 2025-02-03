@@ -7,11 +7,11 @@
     $pedido = new Pedido($conn->conectar());
 
     if (isset($_POST['accept'])) {
-        if ($pedido->manageOrder('accept', $_SESSION['userid'])) {
+        if ($pedido->manageOrder('accept', $_POST['idCliente'])) {
             header("Location: ../orders.php");
         }
     } elseif (isset($_POST['deny'])) {
-        if ($pedido->manageOrder('deny', $_SESSION['userid'])) {
+        if ($pedido->manageOrder('deny', $_POST['idCliente'])) {
             header("Location: ../orders.php");
         }
     }

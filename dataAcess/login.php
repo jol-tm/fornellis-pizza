@@ -14,9 +14,10 @@
         $_SESSION['usernu'] = $user['numero'];
         $_SESSION['userse'] = $user['senha'];
         $_SESSION['useren'] = $user['endereco'];
+        $_SESSION['loginstatus'] = "Logado como {$_SESSION['userno']}";
         header('Location: ../index.php');
     } else {
-        $_SESSION['loginerro'] = "Email ou senha incorretos!";
+        $_SESSION['loginstatus'] = "Email ou senha incorretos!";
         header('Location: ../index.php');
     }
 ?>

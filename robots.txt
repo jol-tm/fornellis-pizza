@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin.php
+Disallow: /admPurchaseHistory.php
+Disallow: /addProduct.php
+Disallow: /editMenu.php

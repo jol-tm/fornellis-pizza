@@ -39,14 +39,16 @@
         Total:<br>R$ 
         <?php
             if ($pedidos != null) {
-                echo $pedido->calcTotalPrice($_SESSION['userid']); 
+                echo $pedido->calcTotalPrice($_SESSION['userid']);
+                echo '        
+                    <form action="endPurchase.php" method="post">
+                        <button type="submit" name="buy">Comprar</button>
+                    </form>
+                ';
             } else {
                 echo "00,00"; 
             }
         ?>
-        <form action="endPurchase.php" method="post">
-            <button type="submit" name="buy">Comprar</button>
-        </form>
     </footer id="total">
 </div>
 <?php include_once "assets/footer.php"; ?>

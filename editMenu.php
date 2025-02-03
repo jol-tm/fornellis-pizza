@@ -3,6 +3,10 @@
   session_start();
   if ($_SESSION['userem'] != $admin) {
     header("Location: index.php");
+  } 
+  if (isset($_SESSION['status'])) {
+    echo "<div class='notification'>{$_SESSION['status']}</div>";
+    unset($_SESSION['status']);
   }
   include_once "assets/header.php"; 
   include_once "classes/produto.php"; 
@@ -36,7 +40,7 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img'></input></th>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
@@ -57,7 +61,7 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img'></input></th>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
@@ -78,7 +82,7 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input  class='inputEditMenu' type='file' name='img'></input></th>
+                <th scope='row'><input  class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
                     <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>

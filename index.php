@@ -16,9 +16,9 @@
     } elseif (isset($_SESSION['cadastro'])) {
         echo "<div class='notification'>{$_SESSION['cadastro']}</div>";
         unset($_SESSION['cadastro']);
-    } elseif (isset($_SESSION['loginerro'])) {
-        echo "<div class='notification'>{$_SESSION['loginerro']}</div>";
-        unset($_SESSION['loginerro']);
+    } elseif (isset($_SESSION['loginstatus'])) {
+        echo "<div class='notification'>{$_SESSION['loginstatus']}</div>";
+        unset($_SESSION['loginstatus']);
     } elseif (isset($_GET['off'])) {
         echo "<div class='notification'>Conta desconectada.</div>";
     }

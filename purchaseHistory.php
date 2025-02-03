@@ -12,7 +12,6 @@
     <div class="topo">
       <h2>Pedido</h2>
       <h2>Data</h2>
-      <!-- <h2>Pagamento</h2> -->
       <h2>Valor</h2>
       <h2>Status</h2>
     </div>
@@ -22,7 +21,7 @@
             $pedido = new pedido($conn->conectar());
             $userHistory = $pedido->listHistory($_SESSION["userid"]);
 
-            foreach ($userHistory as $index => $item) {
+            foreach ($userHistory as $item) {
                 echo "
                     <div class=\"item\">
                       <div class=\"espacamento\">{$item['nome']} x {$item['quantidade']}</div>
