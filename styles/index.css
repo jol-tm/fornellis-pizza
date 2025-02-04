@@ -43,12 +43,10 @@
 }
 
 body {
+    flex-direction: column;
     font-family: var(--f1);
     color: var(--c4);
-    background-image: url(../imgs/fundoPizza.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+    background: black url(../imgs/fundoPizza.jpg) center/cover fixed;
 }
 h4, h5 {
     margin: 0;
@@ -70,7 +68,6 @@ a {
     left: 2rem;
     margin: 0 -6.5rem 0 0;
     scale: 1.2;
-    animation: shake 5s alternate infinite ease-in-out;
 }
 #logo-img {
     width: 6.5rem;
@@ -99,6 +96,27 @@ a {
 }
 .nav-link-css:hover, .nav-link-css:focus {
     color: var(--c3);
+}
+/* TELA DE CARREGAMENTO */
+#loadingScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: var(--f2);
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    color: var(--c3);
+    height: 100vh;
+    width: 100vw;
+    background: var(--c1);
+    transition: opacity .3s;
+}
+#loadingScreenImg {
+   opacity: 0;
+   transition: .3s;
 }
 /* MENU DO USUÁRIO */
 .pop-up-box {
@@ -134,6 +152,7 @@ a {
     background-color: var(--c3);
     width: 90vw;
     max-width: 60rem;
+    max-height: 95vh;
     padding: 5rem;
     border-radius: 1rem;
     animation: fade .3s;
@@ -358,7 +377,7 @@ select {
     align-items: center;
     justify-content: center;
     font-family: var(--f2);
-    height: 8rem;
+    height: 10rem;
     width: 95%;
     max-width: 25rem;
     margin: 1rem auto;
@@ -428,13 +447,14 @@ footer {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    margin: auto;
-    bottom: -5rem;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 95%;
     padding: 1rem;
     border-radius: 1rem;
     color: var(--c3);
     background-color: var(--c2);
-    animation: showUp 5s;
+    animation: showUp 5s forwards;
 }
 /* CARRINHO */
 @media only screen and (min-width : 0) {
@@ -545,9 +565,13 @@ footer {
     padding: 1rem 0 0 0;
 }
 /* ALTERAR CADASTRO */
-#deleteAcc {
+.deleteAcc {
     color: white;
     background-color: var(--c1);
+}
+#deleteAccConfirmation {
+    gap: .5rem;
+    transition: .3s;
 }
 /* HISTÓRICO DE PEDIDOS */
 .table {
@@ -607,13 +631,6 @@ td, th {
     } to {
         opacity: 100%;
         top: 0px;
-    }
-}
-@keyframes shake {
-    from {
-        rotate: -5deg;
-    } to {
-        rotate: 5deg;
     }
 }
 @keyframes showUp {

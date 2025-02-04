@@ -21,8 +21,15 @@
     <noscript>É necessário permitir JavaScript para o website funcionar corretamente</noscript>
 </head>
 <body>
-     <!--TELA LOGIN/CADASTRO-->
-     <div class="pop-up-box">
+    <div id='loadingScreen'>
+        <img id='loadingScreenImg' width=150 src="imgs/logo-fornelli's.png" alt='Logo'>
+        <h1>Fornelli's Pizza</h1>
+        <div class='spinner-grow text-success' role='status'>
+            <span class='visually-hidden'>Loading...</span>
+        </div>
+    </div>
+    <!--TELA LOGIN/CADASTRO-->
+    <div class="pop-up-box">
         <div id="login-menu" class="pop-up">
             <?php
                 if (isset($_SESSION['userid']) && $_SESSION['userem'] != $admin) {

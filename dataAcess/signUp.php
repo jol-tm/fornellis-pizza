@@ -10,7 +10,7 @@
         $_SESSION['cadastro'] = "Cadastrado com sucesso!";
         header('Location: ../index.php');
     } else {
-        $_SESSION['cadastro'] = "Erro ao cadastrar!";
+        $_SESSION['cadastro'] = "Erro ao cadastrar! Tente utilizar outro email.";
         header('Location: ../index.php');
     }
 ?>

@@ -8,11 +8,12 @@
 
     if (isset($_POST['updateAcc'])) {
         if ($cliente->editAcc($_POST['nome'], $_POST['email'], $_POST['tel'], $_POST['pass'], $_POST['adress'], $_SESSION['userid'])) {
-            header('Location: logOff.php');
+            $_SESSION['status'] = 'Cadastro editado com sucesso!';    
+            header('Location: ../changeRegistration.php');
         }
     } elseif (isset($_POST['deleteAcc'])) {
         if ($cliente->deleteAcc($_SESSION['userid'])) {
-            header('Location: logOff.php');
+            header('Location: logOff.php?deleted');
         }
     }
 ?>

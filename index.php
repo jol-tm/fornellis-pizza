@@ -21,6 +21,8 @@
         unset($_SESSION['loginstatus']);
     } elseif (isset($_GET['off'])) {
         echo "<div class='notification'>Conta desconectada.</div>";
+    } elseif (isset($_GET['deleted'])) {
+        echo "<div class='notification'>Conta apagada.</div>";
     }
 ?>
     <!--CAROUSEL-->

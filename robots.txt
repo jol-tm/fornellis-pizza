@@ -3,3 +3,9 @@ Disallow: /admin.php
 Disallow: /admPurchaseHistory.php
 Disallow: /addProduct.php
 Disallow: /editMenu.php
+Disallow: /classes/*
+Disallow: /dataAcess/*
+Disallow: /assets/*
+Disallow: /imgs/*
+Disallow: /scripts/*
+Disallow: /styles/*

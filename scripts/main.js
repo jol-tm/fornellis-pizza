@@ -5,8 +5,18 @@ $(document).ready(function() {
     $('#user-icon').on('click', UserMenu);
     $('.hide-user-menu').on('click', closeUserMenu);
     $(document).on('scroll', checkscroll);
+
+    // Roda uma animação quando a imagem carrega
+    $('#loadingScreenImg').on('load', () => {
+        $('#loadingScreenImg').css('opacity', 1);
+    });
+    if ($('#loadingScreenImg')[0].complete) {
+        $('#loadingScreenImg').trigger('load');
+    }
+
     changeMenu();
     AOS.init();
+
     setTimeout(() => { AOS.refresh(); }, 1000);
     if (window.history.replaceState) {
         window.history.replaceState( null, null, window.location.href );
@@ -18,8 +28,14 @@ $(document).ready(function() {
         endPurchaseTimer();
     } else if (archive == "purchaseHistory.php" ||archive == "admPurchaseHistory.php") {
         paintStatus();
+    } else if (archive == "changeRegistration.php") {
+        showDeletionConfirmation();
     }
 
+});
+
+$(window).on('load', () => {
+    $('#loadingScreen').css({'opacity': 0, 'pointer-events': 'none'});
 });
 
 function changeMenu() {
@@ -130,5 +146,18 @@ function paintStatus() {
         } else if (e.text() == "Negado") {
             e.css('color', '#a70011');
         }
+    });
+}
+
+function showDeletionConfirmation() {
+    $('#deleteAccBtn').on('click', () => {
+        $('#deleteAccConfirmation').css('opacity', 1);
+        $('#deleteAccConfirmation').css('display', 'flex');
+        $('#cancel').on('click', () => {
+            $('#deleteAccConfirmation').css('opacity', 0);
+            setTimeout(() => {
+                $('#deleteAccConfirmation').css('display', 'none');
+            }, 300);
+        })
     });
 }
