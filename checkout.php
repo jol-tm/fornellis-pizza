@@ -28,7 +28,7 @@
                             <div class='number'>" . $item['quantidade'] . "</div>
                             <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=sub'>-</a>
                         </div>
-                        <h4 class='price'>R$" . $item['preco_unitario'] . "</h4>
+                        <h4 class='price'>R$" . str_replace('.', ',', $item['preco_unitario']) . "</h4>
                     </div>
                 "; 
             }
@@ -39,7 +39,7 @@
         Total:<br>R$ 
         <?php
             if ($pedidos != null) {
-                echo $pedido->calcTotalPrice($_SESSION['userid']);
+                echo str_replace('.', ',', $pedido->calcTotalPrice($_SESSION['userid']));
                 echo '        
                     <form action="endPurchase.php" method="post">
                         <button type="submit" name="buy">Comprar</button>

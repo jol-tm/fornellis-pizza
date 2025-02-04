@@ -13,7 +13,7 @@
 ?>
 <div id="checkoutpadding" class="box">
     <h1>Pedidos</h1>
-    <div class="topo topoOrders">
+    <div class="topo">
         <h2>Pedido</h2>
         <h2>Telefone</h2>
         <h2>Endereço</h2>
@@ -21,10 +21,10 @@
     </div>
     <div id="itens">
         <?php
-            foreach ($pedidos as $item) {
+            /* foreach ($pedidos as $item) {
                 echo "
                     <div class='item'>
-                        <h4 class='itemCol'>{$item['nome']} x {$item['quantidade']}</h4>
+                        <h4 class='itemCol content'>{$item['nome']} x {$item['quantidade']}</h4>
                         <h4 class='itemCol'>{$item['numero']}</h4>
                         <h4 class='itemCol'>{$item['endereco']}</h4>
                         <form id='controlOrder' action='dataAcess/manageOrder.php' method='post'>
@@ -34,7 +34,7 @@
                         </form>                        
                     </div>
                     ";
-            }
+            }*/
         ?>
     </div>
 </div>

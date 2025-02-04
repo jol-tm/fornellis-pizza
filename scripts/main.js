@@ -30,6 +30,11 @@ $(document).ready(function() {
         paintStatus();
     } else if (archive == "changeRegistration.php") {
         showDeletionConfirmation();
+    } else if (archive == "editMenu.php") {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    } else if (archive == "orders.php") {
+        fetchOrders();
     }
 
 });
@@ -153,11 +158,42 @@ function showDeletionConfirmation() {
     $('#deleteAccBtn').on('click', () => {
         $('#deleteAccConfirmation').css('opacity', 1);
         $('#deleteAccConfirmation').css('display', 'flex');
+        window.scrollTo(0, $(document).height());
         $('#cancel').on('click', () => {
             $('#deleteAccConfirmation').css('opacity', 0);
             setTimeout(() => {
                 $('#deleteAccConfirmation').css('display', 'none');
             }, 300);
         })
+    });
+}
+
+async function fetchOrders() {
+    let response = await fetch('fetchOrders.php');
+    let data = await response.json();
+    
+    displayOrders(data);
+
+    const interval = setInterval(() => {
+        displayOrders(data);
+    }, 5000);
+}
+
+function displayOrders(data) {
+    console.log('displaying...');
+    data.forEach(el => {
+        let content = `
+            <div class='item'>
+                <h4 class='itemCol content'>${el['nome']} x ${el['quantidade']}</h4>
+                <h4 class='itemCol'>${el['numero']}</h4>
+                <h4 class='itemCol'>${el['endereco']}</h4>
+                <form id='controlOrder' action='dataAcess/manageOrder.php' method='post'>
+                    <input type='hidden' name='idCliente' value='${el['idCliente']}'></input>
+                    <button type='submit' id='acceptBtn' name='accept'><img src='imgs/icones/accept.svg' alt=''></button>
+                    <button type='submit' id='denyBtn' name='deny'><img height=24 src='imgs/icones/close-nav.svg' alt=''></button>
+                </form>                        
+            </div>
+        `;
+        $('#itens').prepend(content);
     });
 }

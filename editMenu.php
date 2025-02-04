@@ -23,8 +23,8 @@
           <th><h4>Categoria</h4></th>
           <th><h4>Descrição</h4></th>
           <th><h4>Preço</h4></th>
-          <th><h4>Editar</h4></th>
-          <th><h4>Apagar</h4></th>
+          <th><h5>Editar</h5></th>
+          <th><h5>Excluir</h5></th>
         </tr>
       </thead>
       <tbody>
@@ -40,15 +40,15 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
-                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Clique para selecionar nova imagem. Ela só irá aparecer após editar.'><img class='editMenuImg' src='{$item['imagem']}'></th>
+                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>
                     </select></td>
-                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></input></td>
-                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></input></td>
+                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></td>
+                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></td>
                     <td><button type='submit' name='editProduct' value='{$item['id']}' id='editBtn'><img src='imgs/icones/editProd.svg' alt=''></button></td>
                     <td><button type='submit' name='deleteProduct' value='{$item['id']}' id='removeBtn'><img height=24 src='imgs/icones/delete-account-svg.svg' alt=''></button></td>
                 </form>
@@ -61,15 +61,15 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
-                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
+                <th scope='row'><input class='inputEditMenu' type='file' name='img' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Clique para selecionar nova imagem. Ela só irá aparecer após editar.'><img class='editMenuImg' src='{$item['imagem']}'></th>
+                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>
                     </select></td>
-                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></input></td>
-                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></input></td>
+                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></td>
+                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></td>
                     <td><button type='submit' name='editProduct' value='{$item['id']}' id='editBtn'><img src='imgs/icones/editProd.svg' alt=''></button></td>
                     <td><button type='submit' name='deleteProduct' value='{$item['id']}' id='removeBtn'><img height=24 src='imgs/icones/delete-account-svg.svg' alt=''></button></td>
                 </form>
@@ -82,15 +82,15 @@
             echo "
                 <tr>
                 <form id='controlOrder' action='dataAcess/updateMenu.php' method='post' enctype='multipart/form-data'>
-                <th scope='row'><input  class='inputEditMenu' type='file' name='img' value='{$item['imagem']}'></input></th>
-                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></input></td>
+                <th scope='row'><input  class='inputEditMenu' type='file' name='img' data-bs-toggle='tooltip' data-bs-placement='top' data-bs-title='Clique para selecionar nova imagem. Ela só irá aparecer após editar.'><img class='editMenuImg' src='{$item['imagem']}'></th>
+                    <td><input class='inputEditMenu' type='text' name='nome' value='{$item['nome']}'></td>
                     <td><select name='categ' class='inputEditMenu'>
                       <option value='Salgada' {$status[0]}>Salgada</option>
                       <option value='Doce' {$status[1]}>Doce</option>
                       <option value='Bebida' {$status[2]}>Bebida</option>
                     </select></td>
-                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></input></td>
-                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></input></td>
+                    <td><input class='inputEditMenu' type='text' name='desc' value='{$item['descricao']}'></td>
+                    <td><input class='inputEditMenu' type='text' name='preco' value='" . $item['preco'] . "'></td>
                     <td><button type='submit' name='editProduct' value='{$item['id']}' id='editBtn'><img src='imgs/icones/editProd.svg' alt=''></button></td>
                     <td><button type='submit' name='deleteProduct' value='{$item['id']}' id='removeBtn'><img height=24 src='imgs/icones/delete-account-svg.svg' alt=''></button></td>
                 </form>

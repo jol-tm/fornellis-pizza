@@ -8,7 +8,7 @@
 ?>
 <div class="box">
     <h1>Finalização de Compra</h1>
-    <img src="imgs/logo-fornelli's.png" style="width: 40%">
+    <img src="imgs/logo-fornelli's.png" width="30%">
     <h4 id="endPurchaseTimer">Sua compra vai ser finalizada em 20 segundos</h4>
     <div class="spinner-grow text-success" role="status">
         <span class="visually-hidden">Loading...</span>

@@ -108,7 +108,7 @@
         }
 
         public function listHistory($idCliente) {
-            $select = "SELECT itens_pedido.quantidade, pedidos.dataPedido, pedidos.valor_total, pedidos.status, produtos.nome, produtos.imagem FROM itens_pedido INNER JOIN produtos ON itens_pedido.idProduto = produtos.id INNER JOIN pedidos ON itens_pedido.idCliente = pedidos.idCliente WHERE itens_pedido.idCliente = $idCliente AND itens_pedido.status != 'Carrinho' AND pedidos.status != 'Carrinho' ORDER BY pedidos.dataPedido DESC;";
+            $select = "SELECT itens_pedido.quantidade, pedidos.id, pedidos.dataPedido, pedidos.valor_total, pedidos.status, produtos.nome, produtos.imagem FROM itens_pedido INNER JOIN produtos ON itens_pedido.idProduto = produtos.id INNER JOIN pedidos ON itens_pedido.idCliente = pedidos.idCliente WHERE itens_pedido.idCliente = $idCliente AND itens_pedido.status != 'Carrinho' AND pedidos.status != 'Carrinho' ORDER BY pedidos.dataPedido DESC;";
             $stmt = $this->conn->prepare($select);
 
             if ($stmt->execute()) {

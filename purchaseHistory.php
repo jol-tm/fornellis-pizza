@@ -10,9 +10,10 @@
 <div class="box">
   <h1>Histórico Pedidos</h1>
     <div class="topo">
+      <h2>Código</h2>
       <h2>Pedido</h2>
       <h2>Data</h2>
-      <h2>Valor</h2>
+      <h2>Valor Total</h2>
       <h2>Status</h2>
     </div>
       <div id="itens">
@@ -20,10 +21,10 @@
             $conn = new Conn();
             $pedido = new pedido($conn->conectar());
             $userHistory = $pedido->listHistory($_SESSION["userid"]);
-
             foreach ($userHistory as $item) {
                 echo "
                     <div class=\"item\">
+                      <div class=\"espacamento\">{$item['id']}</div>
                       <div class=\"espacamento\">{$item['nome']} x {$item['quantidade']}</div>
                       <div class=\"espacamento\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
                       <div class=\"espacamento\">R$ {$item["valor_total"]}</div>
