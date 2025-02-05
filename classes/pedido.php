@@ -58,6 +58,8 @@
                     };
                 }
             }
+            $this->conn->close();
+            return false;
         }
 
         public function subProduct($idProd, $idCliente) {
@@ -91,6 +93,8 @@
                 $this->conn->close();
                 return $result;
             }
+            $this->conn->close();
+            return false;
         }
 
         public function listAllOrders() {
@@ -100,6 +104,8 @@
                 $this->conn->close();
                 return $result;
             }
+            $this->conn->close();
+            return false;
         }
 
         public function listHistory($idCliente) {
@@ -109,6 +115,8 @@
                 $this->conn->close();
                 return $result;
             }
+            $this->conn->close();
+            return false;
         }
 
         public function listAllHistory() {
@@ -118,6 +126,8 @@
                 $this->conn->close();
                 return $result;
             }
+            $this->conn->close();
+            return false;
         }
 
         public function endPurchase($idCliente) {
@@ -128,6 +138,8 @@
                 $this->conn->close();
                 return true;
             }
+            $this->conn->close();
+            return false;
         }
 
         public function manageOrder($act, $idCliente) {
@@ -142,18 +154,18 @@
             if ($this->conn->query($updateOrder) && $this->conn->query($updateItens)) {
                 $this->conn->close();
                 return true;
-            } else {
-                $this->conn->close();
-                return false;
             }
+            $this->conn->close();
+            return false;
         }
 
-        public function calcTotalPrice($idCliente) {
-            $select = "SELECT valor_total FROM pedidos WHERE idCliente = $idCliente AND status = 'Carrinho'";
+        public function getTotalPrice($idCliente) {
+            $select = "SELECT valor_total FROM pedidos WHERE idCliente = $idCliente AND status = 'Carrinho';";
 
-            if ($result = $this->conn->query($select)->fetch_object()) {
+            if ($result = $this->conn->query($select)->fetch_row()) {
                 $this->conn->close();
-                return $result->valor_total;
+                return $result;
             }
+            $this->conn->close();
         }
     }

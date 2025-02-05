@@ -23,6 +23,8 @@
         echo "<div class='notification'>Conta desconectada.</div>";
     } elseif (isset($_GET['deleted'])) {
         echo "<div class='notification'>Conta apagada.</div>";
+    } elseif (isset($_GET['edited'])) {
+        echo "<div class='notification'>Cadastro editado com sucesso! Por favor, entre novamente na sua conta.</div>";
     }
 ?>
     <!--CAROUSEL-->

@@ -145,7 +145,7 @@ a {
         background-color: var(--c1);
         transition: .3s;
         img {
-            height: 2rem;
+            height: 150%;
         }
     }
 }

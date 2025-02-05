@@ -3,10 +3,6 @@
     if (!isset($_SESSION['userid'])) {
         header("Location: index.php");
     }
-    if (isset($_SESSION['status'])) {
-        echo "<div class='notification'>{$_SESSION['status']}</div>";
-        unset($_SESSION['status']);
-    }
     include_once "assets/header.php"; 
     include_once "admin.php"; 
 ?>
@@ -16,7 +12,7 @@
             echo "
                 <form action='dataAcess/editAcc.php' method='post'>
                     <h1>Alterar Cadastro</h1>
-                    <input type='text' placeholder='Nome' name='nome' value=" . $_SESSION['userno'] . " required>   
+                    <input type='text' placeholder='Nome' name='nome' value='" . $_SESSION['userno'] . "' required>   
                     <input type='password' placeholder='Nova senha' name='pass' value=''>
                     <button type='submit' name='updateAcc'><h4>Salvar</h4></button>
                 </form>

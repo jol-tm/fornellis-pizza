@@ -15,49 +15,65 @@
                 $stmt = $this->conn->prepare($insert);
                 $stmt->bind_param('sssss', $nome, $email, $numero, $senha ,$endereco);
                 if ($stmt->execute()) {
+                    $stmt->close();
+                    $this->conn->close();
                     return true;
                 };
             } else {
+                $this->conn->close();
                 return false;
             }
-            $stmt->close();
-            $this->conn->close();
         }
 
         public function login($email, $senha) {
             $check = "SELECT * FROM clientes WHERE email = '$email'";
-            $stmt = $this->conn->prepare($check);
-            $stmt->execute(); 
-            $result = $stmt->get_result();
+            $result = $this->conn->query($check);
             
             if ($result->num_rows != 0) {
                 $result = $result->fetch_assoc();
                 if (password_verify($senha, $result['senha'])) {
+                    $this->conn->close();
                     return $result;
                 } else {
+                    $this->conn->close();
                     return false;
                 }
             } else {
+                $this->conn->close();
                 return false;
             }
-
-            $stmt->close();
-            $this->conn->close();
         }
 
         public function editAcc($nome, $email, $numero, $senha ,$endereco, $id) {
-            $senha = password_hash($senha, PASSWORD_DEFAULT);
-            $update = "UPDATE clientes SET nome = ?, email = ?, numero = ?, senha = ?, endereco = ? WHERE id = ?";
-            $stmt = $this->conn->prepare($update);
-            $stmt->bind_param('sssssi', $nome, $email, $numero, $senha ,$endereco, $id);
+            if ($senha == null && $email == null) {
+                $update = "UPDATE clientes SET nome = ?, numero = ?, endereco = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $stmt->bind_param('sssi', $nome, $numero, $endereco, $id);
+            } elseif ($senha == null) {
+                $update = "UPDATE clientes SET nome = ?, email = ?, numero = ?, endereco = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $stmt->bind_param('ssssi', $nome, $email, $numero, $endereco, $id);
+            } elseif ($email == null) {
+                $update = "UPDATE clientes SET nome = ?, numero = ?, senha = ?, endereco = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $senha = password_hash($senha, PASSWORD_DEFAULT);
+                $stmt->bind_param('ssssi', $nome, $numero, $senha ,$endereco, $id);
+            } else {
+                $update = "UPDATE clientes SET nome = ?, email = ?, numero = ?, senha = ?, endereco = ? WHERE id = ?";
+                $stmt = $this->conn->prepare($update);
+                $senha = password_hash($senha, PASSWORD_DEFAULT);
+                $stmt->bind_param('sssssi', $nome, $email, $numero, $senha ,$endereco, $id);
+            }
 
             if ($stmt->execute()) {
+                $stmt->close();
+                $this->conn->close();
                 return true;
             } else {
+                $stmt->close();
+                $this->conn->close();
                 return false;
             }
-            $stmt->close();
-            $this->conn->close();
         }
 
         public function deleteAcc($id) {
@@ -66,12 +82,14 @@
             $stmt->bind_param('i', $id);
 
             if ($stmt->execute()) {
+                $stmt->close();
+                $this->conn->close();
                 return true;
             } else {
+                $stmt->close();
+                $this->conn->close();
                 return false;
             }
-            $stmt->close();
-            $this->conn->close();
         }
 
         /*public function listOrders($id) {

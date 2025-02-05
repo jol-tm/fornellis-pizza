@@ -12,7 +12,7 @@
         $_SESSION['userno'] = $user['nome'];
         $_SESSION['userem'] = $user['email'];
         $_SESSION['usernu'] = $user['numero'];
-        $_SESSION['userse'] = $user['senha'];
+        //$_SESSION['userse'] = $user['senha'];
         $_SESSION['useren'] = $user['endereco'];
         $_SESSION['loginstatus'] = "Logado como {$_SESSION['userno']}";
         header('Location: ../index.php');

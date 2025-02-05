@@ -7,9 +7,8 @@
     $cliente = new Cliente($conn->conectar());
 
     if (isset($_POST['updateAcc'])) {
-        if ($cliente->editAcc($_POST['nome'], $_POST['email'], $_POST['tel'], $_POST['pass'], $_POST['adress'], $_SESSION['userid'])) {
-            $_SESSION['status'] = 'Cadastro editado com sucesso!';    
-            header('Location: ../changeRegistration.php');
+        if ($cliente->editAcc($_POST['nome'], $_POST['email'], $_POST['tel'], $_POST['pass'], $_POST['adress'], $_SESSION['userid'])) {    
+            header("Location: logOff.php?edited");
         }
     } elseif (isset($_POST['deleteAcc'])) {
         if ($cliente->deleteAcc($_SESSION['userid'])) {

@@ -39,7 +39,7 @@
         Total:<br>R$ 
         <?php
             if ($pedidos != null) {
-                echo str_replace('.', ',', $pedido->calcTotalPrice($_SESSION['userid']));
+                echo str_replace('.', ',', $pedido->getTotalPrice($_SESSION['userid']));
                 echo '        
                     <form action="endPurchase.php" method="post">
                         <button type="submit" name="buy">Comprar</button>
