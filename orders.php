@@ -15,6 +15,7 @@
     <h1>Pedidos</h1>
     <div class="topo">
         <h2>Pedido</h2>
+        <h2>Valor</h2>
         <h2>Telefone</h2>
         <h2>Endereço</h2>
         <h2>Controlar</h2>
