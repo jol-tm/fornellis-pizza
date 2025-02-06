@@ -18,27 +18,30 @@
             $conn = new Conn();
             $pedido = new Pedido($conn->conectar());
             $pedidos = $pedido->listOrder($_SESSION['userid']);
-            foreach ($pedidos as $item) {
-                echo "
-                    <div class='item'>
-                        <img class='imgProd' height='100' src='" . $item['imagem']. "' alt=''>
-                        <h3>" . $item['nome'] . "</h3>
-                        <div class='units'>
-                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=add'>+</a>
-                            <div class='number'>" . $item['quantidade'] . "</div>
-                            <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=sub'>-</a>
+            if ($pedidos != null) {
+                foreach ($pedidos as $item) {
+                    echo "
+                        <div class='item'>
+                            <img class='imgProd' height='100' src='" . $item['imagem']. "' alt=''>
+                            <h3>" . $item['nome'] . "</h3>
+                            <div class='units'>
+                                <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=add'>+</a>
+                                <div class='number'>" . $item['quantidade'] . "</div>
+                                <a href='dataAcess/changeAmt.php?idCliente={$_SESSION['userid']}&id={$item['idProduto']}&act=sub'>-</a>
+                            </div>
+                            <h4 class='price'>R$" . str_replace('.', ',', $item['preco_unitario']) . "</h4>
                         </div>
-                        <h4 class='price'>R$" . str_replace('.', ',', $item['preco_unitario']) . "</h4>
-                    </div>
-                "; 
+                    "; 
+                }
             }
         ?>
     </div>
     <footer id="total">
         Total:<br>R$ 
         <?php
+            $pedido = new Pedido($conn->conectar());
             if ($pedidos != null) {
-                // Não funciona essa joça :/
+
                 echo str_replace('.', ',', $pedido->getTotalPrice($_SESSION['userid']));
                 echo '        
                     <form action="endPurchase.php" method="post">
