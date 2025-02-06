@@ -32,13 +32,13 @@
                     </div>
                 "; 
             }
-            
         ?>
     </div>
     <footer id="total">
         Total:<br>R$ 
         <?php
             if ($pedidos != null) {
+                // Não funciona essa joça :/
                 echo str_replace('.', ',', $pedido->getTotalPrice($_SESSION['userid']));
                 echo '        
                     <form action="endPurchase.php" method="post">
@@ -46,9 +46,9 @@
                     </form>
                 ';
             } else {
-                echo "00,00"; 
+                echo "00,00";
             }
         ?>
-    </footer id="total">
+    </footer>
 </div>
 <?php include_once "assets/footer.php"; ?>

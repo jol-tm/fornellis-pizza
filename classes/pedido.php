@@ -35,7 +35,7 @@
                         $this->conn->close();
                         return true;
                     }
-                };
+                }
             } elseif ($result->num_rows != 0) {
                 $check = "SELECT idProduto FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
                 
@@ -66,10 +66,21 @@
             $check = "SELECT quantidade FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
 
             if ($this->conn->query($check)->fetch_all(MYSQLI_ASSOC)[0]['quantidade'] == 1) {
-                $delete = "DELETE FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
+                $select = "SELECT idPedido FROM itens_pedido WHERE idCliente = $idCliente AND status = 'Carrinho'";
                 $update = "UPDATE pedidos SET valor_total = (SELECT SUM(ip.quantidade * ip.preco_unitario) FROM itens_pedido ip WHERE ip.idCliente = pedidos.idCliente) WHERE idCliente = $idCliente AND status = 'Carrinho';";
+                $delete = "DELETE FROM itens_pedido WHERE idProduto = $idProd AND idCliente = $idCliente";
+                $idPedido = $this->conn->query($select);
 
                 if ($this->conn->query($delete) && $this->conn->query($update)) {
+                    if ($idPedido->num_rows == 1) {
+                        $idPedido = $idPedido->fetch_row();
+                        $idPedido = $idPedido[0];
+                        $delete2 = "DELETE FROM pedidos WHERE id = $idPedido";
+                        if ($this->conn->query($delete2)) {
+                            $this->conn->close();
+                            return true;
+                        }
+                    }
                     $this->conn->close();
                     return true;
                 };
@@ -162,9 +173,9 @@
         public function getTotalPrice($idCliente) {
             $select = "SELECT valor_total FROM pedidos WHERE idCliente = $idCliente AND status = 'Carrinho';";
 
-            if ($result = $this->conn->query($select)->fetch_row()) {
+            if ($result = $this->conn->query($select)->fetch_assoc()) {
                 $this->conn->close();
-                return $result;
+                return $result['valor_total'];
             }
             $this->conn->close();
         }

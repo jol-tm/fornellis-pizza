@@ -8,6 +8,6 @@
         header("Location: ../index.php?deleted");
     } else {
         session_destroy();
-        header("Location: ../index.php");
+        header("Location: ../index.php?off");
     }
 ?>
