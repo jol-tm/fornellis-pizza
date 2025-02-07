@@ -26,19 +26,25 @@
         }
 
         public function login($email, $senha) {
-            $check = "SELECT * FROM clientes WHERE email = '$email'";
-            $result = $this->conn->query($check);
-            
+            $check = "SELECT * FROM clientes WHERE email = ?";
+            $stmt = $this->conn->prepare($check);
+            $stmt->bind_param('s', $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
             if ($result->num_rows != 0) {
                 $result = $result->fetch_assoc();
                 if (password_verify($senha, $result['senha'])) {
+                    $stmt->close();
                     $this->conn->close();
                     return $result;
                 } else {
+                    $stmt->close();
                     $this->conn->close();
                     return false;
                 }
             } else {
+                $stmt->close();
                 $this->conn->close();
                 return false;
             }

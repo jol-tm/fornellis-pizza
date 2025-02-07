@@ -23,17 +23,19 @@
     </div>
       <div id="itens">
         <?php
-            foreach ($history as $item) {
-                echo "
-                    <div class=\"item\">
-                      <div class=\"espacamento historyAdmItem\">{$item['id']}</div>
-                      <div class=\"espacamento historyAdmItem\">{$item['numero']}</div>
-                      <div class=\"espacamento historyAdmItem\">{$item['nome']} x {$item['quantidade']}</div>
-                      <div class=\"espacamento historyAdmItem\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
-                      <div class=\"espacamento historyAdmItem status\">{$item["status"]}</div>
-                      <div class=\"espacamento historyAdmItem\">R$ {$item["valor_total"]}</div>
-                    </div>
-                ";
+            if ($history) {
+                foreach ($history as $item) {
+                    echo "
+                        <div class=\"item\">
+                          <div class=\"espacamento historyAdmItem\">{$item['id']}</div>
+                          <div class=\"espacamento historyAdmItem\">{$item['numero']}</div>
+                          <div class=\"espacamento historyAdmItem\">{$item['nome']} x {$item['quantidade']}</div>
+                          <div class=\"espacamento historyAdmItem\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
+                          <div class=\"espacamento historyAdmItem status\">{$item["status"]}</div>
+                          <div class=\"espacamento historyAdmItem\">R$ " . str_replace(".", ",", $item["valor_total"]) . "</div>
+                        </div>
+                    ";
+                }
             }
         ?>
     </div>

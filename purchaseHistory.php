@@ -27,7 +27,7 @@
                       <div class=\"espacamento\">{$item['id']}</div>
                       <div class=\"espacamento\">{$item['nome']} x {$item['quantidade']}</div>
                       <div class=\"espacamento\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
-                      <div class=\"espacamento\">R$ {$item["valor_total"]}</div>
+                      <div class=\"espacamento\">R$ " . str_replace(". ", ", ", $item["valor_total"]) . "</div>
                       <div class=\"espacamento status\">{$item["status"]}</div>
                     </div>
                 ";
