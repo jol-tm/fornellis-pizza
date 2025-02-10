@@ -36,6 +36,10 @@
                         </div>
                     ";
                 }
+            } else {
+                echo "
+                    <img src='imgs/empty.png'>
+                ";
             }
         ?>
     </div>

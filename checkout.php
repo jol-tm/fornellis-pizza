@@ -34,7 +34,10 @@
                     "; 
                 }
             } else {
-                echo "";
+                echo "
+                    <img src='imgs/emptyBag.png'>
+                    <p>Não há nada aqui ainda... Que tal adicionar alguns produtos do cardápio?</p>
+                ";
             }
         ?>
     </div>
