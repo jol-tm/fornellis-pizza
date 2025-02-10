@@ -21,16 +21,18 @@
             $conn = new Conn();
             $pedido = new pedido($conn->conectar());
             $userHistory = $pedido->listHistory($_SESSION["userid"]);
-            foreach ($userHistory as $item) {
-                echo "
-                    <div class=\"item\">
-                      <div class=\"espacamento\">{$item['id']}</div>
-                      <div class=\"espacamento\">{$item['nome']} x {$item['quantidade']}</div>
-                      <div class=\"espacamento\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
-                      <div class=\"espacamento\">R$ " . str_replace(". ", ", ", $item["valor_total"]) . "</div>
-                      <div class=\"espacamento status\">{$item["status"]}</div>
-                    </div>
-                ";
+            if ($userHistory) {
+                foreach ($userHistory as $item) {
+                    echo "
+                        <div class=\"item\">
+                          <div class=\"espacamento\">{$item['id']}</div>
+                          <div class=\"espacamento\">{$item['nome']} x {$item['quantidade']}</div>
+                          <div class=\"espacamento\">" . str_replace("-", "/", $item["dataPedido"]) . "</div>
+                          <div class=\"espacamento\">R$ " . str_replace(". ", ", ", $item["valor_total"]) . "</div>
+                          <div class=\"espacamento status\">{$item["status"]}</div>
+                        </div>
+                    ";
+                }
             }
         ?>
     </div>

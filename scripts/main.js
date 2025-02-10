@@ -128,11 +128,14 @@ function checkscroll() {
 
 function endPurchaseTimer() {
     const timerDisplayer = $('#endPurchaseTimer');
+    const progressBar = $('#progressBar');
     let time = 20;
-
+    
     const timer = setInterval(() => {
         if (time >= 0) {
+            let barSize = (time / 20 *100) + "%";
             timerDisplayer.text(`Sua compra vai ser finalizada em ${time} segundos`);
+            progressBar.css('width', barSize);
             time --;
         } else {
             window.location.href += "?purchase=true";

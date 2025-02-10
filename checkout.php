@@ -18,7 +18,7 @@
             $conn = new Conn();
             $pedido = new Pedido($conn->conectar());
             $pedidos = $pedido->listOrder($_SESSION['userid']);
-            if ($pedidos != null) {
+            if ($pedidos) {
                 foreach ($pedidos as $item) {
                     echo "
                         <div class='item'>
@@ -33,6 +33,8 @@
                         </div>
                     "; 
                 }
+            } else {
+                echo "";
             }
         ?>
     </div>
@@ -40,7 +42,7 @@
         Total:<br>R$ 
         <?php
             $pedido = new Pedido($conn->conectar());
-            if ($pedidos != null) {
+            if ($pedidos) {
 
                 echo str_replace('.', ',', $pedido->getTotalPrice($_SESSION['userid']));
                 echo '        
