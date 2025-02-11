@@ -177,12 +177,13 @@ async function fetchOrders() {
     
     displayOrders(data);
 
-    const interval = setInterval(() => {
+    const timeout = setTimeout(() => {
         fetchOrders();
     }, 5000);
 }
 
 function displayOrders(data) {
+    console.log(data);
     let content = "";
 
     data.forEach(el => {
