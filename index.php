@@ -13,9 +13,7 @@
         }
     } elseif (isset($_POST['product']) && !isset($_SESSION['userid']))  {
         echo "<div class='notification'>Você tem que estar logado!</div>";
-    } elseif (isset($_SESSION['cadastro'])) {
-        echo "<div class='notification'>{$_SESSION['cadastro']}</div>";
-        unset($_SESSION['cadastro']);
+        echo "<script>UserMenu();</script>";
     } elseif (isset($_SESSION['loginstatus'])) {
         echo "<div class='notification'>{$_SESSION['loginstatus']}</div>";
         unset($_SESSION['loginstatus']);
