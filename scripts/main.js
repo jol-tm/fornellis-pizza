@@ -178,7 +178,7 @@ async function fetchOrders() {
     displayOrders(data);
 
     const interval = setInterval(() => {
-        displayOrders(data);
+        fetchOrders();
     }, 5000);
 }
 
