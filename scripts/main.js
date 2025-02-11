@@ -183,23 +183,24 @@ async function fetchOrders() {
 }
 
 function displayOrders(data) {
-    console.log(data);
     let content = "";
 
-    data.forEach(el => {
+    for (let i = 0; i < data.length; i++) {
+        const el = data[i];
+
         content = `
-            <div class='item'>
-                <h4 class='itemCol content'>${el['nome']} x ${el['quantidade']}</h4>
-                <h4 class='itemCol'>R$${el['valor_total'].replace(".", ",")}</h4>
-                <h4 class='itemCol'>${el['numero']}</h4>
-                <h4 class='itemCol'>${el['endereco']}</h4>
-                <form id='controlOrder' action='dataAcess/manageOrder.php' method='post'>
-                    <input type='hidden' name='idCliente' value='${el['idCliente']}'></input>
-                    <button type='submit' id='acceptBtn' name='accept'><img src='imgs/icones/accept.svg' alt=''></button>
-                    <button type='submit' id='denyBtn' name='deny'><img height=24 src='imgs/icones/close-nav.svg' alt=''></button>
-                </form>                        
-            </div>` + content;
-    });
+        <div class='item'>
+            <h4 class='itemCol content'>${el['nome']} x ${el['quantidade']}</h4>
+            <h4 class='itemCol'>R$${el['valor_total'].replace(".", ",")}</h4>
+            <h4 class='itemCol'>${el['numero']}</h4>
+            <h4 class='itemCol'>${el['endereco']}</h4>
+            <form id='controlOrder' action='dataAcess/manageOrder.php' method='post'>
+                <input type='hidden' name='idCliente' value='${el['idCliente']}'></input>
+                <button type='submit' id='acceptBtn' name='accept'><img src='imgs/icones/accept.svg' alt=''></button>
+                <button type='submit' id='denyBtn' name='deny'><img height=24 src='imgs/icones/close-nav.svg' alt=''></button>
+            </form>                        
+        </div>` + content;
+    }
 
     $('#itens').html(content);
 }
