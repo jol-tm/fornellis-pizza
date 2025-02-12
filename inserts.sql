@@ -27,4 +27,4 @@ INSERT INTO produtos (nome, categoria, descricao, preco, imagem) VALUES
 ('Pepsi', 'Bebida', 'Pepsi lata 269ml', 5.99, 'imgs/cardapio/pepsi.jpg');
 
 INSERT INTO clientes (nome, email, senha, numero, endereco) VALUES
-('Administrador', 'admin@fornellis.com', 'admin123', '', ''), ('João Lucas', 'joaolucastmagalhaes@gmail.com', 'senha123', '1921345672', 'Av 10, 128');
+('Administrador', 'admin@fornellis.com', 'admin123', '', '');
