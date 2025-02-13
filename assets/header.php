@@ -55,18 +55,17 @@
                     ";
                 } else {
                     echo "
-                    <form action=\"dataAcess/login.php\" method=\"post\">
-                        <h1>Login</h1>
-                        <input type=\"email\" placeholder=\"Email\" name=\"email\" required>    
-                        <input type=\"password\" placeholder=\"Senha\" name=\"pass\" required>
-                        <button type=\"submit\"><h4>Entrar</h4></button>
-                        <h5 id=\"sign-up-link\">Não tem uma conta? Cadastre-se aqui!</h5>
-                    </form>
+                        <form action=\"dataAcess/login.php\" method=\"post\">
+                            <h1>Login</h1>
+                            <input type=\"email\" placeholder=\"Email\" name=\"email\" required>    
+                            <input type=\"password\" placeholder=\"Senha\" name=\"pass\" required>
+                            <button type=\"submit\"><h4>Entrar</h4></button>
+                            <h5 id=\"sign-up-link\">Não tem uma conta? Cadastre-se aqui!</h5>
+                        </form>
                     ";
                 }
             ?>
             <button class="hide-user-menu"><img src="imgs/icones/close-nav.svg" alt=""></button>
-
         </div>
         <div id="sign-up-menu" class="pop-up">
             <button class="hide-user-menu"><img src="imgs/icones/close-nav.svg" alt=""></button>

@@ -83,31 +83,16 @@
         }
 
         public function deleteAcc($id) {
-            $delete = "DELETE FROM clientes WHERE id = ?";
-            $stmt = $this->conn->prepare($delete);
-            $stmt->bind_param('i', $id);
+            $delete = "DELETE FROM itens_pedido WHERE idCliente = $id";
+            $delete2 = "DELETE FROM pedidos WHERE idCliente = $id";
+            $delete3 = "DELETE FROM clientes WHERE id = $id";
 
-            if ($stmt->execute()) {
-                $stmt->close();
+            if ($this->conn->query($delete) && $this->conn->query($delete2) && $this->conn->query($delete3)) {
                 $this->conn->close();
                 return true;
             } else {
-                $stmt->close();
                 $this->conn->close();
                 return false;
             }
         }
-
-        /*public function listOrders($id) {
-            $select = "SELECT * FROM pedidos WHERE idCliente = $id";
-
-            $stmt = $this->conn->prepare($select);
-
-            if ($stmt->execute()) {
-                $stmt = $stmt->get_result();
-                return $stmt->fetch_all(MYSQLI_ASSOC);
-            }
-            $stmt->close();
-            $this->conn->close();
-        }*/
     }

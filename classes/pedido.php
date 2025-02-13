@@ -172,7 +172,6 @@
 
         public function getTotalPrice($idCliente) {
             $select = "SELECT valor_total FROM pedidos WHERE idCliente = $idCliente AND status = 'Carrinho';";
-            // Bug tem que usa id do Pedido também
 
             if ($result = $this->conn->query($select)->fetch_assoc()) {
                 $this->conn->close();

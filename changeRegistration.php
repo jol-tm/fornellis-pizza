@@ -2,9 +2,12 @@
     session_start();
     if (!isset($_SESSION['userid'])) {
         header("Location: index.php");
-    }
+    } 
     include_once "assets/header.php"; 
     include_once "admin.php"; 
+    if (isset($_GET['edited'])) {
+        echo "<div class='notification'>Cadastro editado com sucesso!</div>";
+    }
 ?>
 <div class="box">
     <?php

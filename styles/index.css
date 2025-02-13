@@ -9,9 +9,9 @@
     --c3: #f0f8ff;
     --c4: #574738;
     --c5: #ffe817;
-    --c6: #b30012d9;
+    --c6: #b30012e6;
+    --c7: #4ab54ae6;
     --ts: 0 0 3px black, 0 0 3px black;
-    --blur: 3px;
 }
 
 @media only screen and (min-width : 0) {
@@ -36,9 +36,6 @@
     }
     .div-line {
         scroll-margin-top: 1rem;
-    }
-    .nav-css, .texts,  #scroll-up-btn { /* ativa o blur só para pc */
-        backdrop-filter: blur(var(--blur));
     }
 }
 
@@ -360,7 +357,6 @@ select {
     border-radius: inherit;
     text-shadow: var(--ts);
     color: var(--c3);
-    backdrop-filter: blur(var(--blur));
     opacity: 0;
     transition: .5s;
     p {
@@ -462,8 +458,15 @@ footer {
     padding: 1rem;
     border-radius: 1rem;
     color: var(--c3);
-    background-color: var(--c2);
+    background-color: var(--c7);
+    backdrop-filter: blur(var(--blur));
     animation: showUp 10s forwards;
+    a {
+        cursor: pointer;
+        color: var(--c3);
+        text-decoration: underline;
+        transition: .3s;
+    }
 }
 /* CARRINHO */
 @media only screen and (min-width : 0) {
@@ -654,12 +657,12 @@ td, th {
 }
 @keyframes showUp {
     0% {
-        bottom: -5rem;
-    } 20% {
-        bottom: 1rem;
-    } 80% {
-        bottom: 1rem;
+        top: -5rem;
+    } 10% {
+        top: 7rem;
+    } 90% {
+        top: 7rem;
     } 100% {
-        bottom: -5rem;
+        top: -5rem;
     }
 }

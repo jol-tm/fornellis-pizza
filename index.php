@@ -3,11 +3,11 @@
     include_once "assets/header.php";
     include_once "classes/conn.php";
     $conn = new Conn();
-    
+
     if (isset($_POST['product']) && isset($_SESSION['userid'])) {
         $pedido = new Pedido($conn->conectar());
         if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
-            echo "<div class='notification'>Adicionado ao carrinho!</div>";
+            echo "<div class='notification'>Adicionado ao <a href='checkout.php'>carrinho!</a></div>";
         } else {
             echo "<div class='notification'>Erro ao adicionar ao carrinho!</div>";
         }
@@ -24,8 +24,6 @@
         echo "<div class='notification'>Conta desconectada.</div>";
     } elseif (isset($_GET['deleted'])) {
         echo "<div class='notification'>Conta apagada.</div>";
-    } elseif (isset($_GET['edited'])) {
-        echo "<div class='notification'>Cadastro editado com sucesso! Por favor, entre novamente na sua conta.</div>";
     }
 ?>
     <!--CAROUSEL-->
