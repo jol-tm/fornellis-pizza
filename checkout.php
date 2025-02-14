@@ -1,6 +1,7 @@
 <?php
     session_start();
-    if (!isset($_SESSION['userid'])) {
+    include_once "admin.php";
+    if (!isset($_SESSION['userid']) || $_SESSION['userem'] == $admin) {
         header("Location: index.php");
     }
     include_once "assets/header.php"; 

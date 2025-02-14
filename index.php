@@ -2,9 +2,10 @@
     session_start();
     include_once "assets/header.php";
     include_once "classes/conn.php";
+    include_once "admin.php";
     $conn = new Conn();
 
-    if (isset($_POST['product']) && isset($_SESSION['userid'])) {
+    if (isset($_POST['product']) && isset($_SESSION['userid']) && $_SESSION['userem'] != $admin) {
         $pedido = new Pedido($conn->conectar());
         if ($pedido->addProduct($_POST['product'], $_SESSION['userid'])) {
             echo "<div class='notification'>Adicionado ao <a href='checkout.php'>carrinho!</a></div>";
